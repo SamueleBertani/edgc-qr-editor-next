@@ -1,0 +1,71 @@
+import React, {useEffect} from "react";
+import Link from "next/link";
+const qr = '/images/Qr.png';
+const avanti = "/images/Avanti.svg";
+const image = "/images/Image.svg";
+const fasi = "/images/Group 8.svg";
+
+
+function Page4() {
+
+    useEffect(() => {
+        const root = document.documentElement
+        root.style.setProperty('--green', "#FFFFFF");
+    })
+
+    //window.scrollTo(0, 0);
+
+    return (
+        <>
+
+            <div className="fase">
+                <img src={fasi}/>
+            </div>
+
+            <div className="qrframe">
+                <div className="frame">
+                    <img src={qr} className="qr"/>
+                </div>
+            </div>
+
+            <div className="panel4">
+                <div className="guideframe">
+                    <div className="guide">
+                        Aggiungi un logo <small>(opzionale)</small>
+                    </div>
+                </div>
+
+                <div className="loadOptions">
+                    <div className="loadlogo">
+                        <div>
+                            <img src={image} className="logo"/>
+                        </div>
+                        <div className="loadLabel">
+                            Galleria
+                        </div>
+                    </div>
+                    <div className="rimuovilogo">
+                        Rimuovi
+                    </div>
+                </div>
+                <footer>
+                    <div className="pagine4Options">
+                        <Link href="/page5">
+                            <div className="buttonAvanti4">
+                                <img src={avanti} className="avanti"/>
+                            </div>
+                        </Link>
+
+                        <Link href="/page3">
+                            <div className="buttonIndietro4">
+                                <img src={avanti} className="indietro"/>
+                            </div>
+                        </Link>
+                    </div>
+                </footer>
+            </div>
+        </>
+    )
+}
+
+export default Page4;
