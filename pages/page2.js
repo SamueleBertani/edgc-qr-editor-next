@@ -1,9 +1,10 @@
-import React, {useEffect, useRef, useState} from "react";
+import React, { useEffect, useRef, useState } from "react";
 import jsQR from "jsqr";
-import {get} from '@andreekeberg/imagedata'
+import { get } from '@andreekeberg/imagedata'
 import Camera from 'react-html5-camera-photo';
 import 'react-html5-camera-photo/build/css/index.css';
 import Link from "next/link";
+//import { View, StyleSheet, Button, Alert } from "react-native";
 
 const qr = '/images/Qr.png';
 const camera = "/images/Camerasvg.svg";
@@ -13,6 +14,26 @@ const fasi = "images/Group 5.svg";
 
 
 export default function Page2() {
+
+    const showAlert = () =>
+        Alert.alert(
+            "Alert Title",
+            "My Alert Msg",
+            [
+                {
+                    text: "Cancel",
+                    onPress: () => Alert.alert("Cancel Pressed"),
+                    style: "cancel",
+                },
+            ],
+            {
+                cancelable: true,
+                onDismiss: () =>
+                    Alert.alert(
+                        "This alert was dismissed by tapping outside of the alert dialog."
+                    ),
+            }
+        );
 
 
     //window.scrollTo(0, 0);
@@ -33,15 +54,15 @@ export default function Page2() {
     }
 
     function notifyQrCodeFound(code) {
-        //alert.success("ho trovato qr");
-        //setShow((s) => true)
+        //showAlert();
+        setShow((s) => true)
 
         console.log(code)
     }
 
     function notifyQrCodeNotFound() {
-        //alert.show("non ho trovato nessun qr");
-        //setShow((s) => false)
+        //showAlert();
+        setShow((s) => false)
         console.log("non ho trovato nessun qr")
     }
 
@@ -85,11 +106,11 @@ export default function Page2() {
     return (
         <div>
             <div className="fase">
-                <img src={fasi}/>
+                <img src={fasi} />
             </div>
             <div className="qrframe">
                 <div className="frame">
-                    <img src={qr} className="qr" alt={"qr icon"}/>
+                    <img src={qr} className="qr" alt={"qr icon"} />
                 </div>
             </div>
             <div className="panel2">
@@ -99,7 +120,7 @@ export default function Page2() {
                 <div className="loadOptions">
                     <div className="loadsx" onClick={onCameraInputClick}>
                         <div onClick={() => setShow((s) => true)}>
-                            <img src={camera} className="icon" alt={"camera icon"}/>
+                            <img src={camera} className="icon" alt={"camera icon"} />
                         </div>
                         <div className="loadLabel">
                             Fotocamera
@@ -107,13 +128,13 @@ export default function Page2() {
                     </div>
                     <div className="loaddx" onClick={onImageSelectorClick}>
                         <div onClick={() => setShow((s) => true)}>
-                            <img src={image} className="icon" alt={"gallery icon"}/>
+                            <img src={image} className="icon" alt={"gallery icon"} />
                         </div>
                         <div className="loadLabel">
                             Galleria
                         </div>
                         <input type="file" ref={inputFile} accept="image/png, image/jpeg"
-                               onChange={e => (onImageInput(e.target.files[0]))} style={{display: 'none'}}/>
+                            onChange={e => (onImageInput(e.target.files[0]))} style={{ display: 'none' }} />
                     </div>
                 </div>
                 <div>
@@ -125,14 +146,14 @@ export default function Page2() {
                 </div>
                 <div className="pagineOptions">
                     <Link href="/page25">
-                        <div className="buttonAvanti2" style={{display: show ? "block" : "none"}}>
-                            <img src={avanti} className="avanti"/>
+                        <div className="buttonAvanti2" style={{ display: show ? "block" : "none" }}>
+                            <img src={avanti} className="avanti" />
                         </div>
                     </Link>
 
                     <Link href="/">
                         <div className="buttonIndietro2" onClick={() => setShow((s) => false)}>
-                            <img src={avanti} className="indietro"/>
+                            <img src={avanti} className="indietro" />
                         </div>
                     </Link>
                 </div>

@@ -1,8 +1,14 @@
 import type {NextPage} from 'next'
+import React, {useEffect} from "react";
 import styles from '../styles/Home.module.css'
 import Link from "next/link";
 
 const Home: NextPage = () => {
+
+    useEffect(() => {
+        const root = document.documentElement
+        root.style.setProperty('--green', "#F1FAEE");
+    })
     return (
         <div className={styles.container}>
             <div className="testoIniziale">
