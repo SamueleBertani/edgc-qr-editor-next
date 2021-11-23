@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import Link from "next/link";
 const qr = '/images/Qr.png';
 const avanti = "/images/Avanti.svg";
-const fasi = "/images/Group 8.svg";
+const fasi = "/images/Group 9.svg";
 
 
 function CornerSquarePicker({onPick}) {
@@ -116,7 +116,7 @@ function Page5() {
                     </div>
                 </div>
 
-                <div className="coloreScrittaFrame">
+                <div className="colorframe">
                     <div className="colore">
                         Colore scritta
                     </div>

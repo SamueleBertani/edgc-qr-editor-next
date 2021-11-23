@@ -1,7 +1,7 @@
 import React, {useEffect} from "react";
 import Link from "next/link";
 const qr = '/images/Qr.png';
-const fasi = "/images/Group 8.svg";
+const fasi = "/images/Group 11.svg";
 
 
 function Page7() {

@@ -5,7 +5,7 @@ const share = '/images/Share.svg';
 const qr = '/images/Qr.png';
 const avanti = "/images/Avanti.svg";
 const image = "/images/Image.svg";
-const fasi = "/images/Group 8.svg";
+const fasi = "/images/Group 10.svg";
 
 
 function Page6() {

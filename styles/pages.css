@@ -181,7 +181,7 @@ body {
 .footer {
 
     width: 280px;
-    height: 127px;
+    height: 207px;
 
     text-align: center;
     padding-bottom: 80px;
@@ -361,7 +361,7 @@ body {
     font-family: Roboto;
     font-style: normal;
     font-weight: bold;
-    font-size: 24px;
+    font-size: 29px;
     line-height: 28px;
     text-decoration: none;
     margin-top: 0;
@@ -375,7 +375,7 @@ body {
 
 
     width: 280px;
-    height: 207px;
+    height: 267px;
 
     text-align: center;
     padding-top: 60px;
@@ -472,7 +472,7 @@ body {
 
     margin-top: 70px;
     width: 100%;
-    height: 875px;
+    height: 880px;
     left: 0;
     right: 0;
     margin-left: auto;
@@ -522,7 +522,7 @@ body {
 .qr {
 
     width: 144px;
-    height: 144px;
+    height: 176px;
     left: 0;
     right: 0;
     padding-top: 32px;
@@ -536,7 +536,7 @@ body {
 .guide {
 
     width: 100%;
-    height: 30px;
+    height: 70px;
     padding-top: 40px;
     left: 0;
     right: 0;
@@ -585,7 +585,7 @@ body {
 
     padding-top: 45px;
     width: 295px;
-    height: 130px;
+    height: 175px;
     left: 0;
     right: 0;
     margin-left: auto;
@@ -606,7 +606,7 @@ body {
 .loadLabel {
 
     width: 130px;
-    height: 26px;
+    height: 31px;
     padding-top: 5px;
     margin-left: auto;
     margin-right: auto;
@@ -847,7 +847,7 @@ body {
 
     padding-top: 30px;
     width: 285px;
-    height: 170px;
+    height: 200px;
     left: 0;
     right: 0;
     margin-left: auto;
@@ -857,7 +857,7 @@ body {
 .colore {
 
     width: auto;
-    height: 36px;
+    height: 46px;
     padding-bottom: 10px;
 
     font-family: Roboto;
@@ -934,7 +934,7 @@ body {
 
     padding-top: 30px;
     width: 285px;
-    height: 170px;
+    height: 200px;
     left: 0;
     right: 0;
     margin-left: auto;
@@ -960,7 +960,7 @@ body {
 
     padding-top: 30px;
     width: 285px;
-    height: 170px;
+    height: 200px;
     left: 0;
     right: 0;
     margin-left: auto;
@@ -985,7 +985,7 @@ body {
 .logo {
 
     width: 73px;
-    height: 73px;
+    height: 85px;
     left: 159px;
     padding-top: 12px;
     left: 0;
@@ -998,7 +998,7 @@ body {
 .rimuovilogo {
 
     width: 130px;
-    height: 26px;
+    height: 51px;
     left: 0;
     right: 0;
     margin-left: auto;
@@ -1021,13 +1021,15 @@ body {
 
     padding-top: 30px;
     width: 285px;
-    height: 120px;
+    height: 150px;
     left: 0;
     right: 0;
     margin-left: auto;
     margin-right: auto;
 
 }
+
+textarea { font-size: 20px; }
 
 .text {
 
@@ -1042,7 +1044,7 @@ body {
 .fontframe {
 
     width: 285px;
-    height: 120px;
+    height: 100px;
     left: 0;
     right: 0;
     margin-left: auto;
@@ -1083,8 +1085,8 @@ body {
 
 .consiglio {
 
-    width: 150px;
-    height: 36px;
+    width: 155px;
+    height: 76px;
     padding-top: 40px;
     padding-left: 5px;
 

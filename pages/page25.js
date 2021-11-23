@@ -139,8 +139,6 @@ function Page25() {
                         <CornerDotPicker onPick={(c) => console.log(c)}/>
                     </div>
                 </div>
-
-                <footer>
                     <div className="pagine25Options">
                         <Link href="/page3">
                             <div className="buttonAvanti">
@@ -154,7 +152,6 @@ function Page25() {
                             </div>
                         </Link>
                     </div>
-                </footer>
             </div>
         </div>
     )
