@@ -1,89 +1,58 @@
-import React, { useEffect, useState } from "react";
+import React, {useEffect, useRef, useState} from "react";
 import Link from "next/link";
+import {useDispatch, useSelector} from "react-redux";
+import {
+    changeCornersDotType,
+    changeCornersSquareShape,
+    changeDotsShape
+} from "../features/qrCode/qrCodeOptions";
+
 const qr = '/images/Qr.png';
 const avanti = "/images/Avanti.svg";
 const fasi = "/images/Group 6.svg";
 
+const dotsImageOpts = [
+    {name : "square", value:"squares.png"},
+    {name: "extra-rounded",value:  "extraRounded.png"},
+    {name: "dots", value : "dots.png"},
+    {name: "rounded",value : "rounded.png"},
+    {name: "classy",value : "classy.png"},
+    {name: "classy-rounded",value : "classyRounded.png"},
+]
 
-function DotPicker({ onPick }) {
+const cornersSquareImageOpts = [
+    {name : "square", value:"cornerSquare.png"},
+    {name: "extra-rounded",value:  "extraRound.png"},
+    {name: "dots", value : "dot.png"}
+]
+const cornersDotImageOpts = [
+    {name : "square", value:"squareCornerDot.png"},
+    {name: "dots", value : "cornerDot.png"}
+]
 
-    const images = ["squares.png", "extraRounded.png", "dots.png", "rounded.png", "classy.png", "classyRounded.png"]
+function SvgPicker(props){
+    const [image, setImage] = useState("square")
+    const onSvgClick = (name) => {
+        setImage(name);
+        props.onPick(name)
+    }
 
-    const [image, setImage] = useState(0)
-
-    return (
+    return(
         <>
             <div>
-                {/*{colors[color]}*/}
+                {props.images.map((im) =>
+                    <div key={im.name} style={{backgroundImage:`url(/images/dots/${im.value})`}}
+                         className={im.name === image ? "CornerSquareSelected" : "CornerSquare"}
+                         onClick={() => onSvgClick(im.name)}
+                    />
+                )}
             </div>
-            <div>
-                {images.map((im, i) => <div style={{ backgroundImage: `url(${im})` }}
-                    className={i == image ? "squaresSelected" : "squares"} onClick={() => {
-                        onPick(i);
-                        setImage(i);
-                    }}></div>)}
-            </div>
-
         </>
     )
-
-
 }
-
-function CornerSquarePicker({ onPick }) {
-
-    const images = ["cornerSquare.png", "dot.png", "extraRound.png", "classyCorner.png"]
-
-    const [image, setImage] = useState(0)
-
-    return (
-        <>
-            <div>
-                {/*{colors[color]}*/}
-            </div>
-            <div>
-                {images.map((im, i) => <div style={{ backgroundImage: `url(${im})` }}
-                    className={i == image ? "CornerSquareSelected" : "CornerSquare"}
-                    onClick={() => {
-                        onPick(i);
-                        setImage(i);
-                    }}></div>)}
-            </div>
-
-        </>
-    )
-
-
-}
-
-function CornerDotPicker({ onPick }) {
-
-    const images = ["squareCornerDot.png", "cornerDot.png", "classyCornerDot.png"]
-
-    const [image, setImage] = useState(0)
-
-    return (
-        <>
-            <div>
-                {/*{colors[color]}*/}
-            </div>
-            <div>
-                {images.map((im, i) => <div style={{ backgroundImage: `url(${im})` }}
-                    className={i == image ? "CornerSquareSelected" : "CornerSquare"}
-                    onClick={() => {
-                        onPick(i);
-                        setImage(i);
-                    }}></div>)}
-            </div>
-
-        </>
-    )
-
-
-}
-
 
 function Page25() {
+
 
     useEffect(() => {
         const root = document.documentElement
@@ -92,12 +61,54 @@ function Page25() {
 
     //window.scrollTo(0, 0);
 
+    const qrPanel = useRef()
+
+    const qrOptions = useSelector(state => state.qrOptions.value)
+    const dispatch = useDispatch()
+
+    const [qrCode, setQrCode] = useState(null)
+
+    useEffect(() => {
+        const dynamicImports = async () => {
+            const QRCodeStyling = (await import("qr-code-styling")).default
+            setQrCode(new QRCodeStyling(qrOptions))
+        }
+        dynamicImports()
+    },[])
+
+    useEffect( () => {
+        if (qrCode){
+            qrCode.append(qrPanel.current)
+        }
+    },[qrCode])
+
+
+    useEffect(() => {
+        if(qrCode) {
+            qrCode.update(qrOptions)
+        }
+    }, [qrCode, qrOptions])
+
+    async function onDotShapeChange(v){
+        await dispatch(changeDotsShape(v))
+    }
+
+    async function onCornersSquareChange(v){
+        await dispatch(changeCornersSquareShape(v))
+    }
+
+    async function onCornersDotChange(v) {
+        await dispatch(changeCornersDotType(v))
+    }
+
     return (
         <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", height: "100%" }}>
 
-            <div>
-                <div className="fase">
-                    <img src={fasi} />
+            <div className="qrframe">
+                <div className="frame">
+                    <div className="frame">
+                        <svg  ref={qrPanel} viewBox="0 0 1000 1000" style={{width: 200}}/>
+                    </div>
                 </div>
 
                 <div className="qrframe">
@@ -120,7 +131,7 @@ function Page25() {
                     </div>
 
                     <div className="colortable">
-                        <DotPicker onPick={(c) => console.log(c)} />
+                        <SvgPicker images={dotsImageOpts} onPick={(n) => onDotShapeChange(n)}/>
                     </div>
                 </div>
 
@@ -129,7 +140,7 @@ function Page25() {
                         Cornice Quadrati Grandi
                     </div>
                     <div className="colortable">
-                        <CornerSquarePicker onPick={(c) => console.log(c)} />
+                        <SvgPicker images={cornersSquareImageOpts} onPick={(n) => onCornersSquareChange(n)}/>
                     </div>
                 </div>
 
@@ -138,7 +149,7 @@ function Page25() {
                         Cornice Quadrati Piccoli
                     </div>
                     <div className="colortable">
-                        <CornerDotPicker onPick={(c) => console.log(c)} />
+                        <SvgPicker images={cornersDotImageOpts} onPick={(n) => onCornersDotChange(n)}/>
                     </div>
                 </div>
                 <div className="pagine25Options">
