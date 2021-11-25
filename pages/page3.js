@@ -1,87 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, {useEffect, useRef, useState} from "react";
 import Link from "next/link";
-import { CirclePicker } from "react-color";
+import {useDispatch, useSelector} from "react-redux";
+import {changeCornersDotColor, changeCornerSquareColor, changeDotsColor} from "../features/qrCode/qrCodeOptions";
+import {ColorPicker} from "../components";
+
 const qr = '/images/Qr.png';
 const avanti = "/images/Avanti.svg";
 const fasi = "/images/Group 7.svg";
 
-class Colore1 extends React.Component {
-
-    state = {
-        start: "#000000",
-    };
-
-    handleChangeComplete = (color) => {
-        this.setState({ ...this.state, start: color.hex });
-    };
-
-    render() {
-        return (
-            <CirclePicker
-                color={this.state.start}
-                colors={["#000000", "#e91e63", "#9c27b0", "#673ab7",
-                    "#3f51b5", "#2196f3", "#03a9f4", "#00bcd4"]}
-                circleSize={45}
-                circleSpacing={35}
-                width={{ width: "100%" }}
-                onChangeComplete={this.handleChangeComplete}
-            >
-            </CirclePicker>
-        );
-    }
-}
-
-class Colore2 extends React.Component {
-
-    state = {
-        start: "#000000",
-    };
-
-    handleChangeComplete = (color) => {
-        this.setState({ ...this.state, start: color.hex });
-    };
-
-    render() {
-        return (
-            <CirclePicker
-                color={this.state.start}
-                colors={["#000000", "#e91e63", "#9c27b0", "#673ab7",
-                    "#3f51b5", "#2196f3", "#03a9f4", "#00bcd4"]}
-                circleSize={45}
-                circleSpacing={35}
-                width={{ width: "100%" }}
-                onChangeComplete={this.handleChangeComplete}
-            >
-            </CirclePicker>
-        );
-    }
-}
-
-function ColorPicker({ onPick }) {
-
-    const colors = ["#000000", "#e91e63", "#9c27b0", "#673ab7",
-        "#3f51b5", "#2196f3", "#03a9f4", "#00bcd4"]
-
-    const [color, setColor] = useState(0)
-
-    return (
-        <>
-            <div>
-                {/*{colors[color]}*/}
-            </div>
-            <div>
-                {colors.map((c, i) => <div style={{ backgroundColor: c }} className={i == color ? "selected" : "scelta1"}
-                    onClick={() => {
-                        onPick(c);
-                        setColor(i);
-                    }}></div>)}
-            </div>
-
-        </>
-    )
-
-
-}
+const colors = ["#000000", "#e91e63", "#9c27b0", "#673ab7",
+    "#3f51b5", "#2196f3", "#03a9f4", "#00bcd4"]
 
 
 function Page3() {
@@ -93,6 +21,45 @@ function Page3() {
 
     //window.scrollTo(0, 0);
 
+    const qrPanel = useRef()
+
+    const qrOptions = useSelector(state => state.qrOptions.value)
+    const dispatch = useDispatch()
+
+    const [qrCode, setQrCode] = useState(null)
+
+    useEffect(() => {
+        const dynamicImports = async () => {
+            const QRCodeStyling = (await import("qr-code-styling")).default
+            setQrCode(new QRCodeStyling(qrOptions))
+        }
+        dynamicImports()
+    },[])
+
+    useEffect( () => {
+        if (qrCode){
+            qrCode.append(qrPanel.current)
+        }
+    },[qrCode])
+
+
+    useEffect(() => {
+        if(qrCode) {
+            qrCode.update(qrOptions)
+        }
+    }, [qrCode, qrOptions])
+
+    const onDotsColorChange = (color) => {
+        dispatch(changeDotsColor(color))
+    }
+    const onCornerSquareColorChange = (color) =>{
+        dispatch(changeCornerSquareColor(color))
+    }
+
+    const onCornerDotsColorChange = (color) =>{
+        dispatch(changeCornersDotColor(color))
+    }
+
     return (
         <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", height: "100%" }}>
             <div>
@@ -100,9 +67,10 @@ function Page3() {
                     <img src={fasi} />
                 </div>
 
-                <div className="qrframe">
+            <div className="qrframe">
+                <div className="frame">
                     <div className="frame">
-                        <img src={qr} className="qr" />
+                        <svg  ref={qrPanel} viewBox="0 0 1000 1000" style={{width: 200}}/>
                     </div>
                 </div>
             </div>
@@ -117,23 +85,30 @@ function Page3() {
 
                 <div className="colorframe">
                     <div className="colore">
-                        Colore
+                        Dots Color
                     </div>
 
                     <div className="colortable">
-                        <ColorPicker onPick={(c) => console.log(c)} />
+                        <ColorPicker colors={colors} onPick={(c) => onDotsColorChange(c)}/>
                     </div>
                 </div>
 
                 <div className="gradientframe">
                     <div className="colore">
-                        Gradiente
+                        Corners Square Color
                     </div>
                     <div className="gradienttable">
-                        <ColorPicker onPick={(c) => console.log(c)} />
+                        <ColorPicker colors={colors} onPick={(c) => onCornerSquareColorChange(c)}/>
                     </div>
                 </div>
-
+                <div className="gradientframe">
+                    <div className="colore">
+                        Corners Dot Color
+                    </div>
+                    <div className="gradienttable">
+                        <ColorPicker colors={colors} onPick={(c) => onCornerDotsColorChange(c)}/>
+                    </div>
+                </div>
                 <footer>
                     <div className="pagine3Options">
                         <Link href="/page4">

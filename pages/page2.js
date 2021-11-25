@@ -108,7 +108,7 @@ export default function Page2() {
 
 
     function onCameraInputClick() {
-        setCameraVisibility(true)
+        //setCameraVisibility(true)
     }
 
     return (

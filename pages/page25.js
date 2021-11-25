@@ -6,17 +6,18 @@ import {
     changeCornersSquareShape,
     changeDotsShape
 } from "../features/qrCode/qrCodeOptions";
+import {SvgPicker} from "../components";
 
 const qr = '/images/Qr.png';
 const avanti = "/images/Avanti.svg";
 const fasi = "/images/Group 6.svg";
 
 const dotsImageOpts = [
-    {name : "square", value:"squares.png"},
-    {name: "extra-rounded",value:  "extraRounded.png"},
-    {name: "dots", value : "dots.png"},
-    {name: "rounded",value : "rounded.png"},
-    {name: "classy",value : "classy.png"},
+    {name : "square", value:"/images/dots/squares.png"},
+    {name: "extra-rounded",value:  "/images/dots/extraRounded.png"},
+    {name: "dots", value : "/images/dots/dots.png"},
+    {name: "rounded",value : "/images/dots/rounded.png"},
+    {name: "classy",value : "/images/dots/classy.png"},
     {name: "classy-rounded",value : "classyRounded.png"},
 ]
 
@@ -29,27 +30,6 @@ const cornersDotImageOpts = [
     {name : "square", value:"squareCornerDot.png"},
     {name: "dots", value : "cornerDot.png"}
 ]
-
-function SvgPicker(props){
-    const [image, setImage] = useState("square")
-    const onSvgClick = (name) => {
-        setImage(name);
-        props.onPick(name)
-    }
-
-    return(
-        <>
-            <div>
-                {props.images.map((im) =>
-                    <div key={im.name} style={{backgroundImage:`url(/images/dots/${im.value})`}}
-                         className={im.name === image ? "CornerSquareSelected" : "CornerSquare"}
-                         onClick={() => onSvgClick(im.name)}
-                    />
-                )}
-            </div>
-        </>
-    )
-}
 
 function Page25() {
 
