@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import Link from "next/link";
 const qr = '/images/Qr.png';
 const fasi = "/images/Group 11.svg";
@@ -14,14 +14,16 @@ function Page7() {
     //window.scrollTo(0, 0);
 
     return (
-        <>
-            <div className="fase">
-                <img src={fasi}/>
-            </div>
+        <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", height: "100%" }}>
+            <div>
+                <div className="fase">
+                    <img src={fasi} />
+                </div>
 
-            <div className="qrframe">
-                <div className="frame">
-                    <img src={qr} className="qr"/>
+                <div className="qrframe">
+                    <div className="frame">
+                        <img src={qr} className="qr" />
+                    </div>
                 </div>
             </div>
 
@@ -43,16 +45,16 @@ function Page7() {
                         </div>
 
                         <div className="subConc">
-                            Che progetto bellissimo! Come potrò mai ripagarvi?<br/>
+                            Che progetto bellissimo! Come potrò mai ripagarvi?<br />
                         </div>
 
                         <div className="testoConc">
                             Grazie mille! Se ci tieni a essere anche te partecipe di questo progetto, puoi offrire un
-                            caffè agli sviluppatori con il bottone qui sotto.<br/>
+                            caffè agli sviluppatori con il bottone qui sotto.<br />
                         </div>
 
                         <div className="subConc">
-                            Oppure?<br/>
+                            Oppure?<br />
                         </div>
 
                         <div className="testoConc">
@@ -70,7 +72,7 @@ function Page7() {
 
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 

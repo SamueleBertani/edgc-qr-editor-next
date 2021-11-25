@@ -18,7 +18,8 @@ function Page6() {
     //window.scrollTo(0, 0);
 
     return (
-        <>
+        <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", height: "100%" }}>
+            <div>
             <div className="fase">
                 <img src={fasi}/>
             </div>
@@ -28,6 +29,8 @@ function Page6() {
                     <img src={qr} className="qr"/>
                 </div>
             </div>
+            </div>
+            
             <div className="panel6">
                 <div className="guideframe">
                     <div className="guide">
@@ -73,7 +76,7 @@ function Page6() {
                     </Link>
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 

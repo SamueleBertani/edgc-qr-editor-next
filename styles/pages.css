@@ -7,6 +7,84 @@ body {
     flex: 1;
 }
 
+.alert{
+
+    width: 361px;
+    height: 192px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 70px;
+
+
+    background: #F1FAEE;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 26px;
+    text-align: center;
+
+}
+
+.tryAgain{
+
+    width: 136px;
+    height: 28px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 28px;
+    text-align: center;
+    text-decoration: none;
+    color: #1D3557;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.closeButton{
+    
+    width: 161px;
+    height: 42px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 65px;
+
+
+    background: #A8DADC;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 26px;
+    border: none;
+}
+
+.notFound{
+
+    width: 290px;
+    height: 50px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+    padding-top: 37px;
+    margin: 0 auto 0 auto;
+
+    color: #1D3557;
+    text-align: center;
+}
+
+html,body,#__next{
+    height: 100%;
+    width: 100%;
+}
+
 .squares {
 
     width: 45px;
@@ -98,7 +176,6 @@ body {
 
 
 }
-
 
 .fase {
 
@@ -353,7 +430,7 @@ body {
     color: #1D3557;
 }
 
-.caffe{
+button > a{
 
     width: 181px;
     height: 28px;
@@ -419,10 +496,10 @@ body {
 }
 
 .panel2 {
-
+    
     margin-top: 70px;
     width: 100%;
-    height: 420px;
+    height: 430px;
     left: 0;
     right: 0;
     margin-left: auto;
@@ -439,7 +516,7 @@ body {
 
     margin-top: 70px;
     width: 100%;
-    height: 810px;
+    height: 815px;
     left: 0;
     right: 0;
     margin-left: auto;
@@ -455,7 +532,7 @@ body {
 
     margin-top: 70px;
     width: 100%;
-    height: 635px;
+    height: 640px;
     left: 0;
     right: 0;
     margin-left: auto;
@@ -472,7 +549,7 @@ body {
 
     margin-top: 70px;
     width: 100%;
-    height: 880px;
+    height: 890px;
     left: 0;
     right: 0;
     margin-left: auto;
@@ -490,7 +567,7 @@ body {
 
     margin-top: 70px;
     width: 100%;
-    height: 490px;
+    height: 495px;
     left: 0;
     right: 0;
     margin-left: auto;
@@ -1172,7 +1249,7 @@ textarea { font-size: 20px; }
     border: none;
 }
 
-.backHomeConc {
+a{
 
     width: 130px;
     height: 26px;

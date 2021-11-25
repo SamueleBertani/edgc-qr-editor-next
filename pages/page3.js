@@ -1,6 +1,6 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import {CirclePicker} from "react-color";
+import { CirclePicker } from "react-color";
 const qr = '/images/Qr.png';
 const avanti = "/images/Avanti.svg";
 const fasi = "/images/Group 7.svg";
@@ -12,7 +12,7 @@ class Colore1 extends React.Component {
     };
 
     handleChangeComplete = (color) => {
-        this.setState({...this.state, start: color.hex});
+        this.setState({ ...this.state, start: color.hex });
     };
 
     render() {
@@ -23,7 +23,7 @@ class Colore1 extends React.Component {
                     "#3f51b5", "#2196f3", "#03a9f4", "#00bcd4"]}
                 circleSize={45}
                 circleSpacing={35}
-                width={{width: "100%"}}
+                width={{ width: "100%" }}
                 onChangeComplete={this.handleChangeComplete}
             >
             </CirclePicker>
@@ -38,7 +38,7 @@ class Colore2 extends React.Component {
     };
 
     handleChangeComplete = (color) => {
-        this.setState({...this.state, start: color.hex});
+        this.setState({ ...this.state, start: color.hex });
     };
 
     render() {
@@ -49,7 +49,7 @@ class Colore2 extends React.Component {
                     "#3f51b5", "#2196f3", "#03a9f4", "#00bcd4"]}
                 circleSize={45}
                 circleSpacing={35}
-                width={{width: "100%"}}
+                width={{ width: "100%" }}
                 onChangeComplete={this.handleChangeComplete}
             >
             </CirclePicker>
@@ -57,7 +57,7 @@ class Colore2 extends React.Component {
     }
 }
 
-function ColorPicker({onPick}) {
+function ColorPicker({ onPick }) {
 
     const colors = ["#000000", "#e91e63", "#9c27b0", "#673ab7",
         "#3f51b5", "#2196f3", "#03a9f4", "#00bcd4"]
@@ -70,11 +70,11 @@ function ColorPicker({onPick}) {
                 {/*{colors[color]}*/}
             </div>
             <div>
-                {colors.map((c, i) => <div style={{backgroundColor: c}} className={i == color ? "selected" : "scelta1"}
-                                           onClick={() => {
-                                               onPick(c);
-                                               setColor(i);
-                                           }}></div>)}
+                {colors.map((c, i) => <div style={{ backgroundColor: c }} className={i == color ? "selected" : "scelta1"}
+                    onClick={() => {
+                        onPick(c);
+                        setColor(i);
+                    }}></div>)}
             </div>
 
         </>
@@ -94,14 +94,16 @@ function Page3() {
     //window.scrollTo(0, 0);
 
     return (
-        <div>
-            <div className="fase">
-                <img src={fasi}/>
-            </div>
+        <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", height: "100%" }}>
+            <div>
+                <div className="fase">
+                    <img src={fasi} />
+                </div>
 
-            <div className="qrframe">
-                <div className="frame">
-                    <img src={qr} className="qr"/>
+                <div className="qrframe">
+                    <div className="frame">
+                        <img src={qr} className="qr" />
+                    </div>
                 </div>
             </div>
 
@@ -119,7 +121,7 @@ function Page3() {
                     </div>
 
                     <div className="colortable">
-                        <ColorPicker onPick={(c) => console.log(c)}/>
+                        <ColorPicker onPick={(c) => console.log(c)} />
                     </div>
                 </div>
 
@@ -128,7 +130,7 @@ function Page3() {
                         Gradiente
                     </div>
                     <div className="gradienttable">
-                        <ColorPicker onPick={(c) => console.log(c)}/>
+                        <ColorPicker onPick={(c) => console.log(c)} />
                     </div>
                 </div>
 
@@ -136,13 +138,13 @@ function Page3() {
                     <div className="pagine3Options">
                         <Link href="/page4">
                             <div className="buttonAvanti">
-                                <img src={avanti} className="avanti"/>
+                                <img src={avanti} className="avanti" />
                             </div>
                         </Link>
 
                         <Link href="/page25">
                             <div className="buttonIndietro">
-                                <img src={avanti} className="indietro"/>
+                                <img src={avanti} className="indietro" />
                             </div>
                         </Link>
                     </div>

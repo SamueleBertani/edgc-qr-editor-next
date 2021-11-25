@@ -4,7 +4,6 @@ import { get } from '@andreekeberg/imagedata'
 import Camera from 'react-html5-camera-photo';
 import 'react-html5-camera-photo/build/css/index.css';
 import Link from "next/link";
-//import { View, StyleSheet, Button, Alert } from "react-native";
 
 const qr = '/images/Qr.png';
 const camera = "/images/Camerasvg.svg";
@@ -15,28 +14,8 @@ const fasi = "images/Group 5.svg";
 
 export default function Page2() {
 
-    const showAlert = () =>
-        Alert.alert(
-            "Alert Title",
-            "My Alert Msg",
-            [
-                {
-                    text: "Cancel",
-                    onPress: () => Alert.alert("Cancel Pressed"),
-                    style: "cancel",
-                },
-            ],
-            {
-                cancelable: true,
-                onDismiss: () =>
-                    Alert.alert(
-                        "This alert was dismissed by tapping outside of the alert dialog."
-                    ),
-            }
-        );
 
-
-    //window.scrollTo(0, 0);
+    const [showAlert, setShowAlert] = useState('none')
 
     useEffect(() => {
         const root = document.documentElement
@@ -54,16 +33,13 @@ export default function Page2() {
     }
 
     function notifyQrCodeFound(code) {
-        //showAlert();
         setShow((s) => true)
-
         console.log(code)
     }
 
     function notifyQrCodeNotFound() {
-        //showAlert();
+        setShowAlert("failed");
         setShow((s) => false)
-        console.log("non ho trovato nessun qr")
     }
 
     function onImageInput(file) {
@@ -104,15 +80,28 @@ export default function Page2() {
     }
 
     return (
-        <div>
-            <div className="fase">
-                <img src={fasi} />
-            </div>
-            <div className="qrframe">
-                <div className="frame">
-                    <img src={qr} className="qr" alt={"qr icon"} />
+        <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", height: "100%" }}>
+
+            <div>
+                <div className="fase">
+                    <img src={fasi} />
+                </div>
+                <div className="qrframe">
+                    <div className="frame">
+                        <img src={qr} className="qr" alt={"qr icon"} />
+                    </div>
+                </div>
+                <div style={{ display: { showAlert } == 'none' ? 'none' : 'fixed' }} className="alert">
+                    <div className="notFound">
+                        Qr Code not found
+                    </div>
+                    {showAlert}
+                    <button className="closeButton" onClick={()=>setShowAlert("none") }>
+                        <div className="tryAgain">Try Again</div>
+                    </button>
                 </div>
             </div>
+
             <div className="panel2">
                 <div className="guide">
                     Carica il tuo greenpass
