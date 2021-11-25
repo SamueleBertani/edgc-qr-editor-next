@@ -1,6 +1,7 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import Link from "next/link";
-import "@fontsource/nanum-pen-script"; // Defaults to weight 400.
+import "@fontsource/nanum-pen-script";
+import {useDispatch, useSelector} from "react-redux"; // Defaults to weight 400.
 const share = '/images/Share.svg';
 const qr = '/images/Qr.png';
 const avanti = "/images/Avanti.svg";
@@ -17,6 +18,38 @@ function Page6() {
 
     //window.scrollTo(0, 0);
 
+    const qrPanel = useRef()
+
+    const qrOptions = useSelector(state => state.qrOptions.value)
+    const dispatch = useDispatch()
+
+    const [qrCode, setQrCode] = useState(null)
+
+    useEffect(() => {
+        const dynamicImports = async () => {
+            const QRCodeStyling = (await import("qr-code-styling")).default
+            setQrCode(new QRCodeStyling(qrOptions))
+        }
+        dynamicImports()
+    }, [])
+
+    useEffect(() => {
+        if (qrCode) {
+            qrCode.append(qrPanel.current)
+        }
+    }, [qrCode])
+
+
+    useEffect(() => {
+        if (qrCode) {
+            qrCode.update(qrOptions)
+        }
+    }, [qrCode, qrOptions])
+
+    const onDownloadClicked = () => {
+        qrCode.download({extension : "jpeg"})
+    }
+
     return (
         <>
             <div className="fase">
@@ -25,7 +58,7 @@ function Page6() {
 
             <div className="qrframe">
                 <div className="frame">
-                    <img src={qr} className="qr"/>
+                    <svg ref={qrPanel} viewBox="0 0 1000 1000" style={{width: 200}}/>
                 </div>
             </div>
             <div className="panel6">
@@ -44,7 +77,7 @@ function Page6() {
                             Condividila
                         </div>
                     </div>
-                    <div className="loaddx">
+                    <div className="loaddx" onClick={onDownloadClicked}>
                         <div>
                             <img src={image} className="icon"/>
                         </div>
