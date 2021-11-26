@@ -83,7 +83,7 @@ function Page3() {
 
                     <div className="colorframe">
                         <div className="colore">
-                            Dots Color
+                            Quadratini
                         </div>
 
                         <div className="colortable">
@@ -93,7 +93,7 @@ function Page3() {
 
                     <div className="gradientframe">
                         <div className="colore">
-                            Corners Square Color
+                            Contorno angoli
                         </div>
                         <div className="gradienttable">
                             <ColorPicker colors={colors} onPick={(c) => onCornerSquareColorChange(c)}/>
@@ -101,7 +101,7 @@ function Page3() {
                     </div>
                     <div className="gradientframe">
                         <div className="colore">
-                            Corners Dot Color
+                            Quadratini angoli
                         </div>
                         <div className="gradienttable">
                             <ColorPicker colors={colors} onPick={(c) => onCornerDotsColorChange(c)}/>

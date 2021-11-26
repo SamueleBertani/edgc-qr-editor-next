@@ -104,7 +104,7 @@ function Page25() {
 
                 <div className="colorframe">
                     <div className="colore">
-                        Quadrati grandi
+                        Quadratini
                     </div>
 
                     <div className="colortable">
@@ -114,7 +114,7 @@ function Page25() {
 
                 <div className="gradientframe">
                     <div className="colore">
-                        Cornice Quadrati Grandi
+                        Cornice angoli
                     </div>
                     <div className="colortable">
                         <SvgPicker images={cornersSquareImageOpts} onPick={(n) => onCornersSquareChange(n)}/>
@@ -123,7 +123,7 @@ function Page25() {
 
                 <div className="dotframe">
                     <div className="colore">
-                        Cornice Quadrati Piccoli
+                        Quadratini angoli
                     </div>
                     <div className="colortable">
                         <SvgPicker images={cornersDotImageOpts} onPick={(n) => onCornersDotChange(n)}/>
