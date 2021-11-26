@@ -21,7 +21,6 @@ function Page6() {
     const qrPanel = useRef()
 
     const qrOptions = useSelector(state => state.qrOptions.value)
-    const dispatch = useDispatch()
 
     const [qrCode, setQrCode] = useState(null)
 

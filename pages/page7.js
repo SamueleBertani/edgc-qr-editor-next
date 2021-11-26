@@ -1,5 +1,6 @@
-import React, { useEffect } from "react";
+import React, {useEffect, useRef, useState} from "react";
 import Link from "next/link";
+import {useSelector} from "react-redux";
 const qr = '/images/Qr.png';
 const fasi = "/images/Group 11.svg";
 
@@ -13,6 +14,33 @@ function Page7() {
 
     //window.scrollTo(0, 0);
 
+    const qrPanel = useRef()
+
+    const qrOptions = useSelector(state => state.qrOptions.value)
+
+    const [qrCode, setQrCode] = useState(null)
+
+    useEffect(() => {
+        const dynamicImports = async () => {
+            const QRCodeStyling = (await import("qr-code-styling")).default
+            setQrCode(new QRCodeStyling(qrOptions))
+        }
+        dynamicImports()
+    }, [])
+
+    useEffect(() => {
+        if (qrCode) {
+            qrCode.append(qrPanel.current)
+        }
+    }, [qrCode])
+
+
+    useEffect(() => {
+        if (qrCode) {
+            qrCode.update(qrOptions)
+        }
+    }, [qrCode, qrOptions])
+
     return (
         <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", height: "100%" }}>
             <div>
@@ -22,7 +50,7 @@ function Page7() {
 
                 <div className="qrframe">
                     <div className="frame">
-                        <img src={qr} className="qr" />
+                        <svg ref={qrPanel} viewBox="0 0 1000 1000" style={{width: 200}}/>
                     </div>
                 </div>
             </div>
