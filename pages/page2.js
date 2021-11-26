@@ -91,11 +91,10 @@ export default function Page2() {
                         <img src={qr} className="qr" alt={"qr icon"} />
                     </div>
                 </div>
-                <div style={{ display: { showAlert } == 'none' ? 'none' : 'fixed' }} className="alert">
+                <div style={{ display: showAlert == 'none' ? 'none' : 'block' }} className="alert">
                     <div className="notFound">
                         Qr Code not found
                     </div>
-                    {showAlert}
                     <button className="closeButton" onClick={()=>setShowAlert("none") }>
                         <div className="tryAgain">Try Again</div>
                     </button>
