@@ -7,6 +7,84 @@ body {
     flex: 1;
 }
 
+.alert{
+
+    width: 361px;
+    height: 192px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 70px;
+
+
+    background: #F1FAEE;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 26px;
+    text-align: center;
+
+}
+
+.tryAgain{
+
+    width: 136px;
+    height: 28px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 28px;
+    text-align: center;
+    text-decoration: none;
+    color: #1D3557;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.closeButton{
+    
+    width: 161px;
+    height: 42px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 65px;
+
+
+    background: #A8DADC;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 26px;
+    border: none;
+}
+
+.notFound{
+
+    width: 290px;
+    height: 50px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+    padding-top: 37px;
+    margin: 0 auto 0 auto;
+
+    color: #d60000;
+    text-align: center;
+}
+
+html,body,#__next{
+    height: 100%;
+    width: 100%;
+}
+
 .squares {
 
     width: 45px;
@@ -99,7 +177,6 @@ body {
 
 }
 
-
 .fase {
 
     padding-top: 45px;
@@ -181,7 +258,7 @@ body {
 .footer {
 
     width: 280px;
-    height: 127px;
+    height: 207px;
 
     text-align: center;
     padding-bottom: 80px;
@@ -353,7 +430,7 @@ body {
     color: #1D3557;
 }
 
-.caffe {
+button > a{
 
     width: 181px;
     height: 28px;
@@ -375,7 +452,7 @@ body {
 
 
     width: 280px;
-    height: 207px;
+    height: 267px;
 
     text-align: center;
     padding-top: 60px;
@@ -419,10 +496,10 @@ body {
 }
 
 .panel2 {
-
+    
     margin-top: 70px;
     width: 100%;
-    height: 420px;
+    height: 430px;
     left: 0;
     right: 0;
     margin-left: auto;
@@ -439,7 +516,7 @@ body {
 
     margin-top: 70px;
     width: 100%;
-    height: 810px;
+    height: 815px;
     left: 0;
     right: 0;
     margin-left: auto;
@@ -455,7 +532,7 @@ body {
 
     margin-top: 70px;
     width: 100%;
-    height: 635px;
+    height: 640px;
     left: 0;
     right: 0;
     margin-left: auto;
@@ -472,7 +549,7 @@ body {
 
     margin-top: 70px;
     width: 100%;
-    height: 875px;
+    height: 890px;
     left: 0;
     right: 0;
     margin-left: auto;
@@ -490,7 +567,7 @@ body {
 
     margin-top: 70px;
     width: 100%;
-    height: 490px;
+    height: 495px;
     left: 0;
     right: 0;
     margin-left: auto;
@@ -522,7 +599,7 @@ body {
 .qr {
 
     width: 144px;
-    height: 144px;
+    height: 176px;
     left: 0;
     right: 0;
     padding-top: 32px;
@@ -536,7 +613,7 @@ body {
 .guide {
 
     width: 100%;
-    height: 30px;
+    height: 70px;
     padding-top: 40px;
     left: 0;
     right: 0;
@@ -585,7 +662,7 @@ body {
 
     padding-top: 45px;
     width: 295px;
-    height: 130px;
+    height: 175px;
     left: 0;
     right: 0;
     margin-left: auto;
@@ -606,7 +683,7 @@ body {
 .loadLabel {
 
     width: 130px;
-    height: 26px;
+    height: 31px;
     padding-top: 5px;
     margin-left: auto;
     margin-right: auto;
@@ -847,7 +924,7 @@ body {
 
     padding-top: 30px;
     width: 285px;
-    height: 170px;
+    height: 200px;
     left: 0;
     right: 0;
     margin-left: auto;
@@ -857,7 +934,7 @@ body {
 .colore {
 
     width: auto;
-    height: 36px;
+    height: 46px;
     padding-bottom: 10px;
 
     font-family: Roboto;
@@ -934,7 +1011,7 @@ body {
 
     padding-top: 30px;
     width: 285px;
-    height: 170px;
+    height: 200px;
     left: 0;
     right: 0;
     margin-left: auto;
@@ -960,7 +1037,7 @@ body {
 
     padding-top: 30px;
     width: 285px;
-    height: 170px;
+    height: 200px;
     left: 0;
     right: 0;
     margin-left: auto;
@@ -985,7 +1062,7 @@ body {
 .logo {
 
     width: 73px;
-    height: 73px;
+    height: 85px;
     left: 159px;
     padding-top: 12px;
     left: 0;
@@ -998,7 +1075,7 @@ body {
 .rimuovilogo {
 
     width: 130px;
-    height: 26px;
+    height: 51px;
     left: 0;
     right: 0;
     margin-left: auto;
@@ -1021,13 +1098,15 @@ body {
 
     padding-top: 30px;
     width: 285px;
-    height: 120px;
+    height: 150px;
     left: 0;
     right: 0;
     margin-left: auto;
     margin-right: auto;
 
 }
+
+textarea { font-size: 20px; }
 
 .text {
 
@@ -1042,7 +1121,7 @@ body {
 .fontframe {
 
     width: 285px;
-    height: 120px;
+    height: 100px;
     left: 0;
     right: 0;
     margin-left: auto;
@@ -1083,8 +1162,8 @@ body {
 
 .consiglio {
 
-    width: 150px;
-    height: 36px;
+    width: 155px;
+    height: 76px;
     padding-top: 40px;
     padding-left: 5px;
 
@@ -1170,7 +1249,7 @@ body {
     border: none;
 }
 
-.backHomeConc {
+a{
 
     width: 130px;
     height: 26px;

@@ -96,7 +96,6 @@ function Page25() {
             </div>
 
             <div className="panel25">
-
                 <div className="guideframe">
                     <div className="guide">
                         Scegli il colore
@@ -130,22 +129,19 @@ function Page25() {
                         <SvgPicker images={cornersDotImageOpts} onPick={(n) => onCornersDotChange(n)}/>
                     </div>
                 </div>
+                <div className="pagine25Options">
+                    <Link href="/page3">
+                        <div className="buttonAvanti">
+                            <img src={avanti} className="avanti" />
+                        </div>
+                    </Link>
 
-                <footer>
-                    <div className="pagine25Options">
-                        <Link href="/page3">
-                            <div className="buttonAvanti">
-                                <img src={avanti} className="avanti"/>
-                            </div>
-                        </Link>
-
-                        <Link href="/page2">
-                            <div className="buttonIndietro">
-                                <img src={avanti} className="indietro"/>
-                            </div>
-                        </Link>
-                    </div>
-                </footer>
+                    <Link href="/page2">
+                        <div className="buttonIndietro">
+                            <img src={avanti} className="indietro" />
+                        </div>
+                    </Link>
+                </div>
             </div>
         </div>
     )

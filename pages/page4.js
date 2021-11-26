@@ -2,6 +2,7 @@ import React, {useEffect, useRef, useState} from "react";
 import Link from "next/link";
 import {useDispatch, useSelector} from "react-redux";
 import {changeLogo} from "../features/qrCode/qrCodeOptions";
+
 const qr = '/images/Qr.png';
 const avanti = "/images/Avanti.svg";
 const image = "/images/Image.svg";
@@ -30,17 +31,17 @@ function Page4() {
             setQrCode(new QRCodeStyling(qrOptions))
         }
         dynamicImports()
-    },[])
+    }, [])
 
-    useEffect( () => {
-        if (qrCode){
+    useEffect(() => {
+        if (qrCode) {
             qrCode.append(qrPanel.current)
         }
-    },[qrCode])
+    }, [qrCode])
 
 
     useEffect(() => {
-        if(qrCode) {
+        if (qrCode) {
             qrCode.update(qrOptions)
         }
     }, [qrCode, qrOptions])
@@ -60,56 +61,58 @@ function Page4() {
     }
 
     return (
-        <>
-
-            <div className="fase">
-                <img src={fasi}/>
-            </div>
-
-            <div className="qrframe">
-                <div className="frame">
-                    <svg  ref={qrPanel} viewBox="0 0 1000 1000" style={{width: 200}}/>
+        <div style={{display: "flex", flexDirection: "column", justifyContent: "space-between", height: "100%"}}>
+            <div>
+                <div className="fase">
+                    <img src={fasi}/>
                 </div>
-            </div>
 
-            <div className="panel4">
-                <div className="guideframe">
-                    <div className="guide">
-                        Aggiungi un logo <small>(opzionale)</small>
+                <div className="qrframe">
+                    <div className="frame">
+                        <svg ref={qrPanel} viewBox="0 0 1000 1000" style={{width: 200}}/>
                     </div>
                 </div>
 
-                <div className="loadOptions" >
-                    <div className="loadlogo" onClick={onImageSelectorClick}>
-                        <div>
-                            <img src={image} className="logo"/>
+                <div className="panel4">
+                    <div className="guideframe">
+                        <div className="guide">
+                            Aggiungi un logo <small>(opzionale)</small>
                         </div>
-                        <div className="loadLabel">
-                            Galleria
-                        </div>
-                        <input type="file" ref={inputFile} accept="image/png, image/jpeg" onChange={ e => (onImageInput(e.target.files[0])) } style={{display: 'none'}}/>
                     </div>
-                    <div className="rimuovilogo" onClick={onImageRemoveClick}>
-                        Rimuovi
-                    </div>
-                </div>
-                <footer>
-                    <div className="pagine4Options">
-                        <Link href="/page5">
-                            <div className="buttonAvanti4">
-                                <img src={avanti} className="avanti"/>
-                            </div>
-                        </Link>
 
-                        <Link href="/page3">
-                            <div className="buttonIndietro4">
-                                <img src={avanti} className="indietro"/>
+                    <div className="loadOptions">
+                        <div className="loadlogo" onClick={onImageSelectorClick}>
+                            <div>
+                                <img src={image} className="logo"/>
                             </div>
-                        </Link>
+                            <div className="loadLabel">
+                                Galleria
+                            </div>
+                            <input type="file" ref={inputFile} accept="image/png, image/jpeg"
+                                   onChange={e => (onImageInput(e.target.files[0]))} style={{display: 'none'}}/>
+                        </div>
+                        <div className="rimuovilogo" onClick={onImageRemoveClick}>
+                            Rimuovi
+                        </div>
                     </div>
-                </footer>
+                    <footer>
+                        <div className="pagine4Options">
+                            <Link href="/page5">
+                                <div className="buttonAvanti4">
+                                    <img src={avanti} className="avanti"/>
+                                </div>
+                            </Link>
+
+                            <Link href="/page3">
+                                <div className="buttonIndietro4">
+                                    <img src={avanti} className="indietro"/>
+                                </div>
+                            </Link>
+                        </div>
+                    </footer>
+                </div>
             </div>
-        </>
+        </div>
     )
 }
 

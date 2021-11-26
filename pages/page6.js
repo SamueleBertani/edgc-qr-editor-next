@@ -6,7 +6,7 @@ const share = '/images/Share.svg';
 const qr = '/images/Qr.png';
 const avanti = "/images/Avanti.svg";
 const image = "/images/Image.svg";
-const fasi = "/images/Group 8.svg";
+const fasi = "/images/Group 10.svg";
 
 
 function Page6() {
@@ -51,16 +51,13 @@ function Page6() {
     }
 
     return (
-        <>
-            <div className="fase">
-                <img src={fasi}/>
-            </div>
-
+        <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", height: "100%" }}>
             <div className="qrframe">
                 <div className="frame">
                     <svg ref={qrPanel} viewBox="0 0 1000 1000" style={{width: 200}}/>
                 </div>
             </div>
+            
             <div className="panel6">
                 <div className="guideframe">
                     <div className="guide">
@@ -106,7 +103,7 @@ function Page6() {
                     </Link>
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 

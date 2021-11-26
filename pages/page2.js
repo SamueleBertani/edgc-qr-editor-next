@@ -1,6 +1,6 @@
-import React, {useEffect, useRef, useState} from "react";
+import React, { useEffect, useRef, useState } from "react";
 import jsQR from "jsqr";
-import {get} from '@andreekeberg/imagedata'
+import { get } from '@andreekeberg/imagedata'
 import Camera from 'react-html5-camera-photo';
 import 'react-html5-camera-photo/build/css/index.css';
 import Link from "next/link";
@@ -17,7 +17,7 @@ const fasi = "/images/Group 5.svg";
 export default function Page2() {
 
 
-    //window.scrollTo(0, 0);
+    const [showAlert, setShowAlert] = useState('none')
 
     useEffect(() => {
         const root = document.documentElement
@@ -121,7 +121,16 @@ export default function Page2() {
                     {!qrFound ? <img src={qr} className="qr" alt={"qr icon"}/> :
                     <svg  ref={qrPanel} viewBox="0 0 1000 1000" style={{width: 200}}/>}
                 </div>
+                <div style={{ display: showAlert == 'none' ? 'none' : 'block' }} className="alert">
+                    <div className="notFound">
+                        Qr Code not found
+                    </div>
+                    <button className="closeButton" onClick={()=>setShowAlert("none") }>
+                        <div className="tryAgain">Try Again</div>
+                    </button>
+                </div>
             </div>
+
             <div className="panel2">
                 <div className="guide">
                     Carica il tuo greenpass
@@ -143,7 +152,7 @@ export default function Page2() {
                             Galleria
                         </div>
                         <input type="file" ref={inputFile} accept="image/png, image/jpeg"
-                               onChange={e => (onImageInput(e.target.files[0]))} style={{display: 'none'}}/>
+                            onChange={e => (onImageInput(e.target.files[0]))} style={{ display: 'none' }} />
                     </div>
                 </div>
                 <div>
