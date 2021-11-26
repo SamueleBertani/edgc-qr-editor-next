@@ -114,7 +114,7 @@ function Page25() {
 
                 <div className="gradientframe">
                     <div className="colore">
-                        Cornice angoli
+                        Contorno angoli
                     </div>
                     <div className="colortable">
                         <SvgPicker images={cornersSquareImageOpts} onPick={(n) => onCornersSquareChange(n)}/>
