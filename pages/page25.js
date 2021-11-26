@@ -82,7 +82,10 @@ function Page25() {
     }
 
     return (
-        <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", height: "100%" }}>
+        <div>
+            <div className="fase">
+                <img src={fasi}/>
+            </div>
 
             <div className="qrframe">
                 <div className="frame">
