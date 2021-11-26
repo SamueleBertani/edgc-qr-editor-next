@@ -34,17 +34,17 @@ function Page3() {
             setQrCode(new QRCodeStyling(qrOptions))
         }
         dynamicImports()
-    },[])
+    }, [])
 
-    useEffect( () => {
-        if (qrCode){
+    useEffect(() => {
+        if (qrCode) {
             qrCode.append(qrPanel.current)
         }
-    },[qrCode])
+    }, [qrCode])
 
 
     useEffect(() => {
-        if(qrCode) {
+        if (qrCode) {
             qrCode.update(qrOptions)
         }
     }, [qrCode, qrOptions])
@@ -52,78 +52,77 @@ function Page3() {
     const onDotsColorChange = (color) => {
         dispatch(changeDotsColor(color))
     }
-    const onCornerSquareColorChange = (color) =>{
+    const onCornerSquareColorChange = (color) => {
         dispatch(changeCornerSquareColor(color))
     }
 
-    const onCornerDotsColorChange = (color) =>{
+    const onCornerDotsColorChange = (color) => {
         dispatch(changeCornersDotColor(color))
     }
 
     return (
-        <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", height: "100%" }}>
+        <div style={{display: "flex", flexDirection: "column", justifyContent: "space-between", height: "100%"}}>
             <div>
                 <div className="fase">
-                    <img src={fasi} />
+                    <img src={fasi}/>
                 </div>
 
-            <div className="qrframe">
-                <div className="frame">
+                <div className="qrframe">
                     <div className="frame">
-                        <svg  ref={qrPanel} viewBox="0 0 1000 1000" style={{width: 200}}/>
-                    </div>
-                </div>
-            </div>
-
-            <div className="panel3">
-
-                <div className="guideframe">
-                    <div className="guide">
-                        Scegli il colore
+                        <svg ref={qrPanel} viewBox="0 0 1000 1000" style={{width: 200}}/>
                     </div>
                 </div>
 
-                <div className="colorframe">
-                    <div className="colore">
-                        Dots Color
+                <div className="panel3">
+
+                    <div className="guideframe">
+                        <div className="guide">
+                            Scegli il colore
+                        </div>
                     </div>
 
-                    <div className="colortable">
-                        <ColorPicker colors={colors} onPick={(c) => onDotsColorChange(c)}/>
-                    </div>
-                </div>
+                    <div className="colorframe">
+                        <div className="colore">
+                            Dots Color
+                        </div>
 
-                <div className="gradientframe">
-                    <div className="colore">
-                        Corners Square Color
+                        <div className="colortable">
+                            <ColorPicker colors={colors} onPick={(c) => onDotsColorChange(c)}/>
+                        </div>
                     </div>
-                    <div className="gradienttable">
-                        <ColorPicker colors={colors} onPick={(c) => onCornerSquareColorChange(c)}/>
-                    </div>
-                </div>
-                <div className="gradientframe">
-                    <div className="colore">
-                        Corners Dot Color
-                    </div>
-                    <div className="gradienttable">
-                        <ColorPicker colors={colors} onPick={(c) => onCornerDotsColorChange(c)}/>
-                    </div>
-                </div>
-                <footer>
-                    <div className="pagine3Options">
-                        <Link href="/page4">
-                            <div className="buttonAvanti">
-                                <img src={avanti} className="avanti" />
-                            </div>
-                        </Link>
 
-                        <Link href="/page25">
-                            <div className="buttonIndietro">
-                                <img src={avanti} className="indietro" />
-                            </div>
-                        </Link>
+                    <div className="gradientframe">
+                        <div className="colore">
+                            Corners Square Color
+                        </div>
+                        <div className="gradienttable">
+                            <ColorPicker colors={colors} onPick={(c) => onCornerSquareColorChange(c)}/>
+                        </div>
                     </div>
-                </footer>
+                    <div className="gradientframe">
+                        <div className="colore">
+                            Corners Dot Color
+                        </div>
+                        <div className="gradienttable">
+                            <ColorPicker colors={colors} onPick={(c) => onCornerDotsColorChange(c)}/>
+                        </div>
+                    </div>
+                    <footer>
+                        <div className="pagine3Options">
+                            <Link href="/page4">
+                                <div className="buttonAvanti">
+                                    <img src={avanti} className="avanti"/>
+                                </div>
+                            </Link>
+
+                            <Link href="/page25">
+                                <div className="buttonIndietro">
+                                    <img src={avanti} className="indietro"/>
+                                </div>
+                            </Link>
+                        </div>
+                    </footer>
+                </div>
             </div>
         </div>
     )

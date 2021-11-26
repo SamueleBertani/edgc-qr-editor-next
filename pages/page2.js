@@ -121,11 +121,6 @@ export default function Page2() {
                     {!qrFound ? <img src={qr} className="qr" alt={"qr icon"}/> :
                     <svg  ref={qrPanel} viewBox="0 0 1000 1000" style={{width: 200}}/>}
                 </div>
-                <div className="qrframe">
-                    <div className="frame">
-                        <img src={qr} className="qr" alt={"qr icon"} />
-                    </div>
-                </div>
                 <div style={{ display: showAlert == 'none' ? 'none' : 'block' }} className="alert">
                     <div className="notFound">
                         Qr Code not found

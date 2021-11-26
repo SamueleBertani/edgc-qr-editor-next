@@ -93,12 +93,6 @@ function Page25() {
                         <svg  ref={qrPanel} viewBox="0 0 1000 1000" style={{width: 200}}/>
                     </div>
                 </div>
-
-                <div className="qrframe">
-                    <div className="frame">
-                        <img src={qr} className="qr" />
-                    </div>
-                </div>
             </div>
 
             <div className="panel25">
