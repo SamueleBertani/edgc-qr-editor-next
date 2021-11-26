@@ -107,7 +107,7 @@ export default function Page2() {
                 </div>
                 <div className="loadOptions">
                     <div className="loadsx" onClick={onCameraInputClick}>
-                        <div onClick={() => setShow((s) => true)}>
+                        <div>
                             <img src={camera} className="icon" alt={"camera icon"} />
                         </div>
                         <div className="loadLabel">
