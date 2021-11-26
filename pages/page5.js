@@ -1,62 +1,20 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import Link from "next/link";
+import {useDispatch, useSelector} from "react-redux";
+import {ColorPicker, SvgPicker} from "../components";
+
 const qr = '/images/Qr.png';
 const avanti = "/images/Avanti.svg";
 const fasi = "/images/Group 8.svg";
 
-
-function CornerSquarePicker({onPick}) {
-
-    const images = ["cornerSquare.png", "dot.png", "extraRound.png", "classyCorner.png"]
-
-    const [image, setImage] = useState(0)
-
-    return (
-        <>
-            <div>
-                {/*{colors[color]}*/}
-            </div>
-            <div>
-                {images.map((im, i) => <div style={{backgroundImage: `url(${im})`}}
-                                            className={i == image ? "CornerSquareSelected" : "CornerSquare"}
-                                            onClick={() => {
-                                                onPick(i);
-                                                setImage(i);
-                                            }}></div>)}
-            </div>
-
-        </>
-    )
-
-
-}
-
-function ColorPicker({onPick}) {
-
-    const colors = ["#000000", "#e91e63", "#9c27b0", "#673ab7",
-        "#3f51b5", "#2196f3", "#03a9f4", "#00bcd4"]
-
-    const [color, setColor] = useState(0)
-
-    return (
-        <>
-            <div>
-                {/*{colors[color]}*/}
-            </div>
-            <div>
-                {colors.map((c, i) => <div style={{backgroundColor: c}} className={i == color ? "selected" : "scelta1"}
-                                           onClick={() => {
-                                               onPick(c);
-                                               setColor(i);
-                                           }}></div>)}
-            </div>
-
-        </>
-    )
-
-
-}
-
+const colors = ["#000000", "#e91e63", "#9c27b0", "#673ab7",
+    "#3f51b5", "#2196f3", "#03a9f4", "#00bcd4"]
+const images = [
+    {name : "corner_square", value: "/images/dots/cornerSquare.png"},
+    {name: "dot", value: "/images/dots/dot.png"},
+    {name: "extra_round" , value : "/images/dots/extraRound.png"},
+    {name : "classy_corner", value: "/images/dots/classyCorner.png"}
+]
 
 function Page5() {
 
@@ -67,6 +25,42 @@ function Page5() {
 
     //window.scrollTo(0, 0);
 
+    const qrPanel = useRef()
+
+    const qrOptions = useSelector(state => state.qrOptions.value)
+    const dispatch = useDispatch()
+
+    const [qrCode, setQrCode] = useState(null)
+
+    useEffect(() => {
+        const dynamicImports = async () => {
+            const QRCodeStyling = (await import("qr-code-styling")).default
+            setQrCode(new QRCodeStyling(qrOptions))
+        }
+        dynamicImports()
+    }, [])
+
+    useEffect(() => {
+        if (qrCode) {
+            qrCode.append(qrPanel.current)
+        }
+    }, [qrCode])
+
+
+    useEffect(() => {
+        if (qrCode) {
+            qrCode.update(qrOptions)
+        }
+    }, [qrCode, qrOptions])
+
+    const onSvgPickerChanged = (value) => {
+        console.log(value)
+    }
+
+    const onColorPickedChanged = (value) => {
+        console.log(value)
+    }
+
     return (
         <>
 
@@ -76,7 +70,7 @@ function Page5() {
 
             <div className="qrframe">
                 <div className="frame">
-                    <img src={qr} className="qr"/>
+                    <svg ref={qrPanel} viewBox="0 0 1000 1000" style={{width: 200}}/>
                 </div>
             </div>
 
@@ -91,7 +85,7 @@ function Page5() {
                         Cornice
                     </div>
                     <div className="colortable">
-                        <CornerSquarePicker onPick={(c) => console.log(c)}/>
+                        <SvgPicker images={images} onPick={(v) => onSvgPickerChanged(v)}/>
                     </div>
                 </div>
 
@@ -121,7 +115,7 @@ function Page5() {
                         Colore scritta
                     </div>
                     <div className="colortable">
-                        <ColorPicker onPick={(c) => console.log(c)}/>
+                        <ColorPicker colors={colors} onPick={(c) => onColorPickedChanged(c)}/>
                     </div>
                 </div>
 
