@@ -4,16 +4,19 @@ import { get } from '@andreekeberg/imagedata'
 import Camera from 'react-html5-camera-photo';
 import 'react-html5-camera-photo/build/css/index.css';
 import Link from "next/link";
-import { FACING_MODES } from 'react-html5-camera-photo';
+import {useDispatch, useSelector} from "react-redux";
+import {defaultQrOptions} from "../utilities";
+import {changeData} from "../features/qrCode/qrCodeOptions";
 
 const qr = '/images/Qr.png';
 const camera = "/images/Camerasvg.svg";
 const image = "/images/Image.svg";
 const avanti = "/images/Avanti.svg";
-const fasi = "images/Group 5.svg";
+const fasi = "/images/Group 5.svg";
 
 
 export default function Page2() {
+
 
     const [showAlert, setShowAlert] = useState('none')
 
@@ -22,7 +25,37 @@ export default function Page2() {
         root.style.setProperty('--green', "#FFFFFF");
     })
 
-    const [show, setShow] = useState(false);
+    const qrPanel = useRef()
+
+    const qrOptions = useSelector(state => state.qrOptions.value)
+    const dispatch = useDispatch()
+
+    const [qrFound, setFound] = useState(qrOptions.data !== defaultQrOptions.data)
+
+
+    const [qrCode, setQrCode] = useState(null)
+
+    useEffect(() => {
+        const dynamicImports = async () => {
+            const QRCodeStyling = (await import("qr-code-styling")).default
+            setQrCode(new QRCodeStyling(qrOptions))
+        }
+        dynamicImports()
+    },[])
+
+    useEffect( () => {
+        if (qrCode){
+            qrCode.append(qrPanel.current)
+        }
+    })
+
+    useEffect(() => {
+        if(qrCode) {
+            qrCode.update(qrOptions)
+        }
+    }, [qrCode, qrOptions])
+
+
 
     const [cameraIsVisible, setCameraVisibility] = useState(false);
 
@@ -39,6 +72,8 @@ export default function Page2() {
     function notifyQrCodeNotFound() {
         setShowAlert("failed");
         setShow((s) => false)
+        dispatch(changeData(code))
+        setFound(true)
     }
 
     function onImageInput(file) {
@@ -75,7 +110,7 @@ export default function Page2() {
 
 
     function onCameraInputClick() {
-        setCameraVisibility(true)
+        //setCameraVisibility(true)
     }
 
     return (
@@ -91,19 +126,17 @@ export default function Page2() {
                     }}
                 />}
             </div>
-                <div className="fase">
-                    <img src={fasi} />
-                </div>
-                <div className="qrframe">
-                    <div className="frame">
-                        <img src={qr} className="qr" alt={"qr icon"} />
-                    </div>
+            </div>
+            <div className="qrframe">
+                <div className="frame">
+                    {!qrFound ? <img src={qr} className="qr" alt={"qr icon"}/> :
+                    <svg  ref={qrPanel} viewBox="0 0 1000 1000" style={{width: 200}}/>}
                 </div>
                 <div style={{ display: showAlert == 'none' ? 'none' : 'block' }} className="alert">
                     <div className="notFound">
                         Qr Code not found
                     </div>
-                    <button className="closeButton" onClick={() => setShowAlert("none")}>
+                    <button className="closeButton" onClick={()=>setShowAlert("none") }>
                         <div className="tryAgain">Try Again</div>
                     </button>
                 </div>
@@ -115,7 +148,7 @@ export default function Page2() {
                 <div className="loadOptions">
                     <div className="loadsx" onClick={onCameraInputClick}>
                         <div>
-                            <img src={camera} className="icon" alt={"camera icon"} />
+                            <img src={camera} className="icon" alt={"camera icon"}/>
                         </div>
                         <div className="loadLabel">
                             Fotocamera
@@ -123,7 +156,7 @@ export default function Page2() {
                     </div>
                     <div className="loaddx" onClick={onImageSelectorClick}>
                         <div>
-                            <img src={image} className="icon" alt={"gallery icon"} />
+                            <img src={image} className="icon" alt={"gallery icon"}/>
                         </div>
                         <div className="loadLabel">
                             Galleria
@@ -135,14 +168,14 @@ export default function Page2() {
 
                 <div className="pagineOptions">
                     <Link href="/page25">
-                        <div className="buttonAvanti" style={{ display: show ? "block" : "none" }}>
-                            <img src={avanti} className="avanti" />
+                        <div className="buttonAvanti" style={{display: qrFound ? "block" : "none"}}>
+                            <img src={avanti} className="avanti"/>
                         </div>
                     </Link>
 
                     <Link href="/">
-                        <div className="buttonIndietro" onClick={() => setShow((s) => false)}>
-                            <img src={avanti} className="indietro" />
+                        <div className="buttonIndietro">
+                            <img src={avanti} className="indietro"/>
                         </div>
                     </Link>
                 </div>

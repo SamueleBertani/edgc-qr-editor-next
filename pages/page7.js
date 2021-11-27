@@ -1,5 +1,6 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import Link from "next/link";
+import {useSelector} from "react-redux";
 const qr = '/images/Qr.png';
 const fasi = "/images/Group 11.svg";
 
@@ -13,18 +14,45 @@ function Page7() {
 
     //window.scrollTo(0, 0);
 
+    const qrPanel = useRef()
+
+    const qrOptions = useSelector(state => state.qrOptions.value)
+
+    const [qrCode, setQrCode] = useState(null)
+
+    useEffect(() => {
+        const dynamicImports = async () => {
+            const QRCodeStyling = (await import("qr-code-styling")).default
+            setQrCode(new QRCodeStyling(qrOptions))
+        }
+        dynamicImports()
+    }, [])
+
+    useEffect(() => {
+        if (qrCode) {
+            qrCode.append(qrPanel.current)
+        }
+    }, [qrCode])
+
+
+    useEffect(() => {
+        if (qrCode) {
+            qrCode.update(qrOptions)
+        }
+    }, [qrCode, qrOptions])
+
     return (
         <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", height: "100%" }}>
             <div>
-            <div className="fase">
-                <img src={fasi}/>
-            </div>
-
-            <div className="qrframe">
-                <div className="frame">
-                    <img src={qr} className="qr"/>
+                <div className="fase">
+                    <img src={fasi} />
                 </div>
-            </div>
+
+                <div className="qrframe">
+                    <div className="frame">
+                        <svg ref={qrPanel} viewBox="0 0 1000 1000" style={{width: 200}}/>
+                    </div>
+                </div>
             </div>
 
             <div className="panel7">
@@ -45,16 +73,16 @@ function Page7() {
                         </div>
 
                         <div className="subConc">
-                            Che progetto bellissimo! Come potrò mai ripagarvi?<br/>
+                            Che progetto bellissimo! Come potrò mai ripagarvi?<br />
                         </div>
 
                         <div className="testoConc">
                             Grazie mille! Se ci tieni a essere anche te partecipe di questo progetto, puoi offrire un
-                            caffè agli sviluppatori con il bottone qui sotto.<br/>
+                            caffè agli sviluppatori con il bottone qui sotto.<br />
                         </div>
 
                         <div className="subConc">
-                            Oppure?<br/>
+                            Oppure?<br />
                         </div>
 
                         <div className="testoConc">

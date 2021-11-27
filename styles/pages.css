@@ -95,7 +95,6 @@ html,body,#__next{
     width: 100%;
 }
 
-
 .squares {
 
     width: 45px;
@@ -542,7 +541,11 @@ button > a{
 
     margin-top: 70px;
     width: 100%;
+<<<<<<< HEAD
     height: 640px;
+=======
+    height: 815px;
+>>>>>>> f1131133478fdb6726ad4bbd046008cae3b8357b
     left: 0;
     right: 0;
     margin-left: auto;
@@ -559,7 +562,11 @@ button > a{
 
     margin-top: 70px;
     width: 100%;
+<<<<<<< HEAD
     height: 485px;
+=======
+    height: 640px;
+>>>>>>> f1131133478fdb6726ad4bbd046008cae3b8357b
     left: 0;
     right: 0;
     margin-left: auto;
