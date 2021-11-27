@@ -94,7 +94,8 @@ function Page3() {
     //window.scrollTo(0, 0);
 
     return (
-        <div>
+        <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", height: "100%" }}>
+            <div>
             <div className="fase">
                 <img src={fasi}/>
             </div>
@@ -104,8 +105,9 @@ function Page3() {
                     <img src={qr} className="qr"/>
                 </div>
             </div>
+            </div>
 
-            <div className="panel3">
+            <div className="panel">
 
                 <div className="guideframe">
                     <div className="guide">
@@ -123,17 +125,17 @@ function Page3() {
                     </div>
                 </div>
 
-                <div className="gradientframe">
+                <div className="colorframe">
                     <div className="colore">
                         Gradiente
                     </div>
-                    <div className="gradienttable">
+                    <div className="colortable">
                         <ColorPicker onPick={(c) => console.log(c)}/>
                     </div>
                 </div>
 
                 <footer>
-                    <div className="pagine3Options">
+                    <div className="pagineOptions">
                         <Link href="/page4">
                             <div className="buttonAvanti">
                                 <img src={avanti} className="avanti"/>

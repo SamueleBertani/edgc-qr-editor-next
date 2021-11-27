@@ -5,7 +5,7 @@ const share = '/images/Share.svg';
 const qr = '/images/Qr.png';
 const avanti = "/images/Avanti.svg";
 const image = "/images/Image.svg";
-const fasi = "/images/Group 8.svg";
+const fasi = "/images/Group 10.svg";
 
 
 function Page6() {
@@ -18,7 +18,8 @@ function Page6() {
     //window.scrollTo(0, 0);
 
     return (
-        <>
+        <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", height: "100%" }}>
+            <div>
             <div className="fase">
                 <img src={fasi}/>
             </div>
@@ -28,7 +29,8 @@ function Page6() {
                     <img src={qr} className="qr"/>
                 </div>
             </div>
-            <div className="panel6">
+            </div>
+            <div className="panel">
                 <div className="guideframe">
                     <div className="guide">
                         Scarica la tua opera
@@ -61,19 +63,19 @@ function Page6() {
 
                 <div className="pagineOptions">
                     <Link href="/page7">
-                        <div className="buttonAvanti6">
+                        <div className="buttonAvanti">
                             <img src={avanti} className="avanti"/>
                         </div>
                     </Link>
 
                     <Link href="/page5">
-                        <div className="buttonIndietro6">
+                        <div className="buttonIndietro">
                             <img src={avanti} className="indietro"/>
                         </div>
                     </Link>
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 

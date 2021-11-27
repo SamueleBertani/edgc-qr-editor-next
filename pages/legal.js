@@ -1,12 +1,13 @@
-import React from "react";
-import {Link} from 'react-router-dom';
+import React, {useEffect} from "react";
+import Link from "next/link";
+import styles from '../styles/Home.module.css'
 
 function Legal() {
-    let root = document.documentElement;
 
-    root.style.setProperty('--green', "#F1FAEE");
-
-    window.scrollTo(0, 0);
+    useEffect(() => {
+        const root = document.documentElement
+        root.style.setProperty('--green', "#F1FAEE");
+    })
 
     return (
         <>
@@ -61,10 +62,10 @@ function Legal() {
 
                 <footer className="footer1">
                     <button className="caffeButton">
-                        <Link to='/page1' className="caffe">Offrici un caffè</Link>
+                        <Link href='/page7' className="caffe">Offrici un caffè</Link>
                     </button>
                     <div>
-                        <Link to='/page1' className="backHome">Torna alla home</Link>
+                        <Link href='/' className="backHome">Torna alla home</Link>
                     </div>
                 </footer>
             </div>

@@ -1,7 +1,7 @@
 import React, {useEffect} from "react";
 import Link from "next/link";
 const qr = '/images/Qr.png';
-const fasi = "/images/Group 8.svg";
+const fasi = "/images/Group 11.svg";
 
 
 function Page7() {
@@ -14,7 +14,8 @@ function Page7() {
     //window.scrollTo(0, 0);
 
     return (
-        <>
+        <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", height: "100%" }}>
+            <div>
             <div className="fase">
                 <img src={fasi}/>
             </div>
@@ -23,6 +24,7 @@ function Page7() {
                 <div className="frame">
                     <img src={qr} className="qr"/>
                 </div>
+            </div>
             </div>
 
             <div className="panel7">
@@ -70,7 +72,7 @@ function Page7() {
 
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 

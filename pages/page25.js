@@ -1,11 +1,11 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 const qr = '/images/Qr.png';
 const avanti = "/images/Avanti.svg";
 const fasi = "/images/Group 6.svg";
 
 
-function DotPicker({onPick}) {
+function DotPicker({ onPick }) {
 
     const images = ["squares.png", "extraRounded.png", "dots.png", "rounded.png", "classy.png", "classyRounded.png"]
 
@@ -17,11 +17,11 @@ function DotPicker({onPick}) {
                 {/*{colors[color]}*/}
             </div>
             <div>
-                {images.map((im, i) => <div style={{backgroundImage: `url(${im})`}}
-                                            className={i == image ? "squaresSelected" : "squares"} onClick={() => {
-                    onPick(i);
-                    setImage(i);
-                }}></div>)}
+                {images.map((im, i) => <div style={{ backgroundImage: `url(${im})` }}
+                    className={i == image ? "squaresSelected" : "squares"} onClick={() => {
+                        onPick(i);
+                        setImage(i);
+                    }}></div>)}
             </div>
 
         </>
@@ -30,7 +30,7 @@ function DotPicker({onPick}) {
 
 }
 
-function CornerSquarePicker({onPick}) {
+function CornerSquarePicker({ onPick }) {
 
     const images = ["cornerSquare.png", "dot.png", "extraRound.png", "classyCorner.png"]
 
@@ -42,12 +42,12 @@ function CornerSquarePicker({onPick}) {
                 {/*{colors[color]}*/}
             </div>
             <div>
-                {images.map((im, i) => <div style={{backgroundImage: `url(${im})`}}
-                                            className={i == image ? "CornerSquareSelected" : "CornerSquare"}
-                                            onClick={() => {
-                                                onPick(i);
-                                                setImage(i);
-                                            }}></div>)}
+                {images.map((im, i) => <div style={{ backgroundImage: `url(${im})` }}
+                    className={i == image ? "CornerSquareSelected" : "CornerSquare"}
+                    onClick={() => {
+                        onPick(i);
+                        setImage(i);
+                    }}></div>)}
             </div>
 
         </>
@@ -56,7 +56,7 @@ function CornerSquarePicker({onPick}) {
 
 }
 
-function CornerDotPicker({onPick}) {
+function CornerDotPicker({ onPick }) {
 
     const images = ["squareCornerDot.png", "cornerDot.png", "classyCornerDot.png"]
 
@@ -68,12 +68,12 @@ function CornerDotPicker({onPick}) {
                 {/*{colors[color]}*/}
             </div>
             <div>
-                {images.map((im, i) => <div style={{backgroundImage: `url(${im})`}}
-                                            className={i == image ? "CornerSquareSelected" : "CornerSquare"}
-                                            onClick={() => {
-                                                onPick(i);
-                                                setImage(i);
-                                            }}></div>)}
+                {images.map((im, i) => <div style={{ backgroundImage: `url(${im})` }}
+                    className={i == image ? "CornerSquareSelected" : "CornerSquare"}
+                    onClick={() => {
+                        onPick(i);
+                        setImage(i);
+                    }}></div>)}
             </div>
 
         </>
@@ -93,18 +93,20 @@ function Page25() {
     //window.scrollTo(0, 0);
 
     return (
-        <div>
-            <div className="fase">
-                <img src={fasi}/>
-            </div>
+        <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", height: "100%" }}>
+            <div>
+                <div className="fase">
+                    <img src={fasi} />
+                </div>
 
-            <div className="qrframe">
-                <div className="frame">
-                    <img src={qr} className="qr"/>
+                <div className="qrframe">
+                    <div className="frame">
+                        <img src={qr} className="qr" />
+                    </div>
                 </div>
             </div>
 
-            <div className="panel25">
+            <div className="panel">
 
                 <div className="guideframe">
                     <div className="guide">
@@ -118,7 +120,7 @@ function Page25() {
                     </div>
 
                     <div className="colortable">
-                        <DotPicker onPick={(c) => console.log(c)}/>
+                        <DotPicker onPick={(c) => console.log(c)} />
                     </div>
                 </div>
 
@@ -127,7 +129,7 @@ function Page25() {
                         Cornice Quadrati Grandi
                     </div>
                     <div className="colortable">
-                        <CornerSquarePicker onPick={(c) => console.log(c)}/>
+                        <CornerSquarePicker onPick={(c) => console.log(c)} />
                     </div>
                 </div>
 
@@ -136,21 +138,21 @@ function Page25() {
                         Cornice Quadrati Piccoli
                     </div>
                     <div className="colortable">
-                        <CornerDotPicker onPick={(c) => console.log(c)}/>
+                        <CornerDotPicker onPick={(c) => console.log(c)} />
                     </div>
                 </div>
 
                 <footer>
-                    <div className="pagine25Options">
+                    <div className="pagineOptions">
                         <Link href="/page3">
                             <div className="buttonAvanti">
-                                <img src={avanti} className="avanti"/>
+                                <img src={avanti} className="avanti" />
                             </div>
                         </Link>
 
                         <Link href="/page2">
                             <div className="buttonIndietro">
-                                <img src={avanti} className="indietro"/>
+                                <img src={avanti} className="indietro" />
                             </div>
                         </Link>
                     </div>
