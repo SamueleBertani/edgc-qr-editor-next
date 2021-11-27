@@ -66,14 +66,13 @@ export default function Page2() {
     }
 
     function notifyQrCodeFound(code) {
-        setShow((s) => true)
+        dispatch(changeData(code))
+        setFound(true)
     }
 
     function notifyQrCodeNotFound() {
         setShowAlert("failed");
-        setShow((s) => false)
-        dispatch(changeData(code))
-        setFound(true)
+        
     }
 
     function onImageInput(file) {
@@ -110,7 +109,7 @@ export default function Page2() {
 
 
     function onCameraInputClick() {
-        //setCameraVisibility(true)
+        setCameraVisibility(true)
     }
 
     return (
@@ -118,8 +117,6 @@ export default function Page2() {
             <div>
             <div className="foto">
                 {cameraIsVisible && <Camera
-                    idealFacingMode={FACING_MODES.USER}
-                    sizeFactor={1}
                     isFullscreen={true}
                     onTakePhotoAnimationDone={(dataUri) => {
                         handleTakePhoto(dataUri);
