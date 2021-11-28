@@ -7,6 +7,7 @@ import {
     changeDotsShape
 } from "../features/qrCode/qrCodeOptions";
 import {SvgPicker} from "../components";
+import withTransition from "../HOC/withTransition";
 
 const qr = '/images/Qr.png';
 const avanti = "/images/Avanti.svg";
@@ -149,4 +150,4 @@ function Page25() {
     )
 }
 
-export default Page25;
+export default withTransition(Page25);

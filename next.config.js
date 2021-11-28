@@ -5,10 +5,10 @@ module.exports = {
         config.module.rules.push({
             test: /\.svg$/,
             use: ["@svgr/webpack"],
-            i18n: {
+           /* i18n: {
                 locales: ["en"],
                 defaultLocale: "en",
-            },
+            }*/
         });
 
 

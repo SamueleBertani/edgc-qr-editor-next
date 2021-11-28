@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
 import { changeLogo } from "../features/qrCode/qrCodeOptions";
+import withTransition from "../HOC/withTransition";
 
 const qr = '/images/Qr.png';
 const avanti = "/images/Avanti.svg";
@@ -113,4 +114,4 @@ function Page4() {
     )
 }
 
-export default Page4;
+export default withTransition(Page4);

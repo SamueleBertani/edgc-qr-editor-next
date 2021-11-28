@@ -1,6 +1,7 @@
 import React, {useEffect} from "react";
 import Link from "next/link";
 import styles from '../styles/Home.module.css'
+import withTransition from "../HOC/withTransition";
 
 function Legal() {
 
@@ -73,4 +74,4 @@ function Legal() {
     )
 }
 
-export default Legal;
+export default withTransition(Legal);

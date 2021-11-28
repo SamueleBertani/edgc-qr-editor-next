@@ -1,6 +1,7 @@
 import React, {useEffect, useRef, useState} from "react";
 import Link from "next/link";
 import {useSelector} from "react-redux";
+import withTransition from "../HOC/withTransition";
 const qr = '/images/Qr.png';
 const fasi = "/images/Group 11.svg";
 
@@ -104,4 +105,4 @@ function Page7() {
     )
 }
 
-export default Page7;
+export default withTransition(Page7);

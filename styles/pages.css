@@ -2,6 +2,27 @@
     --green: #F1FAEE;
 }
 
+.slide-in {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background: #F1FAEE;
+    transform-origin: left;
+    
+  }
+
+  .slide-out {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background: #F1FAEE;
+    transform-origin: right;
+  }
+
 .foto {
 
     position: absolute;

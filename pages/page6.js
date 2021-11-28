@@ -2,11 +2,13 @@ import React, {useEffect, useRef, useState} from "react";
 import Link from "next/link";
 import "@fontsource/nanum-pen-script";
 import {useDispatch, useSelector} from "react-redux"; // Defaults to weight 400.
+import withTransition from "../HOC/withTransition";
 const share = '/images/Share.svg';
 const qr = '/images/Qr.png';
 const avanti = "/images/Avanti.svg";
 const image = "/images/Image.svg";
 const fasi = "/images/Group 10.svg";
+
 
 
 function Page6() {
@@ -112,4 +114,4 @@ function Page6() {
     )
 }
 
-export default Page6;
+export default withTransition(Page6);

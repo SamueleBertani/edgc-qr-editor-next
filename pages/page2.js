@@ -7,6 +7,7 @@ import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
 import { defaultQrOptions } from "../utilities";
 import { changeData } from "../features/qrCode/qrCodeOptions";
+import withTransition from "../HOC/withTransition";
 
 const qr = '/images/Qr.png';
 const camera = "/images/Camerasvg.svg";
@@ -15,7 +16,7 @@ const avanti = "/images/Avanti.svg";
 const fasi = "/images/Group 5.svg";
 
 
-export default function Page2() {
+function Page2() {
 
 
     const [showAlert, setShowAlert] = useState('none')
@@ -185,3 +186,5 @@ export default function Page2() {
 }
 
 
+
+export default withTransition(Page2)

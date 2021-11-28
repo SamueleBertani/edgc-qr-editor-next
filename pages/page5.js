@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
 import { ColorPicker, SvgPicker } from "../components";
+import withTransition from "../HOC/withTransition";
 
 const qr = '/images/Qr.png';
 const avanti = "/images/Avanti.svg";
@@ -163,4 +164,4 @@ function Page5() {
     )
 }
 
-export default Page5;
+export default withTransition(Page5);

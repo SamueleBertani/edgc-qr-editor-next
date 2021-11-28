@@ -3,12 +3,16 @@ import type {AppProps} from 'next/app'
 import '../styles/pages.css';
 import {Provider, useDispatch} from "react-redux";
 import store from "../store/store";
+import { AnimatePresence } from "framer-motion";
 
-function App({Component, pageProps}: AppProps) {
+function App({Component, pageProps, router}: AppProps) {
 
     return <>
+    
         <Provider store={store}>
-            <Component {...pageProps}/>
+            <AnimatePresence exitBeforeEnter>
+            <Component {...pageProps} key={router.route}/>
+            </AnimatePresence>
         </Provider>
     </>
 

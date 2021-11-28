@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
 import { changeCornersDotColor, changeCornerSquareColor, changeDotsColor } from "../features/qrCode/qrCodeOptions";
 import { ColorPicker } from "../components";
+import withTransition from "../HOC/withTransition";
 
 const qr = '/images/Qr.png';
 const avanti = "/images/Avanti.svg";
@@ -127,4 +128,4 @@ function Page3() {
     )
 }
 
-export default Page3;
+export default withTransition(Page3);
