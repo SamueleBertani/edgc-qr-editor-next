@@ -63,8 +63,8 @@ function Page3() {
     return (
         <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", height: "100%" }}>
             <div>
-                <div className="fase">
-                    <img src={fasi} />
+                <div className="fase" >
+                    <img src={fasi} alt="personalization part 3"/>
                 </div>
 
                 <div className="qrframe">
@@ -91,7 +91,7 @@ function Page3() {
                     </div>
                 </div>
 
-                <div className="gradientframe">
+                <div className="colorframe">
                     <div className="colore">
                         Contorno angoli
                     </div>
@@ -99,7 +99,7 @@ function Page3() {
                         <ColorPicker colors={colors} onPick={(c) => onCornerSquareColorChange(c)} />
                     </div>
                 </div>
-                <div className="gradientframe">
+                <div className="colorframe">
                     <div className="colore">
                         Quadratini angoli
                     </div>
@@ -110,14 +110,14 @@ function Page3() {
                 <footer>
                     <div className="pagineOptions">
                         <Link href="/page4">
-                            <div className="buttonAvanti">
-                                <img src={avanti} className="avanti" />
+                            <div className="buttonAvanti" >
+                                <img src={avanti} className="avanti" alt="next page"/>
                             </div>
                         </Link>
 
                         <Link href="/page25">
-                            <div className="buttonIndietro">
-                                <img src={avanti} className="indietro" />
+                            <div className="buttonIndietro" >
+                                <img src={avanti} className="indietro" alt="previous page"/>
                             </div>
                         </Link>
                     </div>

@@ -52,8 +52,8 @@ function Page6() {
     return (
         <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", height: "100%" }}>
              <div>
-                <div className="fase">
-                    <img src={fasi} />
+                <div className="fase" >
+                    <img src={fasi} alt="personalization part 6"/>
                 </div>
 
                 <div className="qrframe">
@@ -96,14 +96,14 @@ function Page6() {
 
                 <div className="pagineOptions">
                     <Link href="/page7">
-                        <div className="buttonAvanti">
-                            <img src={avanti} className="avanti"/>
+                        <div className="buttonAvanti" >
+                            <img src={avanti} className="avanti" alt="next page"/>
                         </div>
                     </Link>
 
                     <Link href="/page5">
-                        <div className="buttonIndietro">
-                            <img src={avanti} className="indietro"/>
+                        <div className="buttonIndietro" >
+                            <img src={avanti} className="indietro" alt="previous page"/>
                         </div>
                     </Link>
                 </div>

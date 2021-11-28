@@ -63,8 +63,8 @@ function Page4() {
     return (
         <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", height: "100%" }}>
             <div>
-                <div className="fase">
-                    <img src={fasi} />
+                <div className="fase" >
+                    <img src={fasi} alt="personalization part 4"/>
                 </div>
 
                 <div className="qrframe">
@@ -97,14 +97,14 @@ function Page4() {
                 </div>
                 <div className="pagineOptions">
                     <Link href="/page5">
-                        <div className="buttonAvanti4">
-                            <img src={avanti} className="avanti" />
+                        <div className="buttonAvanti" >
+                            <img src={avanti} className="avanti" alt="next page"/>
                         </div>
                     </Link>
 
                     <Link href="/page3">
-                        <div className="buttonIndietro4">
-                            <img src={avanti} className="indietro" />
+                        <div className="buttonIndietro" >
+                            <img src={avanti} className="indietro" alt="previous page"/>
                         </div>
                     </Link>
                 </div>

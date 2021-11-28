@@ -44,8 +44,8 @@ function Page7() {
     return (
         <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", height: "100%" }}>
             <div>
-                <div className="fase">
-                    <img src={fasi} />
+                <div className="fase" >
+                    <img src={fasi} alt="personalization part 7"/>
                 </div>
 
                 <div className="qrframe">

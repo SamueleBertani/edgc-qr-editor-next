@@ -85,7 +85,7 @@ function Page25() {
         <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", height: "100%" }}>
             <div>
                 <div className="fase">
-                    <img src={fasi} />
+                    <img src={fasi} alt="personalization part 2"/>
                 </div>
 
             <div className="qrframe">
@@ -134,13 +134,13 @@ function Page25() {
                 <div className="pagineOptions">
                     <Link href="/page3">
                         <div className="buttonAvanti">
-                            <img src={avanti} className="avanti" />
+                            <img src={avanti} className="avanti" alt="next page"/>
                         </div>
                     </Link>
 
                     <Link href="/page2">
                         <div className="buttonIndietro">
-                            <img src={avanti} className="indietro" />
+                            <img src={avanti} className="indietro" alt="previous page"/>
                         </div>
                     </Link>
                 </div>

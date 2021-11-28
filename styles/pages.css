@@ -90,9 +90,19 @@ body {
     text-align: center;
 }
 
-html,body,#__next{
+html,body{
     height: 100%;
     width: 100%;
+}
+
+#__next {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
 }
 
 .squares {
@@ -519,117 +529,6 @@ button > a{
     box-shadow: 0px 4px 4px 3px rgba(0, 0, 0, 0.25);
     border-radius: 30px 30px 0 0;
 }
-/*
-.panel2 {
-    
-    margin-top: 70px;
-    width: 100%;
-    height: 430px;
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 0;
-
-    background: #F1FAEE;
-    box-shadow: 0px 4px 4px 3px rgba(0, 0, 0, 0.25);
-    border-radius: 30px 30px 0 0;
-
-}
-
-.panel3 {
-
-    margin-top: 70px;
-    width: 100%;
-<<<<<<< HEAD
-    height: 640px;
-=======
-    height: 815px;
->>>>>>> f1131133478fdb6726ad4bbd046008cae3b8357b
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 0;
-
-    background: #F1FAEE;
-    box-shadow: 0px 4px 4px 3px rgba(0, 0, 0, 0.25);
-    border-radius: 30px 30px 0 0;
-
-}
-
-.panel4 {
-
-    margin-top: 70px;
-    width: 100%;
-<<<<<<< HEAD
-    height: 485px;
-=======
-    height: 640px;
->>>>>>> f1131133478fdb6726ad4bbd046008cae3b8357b
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 0;
-    top: 420px;
-
-    background: #F1FAEE;
-    box-shadow: 0px 4px 4px 3px rgba(0, 0, 0, 0.25);
-    border-radius: 30px 30px 0 0;
-
-}
-
-.panel5 {
-
-    margin-top: 70px;
-    width: 100%;
-    height: 890px;
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 0;
-
-
-    background: #F1FAEE;
-    box-shadow: 0px 4px 4px 3px rgba(0, 0, 0, 0.25);
-    border-radius: 30px 30px 0 0;
-
-}
-
-.panel6 {
-
-    margin-top: 70px;
-    width: 100%;
-    height: 495px;
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 0;
-
-    background: #F1FAEE;
-    box-shadow: 0px 4px 4px 3px rgba(0, 0, 0, 0.25);
-    border-radius: 30px 30px 0 0;
-}
-
-.panel7 {
-
-    margin-top: 70px;
-    width: 100%;
-    height: 600px;
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 0;
-    text-align: center;
-
-    background: #F1FAEE;
-    box-shadow: 0px 4px 4px 3px rgba(0, 0, 0, 0.25);
-    border-radius: 30px 30px 0 0;
-}*/
 
 .qr {
 
@@ -740,56 +639,11 @@ button > a{
     height: 50px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 100px;
+    margin-top: 80px;
     margin-bottom: 70px;
 
 }
-/*
-.pagine3Options {
 
-    width: 135px;
-    height: 130px;
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-
-}
-
-.pagine25Options {
-
-    width: 135px;
-    height: 130px;
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-
-}
-
-.pagine4Options {
-
-    width: 135px;
-    height: 130px;
-    margin-top: 70px;
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-
-}
-
-.pagine5Options {
-
-    width: 135px;
-    height: 130px;
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-
-}
-*/
 .buttonAvanti {
 
     width: 50px;
@@ -818,122 +672,6 @@ button > a{
     border-radius: 26px;
     float: left;
 }
-/*
-.buttonAvanti2 {
-
-    width: 50px;
-    height: 50px;
-    margin-top: 65px;
-    margin-left: auto;
-    text-align: center;
-    background: #A8DADC;
-    border: 1px solid #457B9D;
-    box-sizing: border-box;
-    border-radius: 26px;
-    float: right;
-
-}
-
-.buttonIndietro2 {
-
-    width: 50px;
-    height: 50px;
-    margin-top: 65px;
-    text-align: center;
-    margin-right: auto;
-    background: #A8DADC;
-    border: 1px solid #457B9D;
-    box-sizing: border-box;
-    border-radius: 26px;
-    float: left;
-}
-
-.buttonAvanti4 {
-
-    width: 50px;
-    height: 50px;
-    margin-top: 50px;
-    margin-left: auto;
-    text-align: center;
-    background: #A8DADC;
-    border: 1px solid #457B9D;
-    box-sizing: border-box;
-    border-radius: 26px;
-    float: right;
-
-}
-
-.buttonIndietro4 {
-
-    width: 50px;
-    height: 50px;
-    margin-top: 50px;
-    text-align: center;
-    margin-right: auto;
-    background: #A8DADC;
-    border: 1px solid #457B9D;
-    box-sizing: border-box;
-    border-radius: 26px;
-    float: left;
-}
-
-.buttonAvanti5 {
-
-    width: 50px;
-    height: 50px;
-    margin-top: 25px;
-    margin-left: auto;
-    text-align: center;
-    background: #A8DADC;
-    border: 1px solid #457B9D;
-    box-sizing: border-box;
-    border-radius: 26px;
-    float: right;
-
-}
-
-.buttonIndietro5 {
-
-    width: 50px;
-    height: 50px;
-    margin-top: 25px;
-    text-align: center;
-    margin-right: auto;
-    background: #A8DADC;
-    border: 1px solid #457B9D;
-    box-sizing: border-box;
-    border-radius: 26px;
-    float: left;
-}
-
-.buttonAvanti6 {
-
-    width: 50px;
-    height: 50px;
-    margin-top: 50px;
-    margin-left: auto;
-    text-align: center;
-    background: #A8DADC;
-    border: 1px solid #457B9D;
-    box-sizing: border-box;
-    border-radius: 26px;
-    float: right;
-
-}
-
-.buttonIndietro6 {
-
-    width: 50px;
-    height: 50px;
-    margin-top: 50px;
-    text-align: center;
-    margin-right: auto;
-    background: #A8DADC;
-    border: 1px solid #457B9D;
-    box-sizing: border-box;
-    border-radius: 26px;
-    float: left;
-}*/
 
 .avanti {
 

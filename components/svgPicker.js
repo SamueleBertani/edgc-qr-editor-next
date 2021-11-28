@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 
 export function SvgPicker(props){
-    const [image, setImage] = useState("square")
+    const [image, setImage] = useState("none")
     const onSvgClick = (name) => {
         setImage(name);
         props.onPick(name)

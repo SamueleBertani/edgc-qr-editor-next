@@ -4,9 +4,9 @@ import { get } from '@andreekeberg/imagedata'
 import Camera from 'react-html5-camera-photo';
 import 'react-html5-camera-photo/build/css/index.css';
 import Link from "next/link";
-import {useDispatch, useSelector} from "react-redux";
-import {defaultQrOptions} from "../utilities";
-import {changeData} from "../features/qrCode/qrCodeOptions";
+import { useDispatch, useSelector } from "react-redux";
+import { defaultQrOptions } from "../utilities";
+import { changeData } from "../features/qrCode/qrCodeOptions";
 
 const qr = '/images/Qr.png';
 const camera = "/images/Camerasvg.svg";
@@ -41,16 +41,16 @@ export default function Page2() {
             setQrCode(new QRCodeStyling(qrOptions))
         }
         dynamicImports()
-    },[])
+    }, [])
 
-    useEffect( () => {
-        if (qrCode){
+    useEffect(() => {
+        if (qrCode) {
             qrCode.append(qrPanel.current)
         }
     })
 
     useEffect(() => {
-        if(qrCode) {
+        if (qrCode) {
             qrCode.update(qrOptions)
         }
     }, [qrCode, qrOptions])
@@ -72,7 +72,7 @@ export default function Page2() {
 
     function notifyQrCodeNotFound() {
         setShowAlert("failed");
-        
+
     }
 
     function onImageInput(file) {
@@ -115,27 +115,30 @@ export default function Page2() {
     return (
         <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", height: "100%" }}>
             <div>
-            <div className="foto">
-                {cameraIsVisible && <Camera
-                    isFullscreen={true}
-                    onTakePhotoAnimationDone={(dataUri) => {
-                        handleTakePhoto(dataUri);
-                    }}
-                />}
-            </div>
-            </div>
-            <div className="qrframe">
-                <div className="frame">
-                    {!qrFound ? <img src={qr} className="qr" alt={"qr icon"}/> :
-                    <svg  ref={qrPanel} viewBox="0 0 1000 1000" style={{width: 200}}/>}
+                <div className="foto">
+                    {cameraIsVisible && <Camera
+                        isFullscreen={true}
+                        onTakePhotoAnimationDone={(dataUri) => {
+                            handleTakePhoto(dataUri);
+                        }}
+                    />}
                 </div>
-                <div style={{ display: showAlert == 'none' ? 'none' : 'block' }} className="alert">
-                    <div className="notFound">
-                        Qr Code not found
+                <div className="fase" alt="personalization part 1">
+                    <img src={fasi} />
+                </div>
+                <div className="qrframe">
+                    <div className="frame">
+                        {!qrFound ? <img src={qr} className="qr" alt={"qr icon"} /> :
+                            <svg ref={qrPanel} viewBox="0 0 1000 1000" style={{ width: 200 }} />}
                     </div>
-                    <button className="closeButton" onClick={()=>setShowAlert("none") }>
-                        <div className="tryAgain">Try Again</div>
-                    </button>
+                    <div style={{ display: showAlert == 'none' ? 'none' : 'block' }} className="alert">
+                        <div className="notFound">
+                            Qr Code not found
+                        </div>
+                        <button className="closeButton" onClick={() => setShowAlert("none")}>
+                            <div className="tryAgain">Try Again</div>
+                        </button>
+                    </div>
                 </div>
             </div>
             <div className="panel">
@@ -145,7 +148,7 @@ export default function Page2() {
                 <div className="loadOptions">
                     <div className="loadsx" onClick={onCameraInputClick}>
                         <div>
-                            <img src={camera} className="icon" alt={"camera icon"}/>
+                            <img src={camera} className="icon" alt={"camera icon"} />
                         </div>
                         <div className="loadLabel">
                             Fotocamera
@@ -153,7 +156,7 @@ export default function Page2() {
                     </div>
                     <div className="loaddx" onClick={onImageSelectorClick}>
                         <div>
-                            <img src={image} className="icon" alt={"gallery icon"}/>
+                            <img src={image} className="icon" alt={"gallery icon"} />
                         </div>
                         <div className="loadLabel">
                             Galleria
@@ -165,14 +168,14 @@ export default function Page2() {
 
                 <div className="pagineOptions">
                     <Link href="/page25">
-                        <div className="buttonAvanti" style={{display: qrFound ? "block" : "none"}}>
-                            <img src={avanti} className="avanti"/>
+                        <div className="buttonAvanti" style={{ display: qrFound ? "block" : "none" }} >
+                            <img src={avanti} className="avanti" alt="next page"/>
                         </div>
                     </Link>
 
                     <Link href="/">
-                        <div className="buttonIndietro">
-                            <img src={avanti} className="indietro"/>
+                        <div className="buttonIndietro" >
+                            <img src={avanti} className="indietro" alt="previous page"/>
                         </div>
                     </Link>
                 </div>
