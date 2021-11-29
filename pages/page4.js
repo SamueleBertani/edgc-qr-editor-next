@@ -84,7 +84,7 @@ function Page4() {
                 <div className="loadOptions">
                     <div className="loadlogo" onClick={onImageSelectorClick}>
                         <div>
-                            <img src={image} className="logo" />
+                            <img src={image} className="logo" alt="add logo"/>
                         </div>
                         <div className="loadLabel">
                             Galleria

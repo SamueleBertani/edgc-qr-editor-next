@@ -75,7 +75,7 @@ function Page6() {
                 <div className="loadOptions">
                     <div className="loadsx">
                         <div>
-                            <img src={share} className="icon"/>
+                            <img src={share} className="icon" alt="share"/>
                         </div>
                         <div className="loadLabel">
                             Condividila
@@ -83,7 +83,7 @@ function Page6() {
                     </div>
                     <div className="loaddx" onClick={onDownloadClicked}>
                         <div>
-                            <img src={image} className="icon"/>
+                            <img src={image} className="icon" alt="save in gallery"/>
                         </div>
                         <div className="loadLabel">
                             Salva in Galleria
