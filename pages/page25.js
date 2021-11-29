@@ -40,7 +40,7 @@ function Page25() {
         root.style.setProperty('--green', "#FFFFFF");
     })
 
-    //window.scrollTo(0, 0);
+    
 
     const qrPanel = useRef()
 

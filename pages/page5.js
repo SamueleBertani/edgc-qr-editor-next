@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
-import { ColorPicker, SvgPicker } from "../components";
+import { ColorPicker, FramePicker } from "../components";
 import withTransition from "../HOC/withTransition";
 
 const qr = '/images/Qr.png';
@@ -10,6 +10,7 @@ const fasi = "/images/Group 9.svg";
 
 const colors = ["#000000", "#e91e63", "#9c27b0", "#673ab7",
     "#3f51b5", "#2196f3", "#03a9f4", "#00bcd4"]
+
 const images = [
     { name: "none", value: "" },
     { name: "corner_square", value: "/images/dots/cornerSquare.png" },
@@ -26,8 +27,6 @@ function Page5() {
         const root = document.documentElement
         root.style.setProperty('--green', "#FFFFFF");
     })
-
-    //window.scrollTo(0, 0);
 
     const qrPanel = useRef()
 
@@ -57,7 +56,7 @@ function Page5() {
         }
     }, [qrCode, qrOptions])
 
-    const onSvgPickerChanged = (value) => {
+    const onFramePickerChanged = (value) => {
         console.log(value)
     }
 
@@ -69,7 +68,7 @@ function Page5() {
         <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", height: "100%" }}>
             <div>
                 <div className="fase" >
-                    <img src={fasi} alt="personalization part 5"/>
+                    <img src={fasi} alt="personalization part 5" />
                 </div>
 
                 <div className="qrframe">
@@ -89,8 +88,8 @@ function Page5() {
                         Cornice
                     </div>
                     <div className="colortable">
-                        <SvgPicker images={images} onPick={(v) => {
-                            onSvgPickerChanged(v),
+                        <FramePicker images={images} onPick={(v) => {
+                            onFramePickerChanged(v),
                                 v == "none" ? setShowState("none") : setShowState("success")
                         }} />
                     </div>
@@ -110,23 +109,23 @@ function Page5() {
                         <div>
                             <select className="tendina">
 
-                                <optgroup style={{fontFamily: 'arial'}}>
+                                <optgroup style={{ fontFamily: 'arial' }}>
                                     <option>Arial</option>
                                 </optgroup>
 
-                                <optgroup style={{fontFamily: 'verdana'}}>
+                                <optgroup style={{ fontFamily: 'verdana' }}>
                                     <option> Veranda </option>
                                 </optgroup>
 
-                                <optgroup style={{fontFamily: 'comic sans'}}>
+                                <optgroup style={{ fontFamily: 'comic sans' }}>
                                     <option> Comic Sans </option>
                                 </optgroup>
 
-                                <optgroup style={{fontFamily: 'lucida sans'}}>
+                                <optgroup style={{ fontFamily: 'lucida sans' }}>
                                     <option> Lucid Sans </option>
                                 </optgroup>
 
-                                <optgroup style={{fontFamily: 'times new romance'}}>
+                                <optgroup style={{ fontFamily: 'times new romance' }}>
                                     <option> Times New Romance </option>
                                 </optgroup>
 
@@ -155,7 +154,7 @@ function Page5() {
 
                     <Link href="/page4">
                         <div className="buttonIndietro" >
-                            <img src={avanti} className="indietro" alt="previous page"/>
+                            <img src={avanti} className="indietro" alt="previous page" />
                         </div>
                     </Link>
                 </div>

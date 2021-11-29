@@ -1,8 +1,8 @@
 import React, {useState} from "react";
 
-export function SvgPicker(props){
-    const [image, setImage] = useState("square")
-    const onSvgClick = (name) => {
+export function FramePicker(props){
+    const [image, setImage] = useState("none")
+    const onFrameClick = (name) => {
         setImage(name);
         props.onPick(name)
     }
@@ -13,7 +13,7 @@ export function SvgPicker(props){
                 {props.images.map((im) =>
                     <div key={im.name} style={{backgroundImage:`url(${im.value})`}}
                          className={im.name === image ? "CornerSquareSelected" : "CornerSquare"}
-                         onClick={() => onSvgClick(im.name)}
+                         onClick={() => onFrameClick(im.name)}
                     />
                 )}
             </div>

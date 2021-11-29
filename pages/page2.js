@@ -18,6 +18,7 @@ const fasi = "/images/Group 5.svg";
 
 function Page2() {
 
+    const [able, setAble] = useState('auto') 
 
     const [showAlert, setShowAlert] = useState('none')
 
@@ -72,7 +73,8 @@ function Page2() {
     }
 
     function notifyQrCodeNotFound() {
-        setShowAlert("failed");
+        setShowAlert('failed');
+        setAble('none')
 
     }
 
@@ -123,6 +125,7 @@ function Page2() {
                             handleTakePhoto(dataUri);
                         }}
                     />}
+                    
                 </div>
                 <div className="fase" alt="personalization part 1">
                     <img src={fasi} />
@@ -136,7 +139,10 @@ function Page2() {
                         <div className="notFound">
                             Qr Code not found
                         </div>
-                        <button className="closeButton" onClick={() => setShowAlert("none")}>
+                        <button className="closeButton" onClick={() => {
+                            setShowAlert("none"),
+                            setAble('auto')
+                        }}>
                             <div className="tryAgain">Try Again</div>
                         </button>
                     </div>
@@ -146,7 +152,7 @@ function Page2() {
                 <div className="guide">
                     Carica il tuo greenpass
                 </div>
-                <div className="loadOptions">
+                <div className="loadOptions" style={{pointerEvents: able}}>
                     <div className="loadsx" onClick={onCameraInputClick}>
                         <div>
                             <img src={camera} className="icon" alt={"camera icon"} />
