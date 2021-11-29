@@ -111,15 +111,8 @@ body {
     text-align: center;
 }
 
-html,body{
-    height: 100%;
-    width: 100%;
-}
-
 #__next {
     position: absolute;
-    height: 100%;
-    width: 100%;
     top: 0px;
     bottom: 0px;
     left: 0px;
@@ -985,7 +978,7 @@ textarea { font-size: 20px; }
 
     padding-top: 20px;
     width: 265px;
-    height: 255px;
+    height: auto;
     left: 0;
     right: 0;
     margin-left: auto;
