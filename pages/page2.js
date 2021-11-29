@@ -128,7 +128,7 @@ function Page2() {
                     
                 </div>
                 <div className="fase" >
-                    <img src={fasi} alt="personalization part 1" />
+                    <img src={fasi} alt="personalization part 1"/>
                 </div>
                 <div className="qrframe">
                     <div className="frame">
