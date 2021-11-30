@@ -8,6 +8,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { defaultQrOptions } from "../utilities";
 import { changeData } from "../features/qrCode/qrCodeOptions";
 import withTransition from "../HOC/withTransition";
+import { FACING_MODES} from 'react-html5-camera-photo';
+
 
 const qr = '/images/Qr.png';
 const camera = "/images/Camerasvg.svg";
@@ -18,7 +20,7 @@ const fasi = "/images/Group 5.svg";
 
 function Page2() {
 
-    const [able, setAble] = useState('auto') 
+    const [able, setAble] = useState('auto')
 
     const [showAlert, setShowAlert] = useState('none')
 
@@ -114,21 +116,23 @@ function Page2() {
     function onCameraInputClick() {
         setCameraVisibility(true)
     }
-
     return (
         <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", height: "100%" }}>
             <div>
                 <div className="foto">
                     {cameraIsVisible && <Camera
+                        idealFacingMode={FACING_MODES.USER}
+                        idealResolution={{ width: window.screen.width, height: window.screen.height }}
                         isFullscreen={true}
+                        sizeFactor={1}
                         onTakePhotoAnimationDone={(dataUri) => {
                             handleTakePhoto(dataUri);
                         }}
                     />}
-                    
+
                 </div>
                 <div className="fase" >
-                    <img src={fasi} alt="personalization part 1"/>
+                    <img src={fasi} alt="personalization part 1" />
                 </div>
                 <div className="qrframe">
                     <div className="frame">
@@ -141,7 +145,7 @@ function Page2() {
                         </div>
                         <button className="closeButton" onClick={() => {
                             setShowAlert("none"),
-                            setAble('auto')
+                                setAble('auto')
                         }}>
                             <div className="tryAgain">Try Again</div>
                         </button>
@@ -152,7 +156,7 @@ function Page2() {
                 <div className="guide">
                     Carica il tuo greenpass
                 </div>
-                <div className="loadOptions" style={{pointerEvents: able}}>
+                <div className="loadOptions" style={{ pointerEvents: able }}>
                     <div className="loadsx" onClick={onCameraInputClick}>
                         <div>
                             <img src={camera} className="icon" alt={"camera icon"} />
@@ -176,13 +180,13 @@ function Page2() {
                 <div className="pagineOptions">
                     <Link href="/page25">
                         <div className="buttonAvanti" style={{ display: qrFound ? "block" : "none" }} >
-                            <img src={avanti} className="avanti" alt="next page"/>
+                            <img src={avanti} className="avanti" alt="next page" />
                         </div>
                     </Link>
 
                     <Link href="/">
                         <div className="buttonIndietro" >
-                            <img src={avanti} className="indietro" alt="previous page"/>
+                            <img src={avanti} className="indietro" alt="previous page" />
                         </div>
                     </Link>
                 </div>
