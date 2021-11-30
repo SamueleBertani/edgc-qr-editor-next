@@ -1,7 +1,9 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 
 export function SvgPicker(props){
-    const [image, setImage] = useState("square")
+    const [image, setImage] = useState(props.initialValue)
+    console.log(props.initialValue)
+
     const onSvgClick = (name) => {
         setImage(name);
         props.onPick(name)

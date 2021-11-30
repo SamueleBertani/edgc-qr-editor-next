@@ -33,14 +33,10 @@ const cornersDotImageOpts = [
 ]
 
 function Page25() {
-
-
     useEffect(() => {
         const root = document.documentElement
         root.style.setProperty('--green', "#FFFFFF");
     })
-
-    
 
     const qrPanel = useRef()
 
@@ -104,14 +100,13 @@ function Page25() {
                         Personalizza il tuo QR code
                     </div>
                 </div>
-
                 <div className="colorframe">
                     <div className="colore">
                         Quadratini
                     </div>
 
                     <div className="colortable">
-                        <SvgPicker images={dotsImageOpts} onPick={(n) => onDotShapeChange(n)}/>
+                        <SvgPicker initialValue={qrOptions.dotsOptions.type} images={dotsImageOpts} onPick={(n) => onDotShapeChange(n)}/>
                     </div>
                 </div>
 
@@ -120,7 +115,7 @@ function Page25() {
                         Contorno angoli
                     </div>
                     <div className="colortable">
-                        <SvgPicker images={cornersSquareImageOpts} onPick={(n) => onCornersSquareChange(n)}/>
+                        <SvgPicker initialValue={qrOptions.cornersSquareOptions.type} images={cornersSquareImageOpts} onPick={(n) => onCornersSquareChange(n)}/>
                     </div>
                 </div>
 
@@ -129,7 +124,7 @@ function Page25() {
                         Quadratini angoli
                     </div>
                     <div className="colortable">
-                        <SvgPicker images={cornersDotImageOpts} onPick={(n) => onCornersDotChange(n)}/>
+                        <SvgPicker initialValue={qrOptions.cornersDotOptions.type} images={cornersDotImageOpts} onPick={(n) => onCornersDotChange(n)}/>
                     </div>
                 </div>
                 <div className="pagineOptions">

@@ -88,7 +88,7 @@ function Page3() {
                     </div>
 
                     <div className="colortable">
-                        <ColorPicker colors={colors} onPick={(c) => onDotsColorChange(c)} />
+                        <ColorPicker initialValue={qrOptions.dotsOptions.color} colors={colors} onPick={(c) => onDotsColorChange(c)} />
                     </div>
                 </div>
 
@@ -97,7 +97,7 @@ function Page3() {
                         Contorno angoli
                     </div>
                     <div className="gradienttable">
-                        <ColorPicker colors={colors} onPick={(c) => onCornerSquareColorChange(c)} />
+                        <ColorPicker initialValue={qrOptions.cornersSquareOptions.color} colors={colors} onPick={(c) => onCornerSquareColorChange(c)} />
                     </div>
                 </div>
                 <div className="colorframe">
@@ -105,7 +105,7 @@ function Page3() {
                         Quadratini angoli
                     </div>
                     <div className="gradienttable">
-                        <ColorPicker colors={colors} onPick={(c) => onCornerDotsColorChange(c)} />
+                        <ColorPicker initialValue={qrOptions.cornersDotOptions.color} colors={colors} onPick={(c) => onCornerDotsColorChange(c)} />
                     </div>
                 </div>
                 <footer>

@@ -1,20 +1,19 @@
 import {useState} from "react";
 
 export function ColorPicker(props) {
-    const [selectedColor, setColor] = useState(0)
-
-    const onColorClick = (color, index) => {
+    const [selectedColor, setColor] = useState(props.initialValue)
+    const onColorClick = (color) => {
        props.onPick(color);
-       setColor(index);
+       setColor(color);
     }
 
     return (
        <>
            <div>{
-               props.colors.map((color, index) => {
-                   return <div key={index} style={{backgroundColor: color}}
-                               className={index === selectedColor ? "selected" : "scelta1"}
-                               onClick={() => onColorClick(color, index)}/>
+               props.colors.map((color) => {
+                   return <div key={color} style={{backgroundColor: color}}
+                               className={color === selectedColor ? "selected" : "scelta1"}
+                               onClick={() => onColorClick(color)}/>
                })
            }</div>
        </>

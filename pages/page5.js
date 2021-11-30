@@ -23,6 +23,15 @@ function Page5() {
 
     const [showState, setShowState] = useState("none")
 
+    const [frame, setFrame] = useState({
+        shape : "none",
+        footer : {
+            content : "",
+            color : "#000000",
+            font : "times new roman",
+        }
+    })
+
     useEffect(() => {
         const root = document.documentElement
         root.style.setProperty('--green', "#FFFFFF");
@@ -57,13 +66,42 @@ function Page5() {
     }, [qrCode, qrOptions])
 
     const onFramePickerChanged = (value) => {
-        console.log(value)
+        value === "none" ? setShowState("none") : setShowState("success")
+        setFrame({
+            ...frame,
+            shape : value
+        })
     }
 
     const onColorPickedChanged = (value) => {
-        console.log(value)
+        setFrame({
+            ...frame,
+            footer : {
+                ...frame.footer,
+                color: value
+            }
+        })
     }
 
+    const onFontChanged = (value) => {
+        setFrame({
+            ...frame,
+            footer : {
+                ...frame.footer,
+                font: value
+            }
+        })
+    }
+
+    const onContentChanged = (value) =>{
+        setFrame({
+            ...frame,
+            footer : {
+                ...frame.footer,
+                content: value
+            }
+        })
+    }
     return (
         <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", height: "100%" }}>
             <div>
@@ -88,18 +126,15 @@ function Page5() {
                         Cornice
                     </div>
                     <div className="colortable">
-                        <FramePicker images={images} onPick={(v) => {
-                            onFramePickerChanged(v),
-                                v == "none" ? setShowState("none") : setShowState("success")
-                        }} />
+                        <FramePicker initialValue={frame.shape} images={images} onPick={(v) => onFramePickerChanged(v)}/>
                     </div>
                 </div>
-                <div style={{ display: showState == "none" ? "none" : "block" }}>
+                <div style={{ display: showState === "none" ? "none" : "block" }}>
                     <div className="scrittaframe">
                         <div className="colore">
                             Scritta
                         </div>
-                        <textarea className="text" cols="30" rows="2"></textarea>
+                        <textarea className="text" cols="30" rows="2" onChange={onContentChanged}/>
                     </div>
 
                     <div className="fontframe">
@@ -107,7 +142,7 @@ function Page5() {
                             Font
                         </div>
                         <div>
-                            <select className="tendina">
+                            <select className="tendina" onChange={onFontChanged}>
 
                                 <optgroup style={{ fontFamily: 'arial' }}>
                                     <option>Arial</option>
@@ -140,7 +175,7 @@ function Page5() {
                             Colore scritta
                         </div>
                         <div className="colortable">
-                            <ColorPicker colors={colors} onPick={(c) => onColorPickedChanged(c)} />
+                            <ColorPicker initialValue={frame.footer.color} colors={colors} onPick={(c) => onColorPickedChanged(c)} />
                         </div>
                     </div>
                 </div>
