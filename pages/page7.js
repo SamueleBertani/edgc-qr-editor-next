@@ -3,7 +3,7 @@ import Link from "next/link";
 import {useSelector} from "react-redux";
 import withTransition from "../HOC/withTransition";
 const qr = '/images/Qr.png';
-const fasi = "/images/Group 11.svg";
+const fasi = "/images/Group 10.svg";
 
 
 function Page7() {
