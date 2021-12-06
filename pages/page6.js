@@ -1,14 +1,15 @@
 import React, {useEffect, useRef, useState} from "react";
 import Link from "next/link";
 import "@fontsource/nanum-pen-script";
-import {useDispatch, useSelector} from "react-redux"; // Defaults to weight 400.
+import {useSelector} from "react-redux"; // Defaults to weight 400.
 import withTransition from "../HOC/withTransition";
+import {getURL} from "next/dist/shared/lib/utils";
+
 const share = '/images/Share.svg';
 const qr = '/images/Qr.png';
 const avanti = "/images/Avanti.svg";
 const image = "/images/Image.svg";
 const fasi = "/images/Group 9.svg";
-
 
 
 function Page6() {
@@ -44,27 +45,40 @@ function Page6() {
     useEffect(() => {
         if (qrCode) {
             qrCode.update(qrOptions)
+            qrCode.getRawData('jpeg').then(d => console.log(URL.createObjectURL(d)))
         }
     }, [qrCode, qrOptions])
 
     const onDownloadClicked = () => {
-        qrCode.download({extension : "jpeg"})
+        qrCode.download({extension: "jpeg"})
+    }
+
+    const onShareClick = async () => {
+        try {
+            await navigator.share({
+                title: "Condividi",
+                text : "Fai vedere a tutti la tua creazione!",
+                url: "https://master.d2g7knv9wv4iw9.amplifyapp.com/",
+            })
+        } catch (err) {
+            console.log(err)
+        }
     }
 
     return (
-        <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", height: "100%" }}>
-             <div>
-                <div className="fase" >
+        <div style={{display: "flex", flexDirection: "column", justifyContent: "space-between", height: "100%"}}>
+            <div>
+                <div className="fase">
                     <img src={fasi} alt="personalization part 6"/>
                 </div>
 
                 <div className="qrframe">
                     <div className="frame">
-                        <svg ref={qrPanel} viewBox="0 0 1000 1000" style={{ width: 200 }} />
+                        <svg ref={qrPanel} viewBox="0 0 1000 1000" style={{width: 200}}/>
                     </div>
                 </div>
             </div>
-            
+
             <div className="panel">
                 <div className="guideframe">
                     <div className="guide">
@@ -73,7 +87,7 @@ function Page6() {
                 </div>
 
                 <div className="loadOptions">
-                    <div className="loadsx">
+                    <div className="loadsx" onClick={onShareClick}>
                         <div>
                             <img src={share} className="icon" alt="share"/>
                         </div>
@@ -98,13 +112,13 @@ function Page6() {
 
                 <div className="pagineOptions">
                     <Link href="/page7">
-                        <div className="buttonAvanti" >
+                        <div className="buttonAvanti">
                             <img src={avanti} className="avanti" alt="next page"/>
                         </div>
                     </Link>
 
                     <Link href="/page5">
-                        <div className="buttonIndietro" >
+                        <div className="buttonIndietro">
                             <img src={avanti} className="indietro" alt="previous page"/>
                         </div>
                     </Link>

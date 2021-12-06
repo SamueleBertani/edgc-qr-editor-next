@@ -10,7 +10,6 @@ import { changeData } from "../features/qrCode/qrCodeOptions";
 import withTransition from "../HOC/withTransition";
 import { FACING_MODES} from 'react-html5-camera-photo';
 
-
 const qr = '/images/Qr.png';
 const camera = "/images/Camerasvg.svg";
 const image = "/images/Image.svg";
@@ -65,22 +64,21 @@ function Page2() {
 
     const inputFile = useRef(null)
 
-    function onImageSelectorClick() {
+    const onImageSelectorClick = () => {
         inputFile.current.click();
     }
 
-    function notifyQrCodeFound(code) {
+    const notifyQrCodeFound = (code) => {
         dispatch(changeData(code))
         setFound(true)
     }
 
-    function notifyQrCodeNotFound() {
+    const notifyQrCodeNotFound = () => {
         setShowAlert('failed');
         setAble('none')
-
     }
 
-    function onImageInput(file) {
+    const onImageInput = (file) => {
         get(file, (error, imageData) => {
             if (error) {
                 console.log(error)
@@ -96,7 +94,7 @@ function Page2() {
     }
 
 
-    function handleTakePhoto(dataUri) {
+    const handleTakePhoto = (dataUri) => {
         get(dataUri, (error, imageData) => {
             if (error) {
                 console.log(error)
@@ -113,9 +111,15 @@ function Page2() {
     }
 
 
-    function onCameraInputClick() {
+    const onCameraInputClick = () => {
         setCameraVisibility(true)
     }
+
+    const handleCameraError = (error) => {
+        setCameraVisibility(false)
+        alert("La fotocamera non è disponibile, controlla di avere una fotocamera o webcam sul tuo dispositivo o controlla i permessi")
+    }
+
     return (
         <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", height: "100%" }}>
             <div>
@@ -128,6 +132,7 @@ function Page2() {
                         onTakePhotoAnimationDone={(dataUri) => {
                             handleTakePhoto(dataUri);
                         }}
+                        onCameraError={error => handleCameraError(error)}
                     />}
 
                 </div>
