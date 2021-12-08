@@ -93,7 +93,7 @@ function Page7() {
                     </div>
 
                     <button className="caffeButtonConc">
-                        <Link href='/' className="caffe">Offrici un caffè</Link>
+                    <a href='https://www.nonstudio.org' className="caffe">Offrici un caffè</a>
                     </button>
                     <div>
                         <Link href='/' className="backHomeConc">Torna alla home</Link>
