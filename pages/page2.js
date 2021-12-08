@@ -134,6 +134,14 @@ function Page2() {
                         }}
                         onCameraError={error => handleCameraError(error)}
                     />}
+                    <div style={{ display: cameraIsVisible == true ? 'block' : 'none' }}>
+                    <Link href="/page2">
+                        
+                        <div className="buttonIndietroFoto" onClick={() => setCameraVisibility(false)}>
+                            <img src={avanti} className="indietro" alt="previous page" />
+                        </div>
+                    </Link>
+                    </div>
 
                 </div>
                 <div className="fase" >
