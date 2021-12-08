@@ -1,4 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
+const favicon = '/favicon.ico';
 
 class MyDocument extends Document {
 
@@ -7,6 +8,8 @@ class MyDocument extends Document {
             <Html lang="it">
                 <Head>
                     <title>Qr Personalization</title>
+                    <link href={favicon} rel="icon" type="image/x-icon" />
+                    
                 </Head>
                 <body>
                     <Main />

@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { changeLogo } from "../features/qrCode/qrCodeOptions";
 import withTransition from "../HOC/withTransition";
 
-const qr = '/images/Qr.png';
 const avanti = "/images/Avanti.svg";
 const image = "/images/Image.svg";
 const fasi = "/images/Group 8.svg";

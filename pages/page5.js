@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { ColorPicker, FramePicker } from "../components";
 import withTransition from "../HOC/withTransition";
 
-const qr = '/images/Qr.png';
+
 const avanti = "/images/Avanti.svg";
 const fasi = "/images/Group 9.svg";
 
