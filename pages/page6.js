@@ -4,6 +4,7 @@ import "@fontsource/nanum-pen-script";
 import {useSelector} from "react-redux"; // Defaults to weight 400.
 import withTransition from "../HOC/withTransition";
 import {getURL} from "next/dist/shared/lib/utils";
+import { useToasts } from 'react-toast-notifications';
 
 const share = '/images/Share.svg';
 const qr = '/images/Qr.png';
@@ -13,6 +14,8 @@ const fasi = "/images/Group 9.svg";
 
 
 function Page6() {
+
+    const { addToast } = useToasts();
 
     useEffect(() => {
         const root = document.documentElement
@@ -51,6 +54,7 @@ function Page6() {
 
     const onDownloadClicked = () => {
         qrCode.download({extension: "jpeg"})
+        addToast('Download iniziato', { appearance: 'success' });
     }
 
     const onShareClick = async () => {
