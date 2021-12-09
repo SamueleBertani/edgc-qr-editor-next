@@ -10,7 +10,7 @@ import { changeData } from "../features/qrCode/qrCodeOptions";
 import withTransition from "../HOC/withTransition";
 import { FACING_MODES} from 'react-html5-camera-photo';
 
-const qr = '/images/Qr.png';
+const QR = '/QR.svg';
 const camera = "/images/Camerasvg.svg";
 const image = "/images/Image.svg";
 const avanti = "/images/Avanti.svg";
@@ -134,6 +134,14 @@ function Page2() {
                         }}
                         onCameraError={error => handleCameraError(error)}
                     />}
+                    <div style={{ display: cameraIsVisible == true ? 'block' : 'none' }}>
+                    <Link href="/page2">
+                        
+                        <div className="buttonIndietroFoto" onClick={() => setCameraVisibility(false)}>
+                            <img src={avanti} className="indietro" alt="previous page" />
+                        </div>
+                    </Link>
+                    </div>
 
                 </div>
                 <div className="fase" >
@@ -141,12 +149,12 @@ function Page2() {
                 </div>
                 <div className="qrframe">
                     <div className="frame">
-                        {!qrFound ? <img src={qr} className="qr" alt={"qr icon"} /> :
-                            <svg ref={qrPanel} viewBox="0 0 1000 1000" style={{ width: 200 }} />}
+                        {!qrFound ? <img src={QR} className="qr" alt={"qr icon"} /> :
+                            <svg ref={qrPanel} viewBox="0 0 1000 1000" style={{ width: 200 , paddingTop: 4}} />}
                     </div>
                     <div style={{ display: showAlert == 'none' ? 'none' : 'block' }} className="alert">
                         <div className="notFound">
-                            Qr Code not found
+                            QR Code non trovato
                         </div>
                         <button className="closeButton" onClick={() => {
                             setShowAlert("none"),
@@ -164,7 +172,7 @@ function Page2() {
                 <div className="loadOptions" style={{ pointerEvents: able }}>
                     <div className="loadsx" onClick={onCameraInputClick}>
                         <div>
-                            <img src={camera} className="icon" alt={"camera icon"} />
+                            <img src={camera} className="icon" alt={"camera icon"} style={{opacity: able == "auto" ? 1 : 0.5}}/>
                         </div>
                         <div className="loadLabel">
                             Fotocamera
@@ -172,7 +180,7 @@ function Page2() {
                     </div>
                     <div className="loaddx" onClick={onImageSelectorClick}>
                         <div>
-                            <img src={image} className="icon" alt={"gallery icon"} />
+                            <img src={image} className="icon" alt={"gallery icon"} style={{opacity: able == "auto" ? 1 : 0.5}}/>
                         </div>
                         <div className="loadLabel">
                             Galleria

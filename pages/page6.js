@@ -7,7 +7,7 @@ import {getURL} from "next/dist/shared/lib/utils";
 import { useToasts } from 'react-toast-notifications';
 
 const share = '/images/Share.svg';
-const qr = '/images/Qr.png';
+
 const avanti = "/images/Avanti.svg";
 const image = "/images/Image.svg";
 const fasi = "/images/Group 9.svg";
@@ -110,7 +110,7 @@ function Page6() {
                 </div>
                 <div className="consiglioFrame">
                     <div className="consiglio">
-                        Inviatela su Whatsapp (così non la perdi)
+                        Inviatela su Whatsapp (cosi' non la perdi)
                     </div>
                 </div>
 

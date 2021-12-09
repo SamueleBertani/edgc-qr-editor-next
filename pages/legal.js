@@ -63,7 +63,7 @@ function Legal() {
 
                 <footer className="footer1">
                     <button className="caffeButton">
-                        <Link href='/page7' className="caffe">Offrici un caffè</Link>
+                        <a href='https://www.nonstudio.org' className="caffe">Offrici un caffè</a>
                     </button>
                     <div>
                         <Link href='/' className="backHome">Torna alla home</Link>
