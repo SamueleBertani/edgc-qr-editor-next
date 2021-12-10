@@ -95,10 +95,6 @@ function Page2() {
         setIsOpen(false)
     }
 
-    const onModalCLose = () => {
-        setIsOpen(false)
-    }
-
     const onImageInput = (file) => {
         get(file, (error, imageData) => {
             if (error) {
