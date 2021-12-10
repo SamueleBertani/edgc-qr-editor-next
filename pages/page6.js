@@ -70,7 +70,12 @@ function Page6() {
 
     const onShareClick = async () => {
         try {
-            navigator.share(imageBlob).then(() => {}).catch(e => console.log(e))
+            navigator.share({
+                files : imageBlob,
+                title : "Condividi il tuo green pass!",
+                text : "Il tuo green pass"
+            }).then(() => {}).catch(e => console.log(e))
+
         } catch (err) {
             console.log(err)
         }
