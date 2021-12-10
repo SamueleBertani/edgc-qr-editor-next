@@ -53,13 +53,15 @@ function Page6() {
         if (qrCode) {
             qrCode.update(qrOptions)
             qrCode.getRawData('jpeg').then(d => {
-                setImageBlob(d)
                 if(navigator.canShare){
-                    setShare(navigator.canShare(imageBlob))
+                    setShare(navigator.canShare(d))
+                    setImageBlob(d)
+                } else {
+                    setShare(false)
                 }
             })
         }
-    }, [imageBlob, qrCode, qrOptions])
+    }, [qrCode, qrOptions])
 
     const onDownloadClicked = () => {
         qrCode.download({extension: "jpeg"})
@@ -113,7 +115,7 @@ function Page6() {
                         </div>
                     </div>
                 </div>
-                <div className="consiglioFrame">
+                <div className="consiglioFrame" style={{ display: sharable ? "block" : "none" }}>
                     <div className="consiglio">
                         Inviatela su Whatsapp (cosi&apos; non la perdi)
                     </div>
