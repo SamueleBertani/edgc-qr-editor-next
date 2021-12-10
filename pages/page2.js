@@ -8,7 +8,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { defaultQrOptions } from "../utilities";
 import { changeData } from "../features/qrCode/qrCodeOptions";
 import withTransition from "../HOC/withTransition";
-import { FACING_MODES} from 'react-html5-camera-photo';
+import { FACING_MODES } from 'react-html5-camera-photo';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const QR = '/QR.svg';
 const camera = "/images/Camerasvg.svg";
@@ -19,9 +21,7 @@ const fasi = "/images/Group 5.svg";
 
 function Page2() {
 
-    const [able, setAble] = useState('auto')
 
-    const [showAlert, setShowAlert] = useState('none')
 
     useEffect(() => {
         const root = document.documentElement
@@ -74,8 +74,7 @@ function Page2() {
     }
 
     const notifyQrCodeNotFound = () => {
-        setShowAlert('failed');
-        setAble('none')
+
     }
 
     const onImageInput = (file) => {
@@ -135,12 +134,12 @@ function Page2() {
                         onCameraError={error => handleCameraError(error)}
                     />}
                     <div style={{ display: cameraIsVisible == true ? 'block' : 'none' }}>
-                    <Link href="/page2">
-                        
-                        <div className="buttonIndietroFoto" onClick={() => setCameraVisibility(false)}>
-                            <img src={avanti} className="indietro" alt="previous page" />
-                        </div>
-                    </Link>
+                        <Link href="/page2">
+
+                            <div className="buttonIndietroFoto" onClick={() => setCameraVisibility(false)}>
+                                <img src={avanti} className="indietro" alt="previous page" />
+                            </div>
+                        </Link>
                     </div>
 
                 </div>
@@ -150,18 +149,7 @@ function Page2() {
                 <div className="qrframe">
                     <div className="frame">
                         {!qrFound ? <img src={QR} className="qr" alt={"qr icon"} /> :
-                            <svg ref={qrPanel} viewBox="0 0 1000 1000" style={{ width: 200 , paddingTop: 4}} />}
-                    </div>
-                    <div style={{ display: showAlert == 'none' ? 'none' : 'block' }} className="alert">
-                        <div className="notFound">
-                            QR Code non trovato
-                        </div>
-                        <button className="closeButton" onClick={() => {
-                            setShowAlert("none"),
-                                setAble('auto')
-                        }}>
-                            <div className="tryAgain">Try Again</div>
-                        </button>
+                            <svg ref={qrPanel} viewBox="0 0 1000 1000" style={{ width: 200, paddingTop: 4 }} />}
                     </div>
                 </div>
             </div>
@@ -169,10 +157,10 @@ function Page2() {
                 <div className="guide">
                     Carica il tuo greenpass
                 </div>
-                <div className="loadOptions" style={{ pointerEvents: able }}>
+                <div className="loadOptions">
                     <div className="loadsx" onClick={onCameraInputClick}>
                         <div>
-                            <img src={camera} className="icon" alt={"camera icon"} style={{opacity: able == "auto" ? 1 : 0.5}}/>
+                            <img src={camera} className="icon" alt={"camera icon"} />
                         </div>
                         <div className="loadLabel">
                             Fotocamera
@@ -180,7 +168,7 @@ function Page2() {
                     </div>
                     <div className="loaddx" onClick={onImageSelectorClick}>
                         <div>
-                            <img src={image} className="icon" alt={"gallery icon"} style={{opacity: able == "auto" ? 1 : 0.5}}/>
+                            <img src={image} className="icon" alt={"gallery icon"} />
                         </div>
                         <div className="loadLabel">
                             Galleria

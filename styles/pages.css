@@ -1,4 +1,6 @@
 :root {
+    --toastify-color-success: #07bc0c;
+  --toastify-color-warning: #f1c40f;
     --green: #F1FAEE;
 }
 
@@ -33,9 +35,14 @@
 body {
     background-color: var(--green);
     flex: 1;
+    scroll-behavior: smooth;
 }
 
 .alert{
+
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0s 2s, opacity 2s linear;
 
     position: absolute;
     z-index: 1;
@@ -97,6 +104,7 @@ body {
 
 .notFound{
 
+
     width: 290px;
     height: 50px;
 
@@ -105,7 +113,7 @@ body {
     font-weight: bold;
     font-size: 27px;
     line-height: 28px;
-    padding-top: 45px;
+    padding-top: 55px;
     margin: 0 auto 0 auto;
 
     color: #d60000;

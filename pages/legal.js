@@ -53,7 +53,7 @@ function Legal() {
                         pagina lunghissima).</p>
                     <p>Proprio per questo se il progetto ti piace e condividi i questi valori, <strong>puoi dare una
                         mano anche tu! </strong></p>
-                    <p>Come?</p>
+                    <p><strong>Come?</strong></p>
                     <p><strong>Offrendo un caffè agli sviluppatori con una donazione.</strong> Non ci aspettiamo che il
                         nostro tempo venga ripagato (non è il nostro obiettivo) ma è un gesto che a noi <strong>fa super
                             piacere </strong>(anche perche i server sono da pagare)</p>
