@@ -55,7 +55,7 @@ function Page6() {
             qrCode.getRawData('jpeg').then(blob => {
                 if (navigator.canShare) {
                     const obj = {
-                        files: [new File([blob], "qr.jpg")],
+                        files: [new File([blob], "qr.jpg", { type: "image/jpeg" })],
                         title: "Condividi il tuo green pass!",
                         text: "Il tuo green pass"
                     }
@@ -73,7 +73,7 @@ function Page6() {
         addToast('Download iniziato', { appearance: 'success' });
     }
 
-    const onShareClick = async () => {
+    const onShareClick = () => {
         try {
             navigator.share(shareObj).then(() => { }).catch(e => console.log(e))
 
