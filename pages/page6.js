@@ -4,7 +4,6 @@ import "@fontsource/nanum-pen-script";
 import {useSelector} from "react-redux"; // Defaults to weight 400.
 import withTransition from "../HOC/withTransition";
 import { useToasts } from 'react-toast-notifications';
-import {images} from "next/dist/build/webpack/config/blocks/images";
 
 const share = '/images/Share.svg';
 
