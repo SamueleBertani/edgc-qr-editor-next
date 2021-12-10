@@ -84,11 +84,11 @@ function Page2() {
     const notifyQrCodeFound = (code) => {
         dispatch(changeData(code))
         setFound(true)
-        addToast('bello il tuo qr code', { appearance: 'success' });
+        //addToast('bello il tuo qr code', { appearance: 'success' });
     }
 
     const notifyQrCodeNotFound = () => {
-        addToast('non ho trovato il qr code', { appearance: 'warning' });
+        //addToast('non ho trovato il qr code', { appearance: 'warning' });
     }
 
     const onModalCLose = () => {
