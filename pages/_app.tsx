@@ -1,18 +1,18 @@
 import '../styles/globals.css'
-import type {AppProps} from 'next/app'
+import type { AppProps } from 'next/app'
 import '../styles/pages.css';
-import {Provider} from "react-redux";
+import { Provider } from "react-redux";
 import store from "../store/store";
-import {AnimatePresence} from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import * as ga from '../lib/ga'
-import React, {useEffect} from "react";
-import {ToastProvider} from "react-toast-notifications";
+import React, { useEffect } from "react";
+import { ToastProvider } from "react-toast-notifications";
 import Head from "next/head"
 
 const favicon = '/favicon.ico';
 
 
-function App({Component, pageProps, router}: AppProps) {
+function App({ Component, pageProps, router }: AppProps) {
 
     useEffect(() => {
         const handleRouteChange = (url) => {
@@ -51,7 +51,7 @@ function App({Component, pageProps, router}: AppProps) {
             <title>Qr Personalization</title>
             <link href={favicon} rel="icon" type="image/x-icon"/>
             <meta property="og:type" content="website"/>
-            <meta property="og:locale" content="en_EN"/>
+            <meta property="og:locale" content="it_IT"/>
             <meta property="og:url" content="https://personalizza-greenpass.it"/>
             <meta property="og:title" content="Personalizza il tuo greenpass! &#127881;"/>
             <meta property="og:site_name" content="Personolizza Greenpass"/>
@@ -62,7 +62,7 @@ function App({Component, pageProps, router}: AppProps) {
         <Provider store={store}>
             <ToastProvider>
                 <AnimatePresence exitBeforeEnter>
-                    <Component {...pageProps} key={router.route}/>
+                    <Component {...pageProps} key={router.route} />
                 </AnimatePresence>
             </ToastProvider>
         </Provider>
