@@ -115,7 +115,7 @@ function Page6() {
                 </div>
                 <div className="consiglioFrame">
                     <div className="consiglio">
-                        Inviatela su Whatsapp (cosi' non la perdi)
+                        Inviatela su Whatsapp (cosi&apos; non la perdi)
                     </div>
                 </div>
 
