@@ -1,23 +1,37 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 const favicon = '/favicon.ico';
 
-class MyDocument extends Document {
-
+export default class MyDocument extends Document {
     render() {
         return (
-            <Html lang="it">
+            <Html>
                 <Head>
                     <title>Qr Personalization</title>
                     <link href={favicon} rel="icon" type="image/x-icon" />
                     
+                    {/* Global Site Tag (gtag.js) - Google Analytics */}
+                    <script
+                        async
+                        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+                    />
+                    <script
+                        dangerouslySetInnerHTML={{
+                            __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
+              page_path: window.location.pathname,
+            });
+          `,
+                        }}
+                    />
                 </Head>
                 <body>
-                    <Main />
-                    <NextScript />
+                <Main />
+                <NextScript />
                 </body>
             </Html>
         )
     }
 }
-
-export default MyDocument

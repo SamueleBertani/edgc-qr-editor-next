@@ -8,9 +8,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { defaultQrOptions } from "../utilities";
 import { changeData } from "../features/qrCode/qrCodeOptions";
 import withTransition from "../HOC/withTransition";
-import { FACING_MODES } from 'react-html5-camera-photo';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { FACING_MODES} from 'react-html5-camera-photo';
+import Modal from "react-modal";
+import { useToasts } from 'react-toast-notifications';
 
 const QR = '/QR.svg';
 const camera = "/images/Camerasvg.svg";
@@ -18,10 +18,24 @@ const image = "/images/Image.svg";
 const avanti = "/images/Avanti.svg";
 const fasi = "/images/Group 5.svg";
 
+const modalStyle = {
+    content: {
+        top: '50%',
+        left: '50%',
+        right: 'auto',
+        bottom: 'auto',
+        marginRight: '-50%',
+        transform: 'translate(-50%, -50%)',
+    },
+};
+
+
 
 function Page2() {
 
+    Modal.setAppElement('#__next')
 
+    const [modalIsOpen, setIsOpen] = useState(false);
 
     useEffect(() => {
         const root = document.documentElement
@@ -71,10 +85,15 @@ function Page2() {
     const notifyQrCodeFound = (code) => {
         dispatch(changeData(code))
         setFound(true)
+        addToast('bello il tuo qr code', { appearance: 'success' });
     }
 
     const notifyQrCodeNotFound = () => {
+        addToast('non ho trovato il qr code', { appearance: 'warning' });
+    }
 
+    const onModalCLose = () => {
+        setIsOpen(false)
     }
 
     const onImageInput = (file) => {
@@ -116,7 +135,7 @@ function Page2() {
 
     const handleCameraError = (error) => {
         setCameraVisibility(false)
-        alert("La fotocamera non è disponibile, controlla di avere una fotocamera o webcam sul tuo dispositivo o controlla i permessi")
+        setIsOpen(true)
     }
 
     return (
@@ -134,12 +153,12 @@ function Page2() {
                         onCameraError={error => handleCameraError(error)}
                     />}
                     <div style={{ display: cameraIsVisible == true ? 'block' : 'none' }}>
-                        <Link href="/page2">
+                    <Link href="/page2">
 
-                            <div className="buttonIndietroFoto" onClick={() => setCameraVisibility(false)}>
-                                <img src={avanti} className="indietro" alt="previous page" />
-                            </div>
-                        </Link>
+                        <div className="buttonIndietroFoto" onClick={() => setCameraVisibility(false)}>
+                            <img src={avanti} className="indietro" alt="previous page" />
+                        </div>
+                    </Link>
                     </div>
 
                 </div>
@@ -192,6 +211,11 @@ function Page2() {
                     </Link>
                 </div>
             </div>
+            <Modal isOpen={modalIsOpen} onRequestClose={onModalCLose} style={modalStyle}>
+                <div>
+                    La fotocamera non è disponibile, controlla di avere una fotocamera o webcam sul tuo dispositivo o controlla i permessi
+                </div>
+            </Modal>
         </div>
     )
 }

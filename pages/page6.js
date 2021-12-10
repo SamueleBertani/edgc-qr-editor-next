@@ -3,7 +3,7 @@ import Link from "next/link";
 import "@fontsource/nanum-pen-script";
 import {useSelector} from "react-redux"; // Defaults to weight 400.
 import withTransition from "../HOC/withTransition";
-import {getURL} from "next/dist/shared/lib/utils";
+import { useToasts } from 'react-toast-notifications';
 
 const share = '/images/Share.svg';
 
@@ -14,10 +14,17 @@ const fasi = "/images/Group 9.svg";
 
 function Page6() {
 
+    const { addToast } = useToasts();
+
+    const [imageBlob, setImageBlob] = useState(null);
+
+    const [sharable, setShare] = useState(false)
+
     useEffect(() => {
         const root = document.documentElement
         root.style.setProperty('--green', "#FFFFFF");
     })
+
 
     //window.scrollTo(0, 0);
 
@@ -45,21 +52,30 @@ function Page6() {
     useEffect(() => {
         if (qrCode) {
             qrCode.update(qrOptions)
-            qrCode.getRawData('jpeg').then(d => console.log(URL.createObjectURL(d)))
+            qrCode.getRawData('jpeg').then(d => {
+                if(navigator.canShare){
+                    setShare(navigator.canShare(d))
+                    setImageBlob(d)
+                } else {
+                    setShare(false)
+                }
+            })
         }
     }, [qrCode, qrOptions])
 
     const onDownloadClicked = () => {
         qrCode.download({extension: "jpeg"})
+        addToast('Download iniziato', { appearance: 'success' });
     }
 
     const onShareClick = async () => {
         try {
-            await navigator.share({
-                title: "Condividi",
-                text : "Fai vedere a tutti la tua creazione!",
-                url: "https://master.d2g7knv9wv4iw9.amplifyapp.com/",
-            })
+            navigator.share({
+                files : imageBlob,
+                title : "Condividi il tuo green pass!",
+                text : "Il tuo green pass"
+            }).then(() => {}).catch(e => console.log(e))
+
         } catch (err) {
             console.log(err)
         }
@@ -73,7 +89,7 @@ function Page6() {
                 </div>
 
                 <div className="qrframe">
-                    <div className="frame">
+                    <div className="frame" >
                         <svg ref={qrPanel} viewBox="0 0 1000 1000" style={{width: 200}}/>
                     </div>
                 </div>
@@ -87,7 +103,7 @@ function Page6() {
                 </div>
 
                 <div className="loadOptions">
-                    <div className="loadsx" onClick={onShareClick}>
+                    <div className="loadsx" onClick={onShareClick} style={{ display: sharable ? "block" : "none" }}>
                         <div>
                             <img src={share} className="icon" alt="share"/>
                         </div>
@@ -104,9 +120,9 @@ function Page6() {
                         </div>
                     </div>
                 </div>
-                <div className="consiglioFrame">
+                <div className="consiglioFrame" style={{ display: sharable ? "block" : "none" }}>
                     <div className="consiglio">
-                        Inviatela su Whatsapp (cosi' non la perdi)
+                        Inviatela su Whatsapp (cosi&apos; non la perdi)
                     </div>
                 </div>
 
@@ -117,7 +133,7 @@ function Page6() {
                         </div>
                     </Link>
 
-                    <Link href="/page5">
+                    <Link href="/page4">
                         <div className="buttonIndietro">
                             <img src={avanti} className="indietro" alt="previous page"/>
                         </div>
