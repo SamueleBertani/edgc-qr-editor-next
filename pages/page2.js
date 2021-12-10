@@ -9,6 +9,7 @@ import { defaultQrOptions } from "../utilities";
 import { changeData } from "../features/qrCode/qrCodeOptions";
 import withTransition from "../HOC/withTransition";
 import { FACING_MODES} from 'react-html5-camera-photo';
+import Modal from "react-modal"
 
 const QR = '/QR.svg';
 const camera = "/images/Camerasvg.svg";
@@ -16,12 +17,27 @@ const image = "/images/Image.svg";
 const avanti = "/images/Avanti.svg";
 const fasi = "/images/Group 5.svg";
 
+const modalStyle = {
+    content: {
+        top: '50%',
+        left: '50%',
+        right: 'auto',
+        bottom: 'auto',
+        marginRight: '-50%',
+        transform: 'translate(-50%, -50%)',
+    },
+};
+
+
 
 function Page2() {
+
+    Modal.setAppElement('#__next')
 
     const [able, setAble] = useState('auto')
 
     const [showAlert, setShowAlert] = useState('none')
+    const [modalIsOpen, setIsOpen] = useState(false);
 
     useEffect(() => {
         const root = document.documentElement
@@ -74,8 +90,11 @@ function Page2() {
     }
 
     const notifyQrCodeNotFound = () => {
-        setShowAlert('failed');
         setAble('none')
+    }
+
+    const onModalCLose = () => {
+        setIsOpen(false)
     }
 
     const onImageInput = (file) => {
@@ -117,7 +136,7 @@ function Page2() {
 
     const handleCameraError = (error) => {
         setCameraVisibility(false)
-        alert("La fotocamera non è disponibile, controlla di avere una fotocamera o webcam sul tuo dispositivo o controlla i permessi")
+        setIsOpen(true)
     }
 
     return (
@@ -136,7 +155,7 @@ function Page2() {
                     />}
                     <div style={{ display: cameraIsVisible == true ? 'block' : 'none' }}>
                     <Link href="/page2">
-                        
+
                         <div className="buttonIndietroFoto" onClick={() => setCameraVisibility(false)}>
                             <img src={avanti} className="indietro" alt="previous page" />
                         </div>
@@ -204,6 +223,11 @@ function Page2() {
                     </Link>
                 </div>
             </div>
+            <Modal isOpen={modalIsOpen} onRequestClose={onModalCLose} style={modalStyle}>
+                <div>
+                    La fotocamera non è disponibile, controlla di avere una fotocamera o webcam sul tuo dispositivo o controlla i permessi
+                </div>
+            </Modal>
         </div>
     )
 }

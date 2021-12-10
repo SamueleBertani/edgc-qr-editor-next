@@ -7,6 +7,7 @@ import { AnimatePresence } from "framer-motion";
 import * as ga from '../lib/ga'
 import {useEffect} from "react";
 import {ToastProvider} from "react-toast-notifications";
+import Modal from "react-modal"
 
 function App({Component, pageProps, router}: AppProps) {
 
