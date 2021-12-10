@@ -6,9 +6,6 @@ export default class MyDocument extends Document {
         return (
             <Html>
                 <Head>
-                    <title>Qr Personalization</title>
-                    <link href={favicon} rel="icon" type="image/x-icon" />
-                    
                     {/* Global Site Tag (gtag.js) - Google Analytics */}
                     <script
                         async
@@ -28,8 +25,8 @@ export default class MyDocument extends Document {
                     />
                 </Head>
                 <body>
-                <Main />
-                <NextScript />
+                    <Main />
+                    <NextScript />
                 </body>
             </Html>
         )
