@@ -1,7 +1,7 @@
-import React, {useEffect, useRef, useState} from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import "@fontsource/nanum-pen-script";
-import {useSelector} from "react-redux"; // Defaults to weight 400.
+import { useSelector } from "react-redux"; // Defaults to weight 400.
 import withTransition from "../HOC/withTransition";
 import { useToasts } from 'react-toast-notifications';
 
@@ -16,7 +16,7 @@ function Page6() {
 
     const { addToast } = useToasts();
 
-    const [imageBlob, setImageBlob] = useState(null);
+    const [shareObj, setShareObj] = useState(null);
 
     const [sharable, setShare] = useState(false)
 
@@ -52,10 +52,15 @@ function Page6() {
     useEffect(() => {
         if (qrCode) {
             qrCode.update(qrOptions)
-            qrCode.getRawData('jpeg').then(d => {
-                if(navigator.canShare){
-                    setShare(navigator.canShare(d))
-                    setImageBlob(d)
+            qrCode.getRawData('jpeg').then(blob => {
+                if (navigator.canShare) {
+                    const obj = {
+                        files: [new File([blob], "qr.jpg")],
+                        title: "Condividi il tuo green pass!",
+                        text: "Il tuo green pass"
+                    }
+                    setShare(navigator.canShare(obj))
+                    setShareObj(obj)
                 } else {
                     setShare(false)
                 }
@@ -64,17 +69,13 @@ function Page6() {
     }, [qrCode, qrOptions])
 
     const onDownloadClicked = () => {
-        qrCode.download({extension: "jpeg"})
+        qrCode.download({ extension: "jpeg" })
         addToast('Download iniziato', { appearance: 'success' });
     }
 
     const onShareClick = async () => {
         try {
-            navigator.share({
-                files : imageBlob,
-                title : "Condividi il tuo green pass!",
-                text : "Il tuo green pass"
-            }).then(() => {}).catch(e => console.log(e))
+            navigator.share(shareObj).then(() => { }).catch(e => console.log(e))
 
         } catch (err) {
             console.log(err)
@@ -82,15 +83,15 @@ function Page6() {
     }
 
     return (
-        <div style={{display: "flex", flexDirection: "column", justifyContent: "space-between", height: "100%"}}>
+        <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", height: "100%" }}>
             <div>
                 <div className="fase">
-                    <img src={fasi} alt="personalization part 6"/>
+                    <img src={fasi} alt="personalization part 6" />
                 </div>
 
                 <div className="qrframe">
                     <div className="frame" >
-                        <svg ref={qrPanel} viewBox="0 0 1000 1000" style={{width: 200}}/>
+                        <svg ref={qrPanel} viewBox="0 0 1000 1000" style={{ width: 200 }} />
                     </div>
                 </div>
             </div>
@@ -105,7 +106,7 @@ function Page6() {
                 <div className="loadOptions">
                     <div className="loadsx" onClick={onShareClick} style={{ display: sharable ? "block" : "none" }}>
                         <div>
-                            <img src={share} className="icon" alt="share"/>
+                            <img src={share} className="icon" alt="share" />
                         </div>
                         <div className="loadLabel">
                             Condividila
@@ -113,7 +114,7 @@ function Page6() {
                     </div>
                     <div className="loaddx" onClick={onDownloadClicked}>
                         <div>
-                            <img src={image} className="icon" alt="save in gallery"/>
+                            <img src={image} className="icon" alt="save in gallery" />
                         </div>
                         <div className="loadLabel">
                             Salva in Galleria
@@ -129,13 +130,13 @@ function Page6() {
                 <div className="pagineOptions">
                     <Link href="/page7">
                         <div className="buttonAvanti">
-                            <img src={avanti} className="avanti" alt="next page"/>
+                            <img src={avanti} className="avanti" alt="next page" />
                         </div>
                     </Link>
 
                     <Link href="/page4">
                         <div className="buttonIndietro">
-                            <img src={avanti} className="indietro" alt="previous page"/>
+                            <img src={avanti} className="indietro" alt="previous page" />
                         </div>
                     </Link>
                 </div>

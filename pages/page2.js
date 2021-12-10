@@ -34,7 +34,6 @@ const modalStyle = {
 function Page2() {
 
     Modal.setAppElement('#__next')
-
     const [modalIsOpen, setIsOpen] = useState(false);
 
     useEffect(() => {
@@ -90,6 +89,10 @@ function Page2() {
 
     const notifyQrCodeNotFound = () => {
         addToast('non ho trovato il qr code', { appearance: 'warning' });
+    }
+
+    const onModalCLose = () => {
+        setIsOpen(false)
     }
 
     const onModalCLose = () => {
