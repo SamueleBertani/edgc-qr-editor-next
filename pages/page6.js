@@ -2,14 +2,14 @@ import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import "@fontsource/nanum-pen-script";
 import { useSelector } from "react-redux"; // Defaults to weight 400.
-import withTransition from "../HOC/withTransition";
 import { useToasts } from 'react-toast-notifications';
+import withTransition from "../HOC/withTransition";
 
 const share = '/images/Share.svg';
 
 const avanti = "/images/Avanti.svg";
 const image = "/images/Image.svg";
-const fasi = "/images/Group 9.svg";
+const fasi = "/images/Group 18.svg";
 
 
 function Page6() {
@@ -91,7 +91,7 @@ function Page6() {
 
                 <div className="qrframe">
                     <div className="frame" >
-                        <svg ref={qrPanel} viewBox="0 0 1000 1000" style={{ width: 200 }} />
+                        <svg ref={qrPanel} viewBox="0 0 1000 1000" style={{width: 198, paddingTop: 4}} />
                     </div>
                 </div>
             </div>
@@ -145,4 +145,4 @@ function Page6() {
     )
 }
 
-export default withTransition(Page6);
+export default withTransition(Page6)

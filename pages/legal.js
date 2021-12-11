@@ -1,7 +1,9 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import Link from "next/link";
 import styles from '../styles/Home.module.css'
+import KofiButton from "kofi-button";
 import withTransition from "../HOC/withTransition";
+
 
 function Legal() {
 
@@ -41,7 +43,7 @@ function Legal() {
                         greenpass personalizzato la disinstallassi.</p>
                     <p>L’unica cosa che salviamo, un po come tutti i siti (ma in realtà di meno), sono dati
                         sull’utilizzo (quanta gente ha provato a usare questo sito, ecc).</p>
-                    <p>Se non ti fidi comunque <strong>puoi contattare Samuele</strong> (samuele@nonstudio.org) per
+                    <p>Se non ti fidi comunque <strong>puoi contattare Samuele</strong>(<a href="mailto:samuele@nonstudio.org" >samuele@nonstudio.org </a>) per
                         guardare il codice del progetto.</p>
                 </div>
                 <div className="sub3">
@@ -58,13 +60,11 @@ function Legal() {
                         nostro tempo venga ripagato (non è il nostro obiettivo) ma è un gesto che a noi <strong>fa super
                             piacere </strong>(anche perche i server sono da pagare)</p>
                     <p>Oppure se come noi non hai un soldo, puoi <strong>condividere il progetto</strong> a qualcun
-                        altr* (cosi magari il caffe lo offre ad entrambi)</p>
+                        altrə (cosi magari il caffe lo offre ad entrambi)</p>
                 </div>
 
                 <footer className="footer1">
-                    <button className="caffeButton">
-                        <a href='https://www.nonstudio.org' className="caffe">Offrici un caffè</a>
-                    </button>
+                <KofiButton title="Offrici un caffè" kofiID="N4N31JDNX" />
                     <div>
                         <Link href='/' className="backHome">Torna alla home</Link>
                     </div>

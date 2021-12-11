@@ -7,16 +7,16 @@ import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
 import { defaultQrOptions } from "../utilities";
 import { changeData } from "../features/qrCode/qrCodeOptions";
-import withTransition from "../HOC/withTransition";
 import { FACING_MODES} from 'react-html5-camera-photo';
 import Modal from "react-modal";
 import { useToasts } from 'react-toast-notifications';
+import withTransition from "../HOC/withTransition";
 
 const QR = '/QR.svg';
 const camera = "/images/Camerasvg.svg";
 const image = "/images/Image.svg";
 const avanti = "/images/Avanti.svg";
-const fasi = "/images/Group 5.svg";
+const fasi = "/images/Group 14.svg";
 
 const modalStyle = {
     content: {
@@ -33,6 +33,8 @@ const modalStyle = {
 
 function Page2() {
 
+    const { addToast } = useToasts();
+    
     Modal.setAppElement('#__next')
     const [modalIsOpen, setIsOpen] = useState(false);
 
@@ -84,15 +86,12 @@ function Page2() {
     const notifyQrCodeFound = (code) => {
         dispatch(changeData(code))
         setFound(true)
-        addToast('bello il tuo qr code', { appearance: 'success' });
+        addToast('Bello il tuo QR Code', { appearance: 'success', autoDismiss: true});
+        document.getElementById("id").scrollIntoView();
     }
 
     const notifyQrCodeNotFound = () => {
-        addToast('non ho trovato il qr code', { appearance: 'warning' });
-    }
-
-    const onModalCLose = () => {
-        setIsOpen(false)
+        addToast('Non ho trovato il QR Code', { appearance: 'warning' , autoDismiss: true});
     }
 
     const onModalCLose = () => {
@@ -171,7 +170,7 @@ function Page2() {
                 <div className="qrframe">
                     <div className="frame">
                         {!qrFound ? <img src={QR} className="qr" alt={"qr icon"} /> :
-                            <svg ref={qrPanel} viewBox="0 0 1000 1000" style={{ width: 200, paddingTop: 4 }} />}
+                            <svg ref={qrPanel} viewBox="0 0 1000 1000" style={{width: 198, paddingTop: 4}} />}
                     </div>
                 </div>
             </div>
@@ -200,15 +199,15 @@ function Page2() {
                     </div>
                 </div>
 
-                <div className="pagineOptions">
+                <div id ="id" className="pagineOptions">
                     <Link href="/page25">
-                        <div className="buttonAvanti" style={{ display: qrFound ? "block" : "none" }} >
+                        <div id="avanti" className="buttonAvanti" style={{ display: qrFound ? "block" : "none" }} >
                             <img src={avanti} className="avanti" alt="next page" />
                         </div>
                     </Link>
 
                     <Link href="/">
-                        <div className="buttonIndietro" >
+                        <div id="indietro" className="buttonIndietro" >
                             <img src={avanti} className="indietro" alt="previous page" />
                         </div>
                     </Link>

@@ -1,9 +1,11 @@
-import React, {useEffect, useRef, useState} from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import {useSelector} from "react-redux";
+import { useSelector } from "react-redux";
 import withTransition from "../HOC/withTransition";
 
-const fasi = "/images/Group 10.svg";
+
+
+const fasi = "/images/Group 19.svg";
 
 
 function Page7() {
@@ -46,12 +48,12 @@ function Page7() {
         <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", height: "100%" }}>
             <div>
                 <div className="fase" >
-                    <img src={fasi} alt="personalization part 7"/>
+                    <img src={fasi} alt="personalization part 7" />
                 </div>
 
                 <div className="qrframe">
                     <div className="frame">
-                        <svg ref={qrPanel} viewBox="0 0 1000 1000" style={{width: 200}}/>
+                        <svg ref={qrPanel} viewBox="0 0 1000 1000" style={{ width: 198, paddingTop: 4 }} />
                     </div>
                 </div>
             </div>
@@ -87,22 +89,21 @@ function Page7() {
                         </div>
 
                         <div className="testoConc">
-                            Puoi condividere il progetto con un amic*! é gratis e noi siamo contenti lo stesso!
+                            Puoi condividere il progetto con un amicə! é gratis e noi siamo contenti lo stesso!
                         </div>
 
                     </div>
-
                     <button className="caffeButtonConc">
-                    <a href='https://www.nonstudio.org' className="caffe">Offrici un caffè</a>
+                        <a href='https://www.nonstudio.org' className="caffe">Offrici un caffè</a>
                     </button>
                     <div>
                         <Link href='/' className="backHomeConc">Torna alla home</Link>
                     </div>
-
                 </div>
+
             </div>
         </div>
     )
 }
 
-export default withTransition(Page7);
+export default withTransition(Page7)

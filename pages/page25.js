@@ -11,7 +11,7 @@ import withTransition from "../HOC/withTransition";
 
 
 const avanti = "/images/Avanti.svg";
-const fasi = "/images/Group 6.svg";
+const fasi = "/images/Group 15.svg";
 
 const dotsImageOpts = [
     {name : "square", value:"/images/dots/squares.png"},
@@ -88,7 +88,7 @@ function Page25() {
             <div className="qrframe">
                 <div className="frame">
                     <div className="frame">
-                        <svg  ref={qrPanel} viewBox="0 0 1000 1000" style={{width: 200}}/>
+                        <svg  ref={qrPanel} viewBox="0 0 1000 1000" style={{width: 198, paddingTop: 4}}/>
                     </div>
                 </div>
             </div>
@@ -145,4 +145,4 @@ function Page25() {
     )
 }
 
-export default withTransition(Page25);
+export default withTransition(Page25)

@@ -8,7 +8,9 @@ import * as ga from '../lib/ga'
 import React, { useEffect } from "react";
 import { ToastProvider } from "react-toast-notifications";
 import Head from "next/head"
-const favicon = '/favicon.ico';
+
+const favicon = '/favicon.svg';
+
 
 
 function App({ Component, pageProps, router }: AppProps) {
@@ -51,7 +53,7 @@ function App({ Component, pageProps, router }: AppProps) {
             <link href={favicon} rel="icon" type="image/x-icon" />
         </Head>
         <Provider store={store}>
-            <ToastProvider>
+        <ToastProvider>
                 <AnimatePresence exitBeforeEnter>
                     <Component {...pageProps} key={router.route} />
                 </AnimatePresence>
