@@ -94,7 +94,11 @@ function Page7() {
 
                     </div>
                     <button className="caffeButtonConc">
-                        <a href='https://www.nonstudio.org' className="caffe">Offrici un caffè</a>
+                        <a href='https://ko-fi.com/Q5Q57B6DG' target='_blank' className="caffe" style={{color: "#1D3557"}}>
+                            <img src="https://storage.ko-fi.com/cdn/cup-border.png" href='https://ko-fi.com/Q5Q57B6DG' alt="Ko-fi donations" style={{ width: 27, height: 18, marginRight: 7 }}></img>
+                            Offrici un caffè
+                        </a>
+
                     </button>
                     <div>
                         <Link href='/' className="backHomeConc">Torna alla home</Link>

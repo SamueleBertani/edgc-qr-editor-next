@@ -320,6 +320,44 @@ body {
 
 }
 
+.shareButton{
+    width: 150px;
+    height: 52px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+
+
+    background: #A8DADC;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 26px;
+    border: none;
+
+}
+
+.share{
+    
+    width: 130px;
+    height: 28px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 28px;
+    text-align: center;
+    text-decoration: none;
+    color: #1D3557;
+    margin-top: 0;
+    margin-bottom: 0;
+
+}
+
 .inizia {
 
     width: 66px;
@@ -478,6 +516,7 @@ button > a{
     text-decoration: none;
     margin-top: 0;
     margin-bottom: 0;
+    
 
     color: #1D3557;
 

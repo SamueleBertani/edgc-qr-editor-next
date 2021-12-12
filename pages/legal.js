@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import Link from "next/link";
 import styles from '../styles/Home.module.css'
-import KofiButton from "kofi-button";
 import withTransition from "../HOC/withTransition";
 
 
@@ -64,7 +63,13 @@ function Legal() {
                 </div>
 
                 <footer className="footer1">
-                <KofiButton title="Offrici un caffè" kofiID="N4N31JDNX" />
+                    <button className="caffeButton">
+                        <a href='https://ko-fi.com/Q5Q57B6DG' target='_blank' className="caffe" style={{color: "#1D3557"}}>
+                            <img src="https://storage.ko-fi.com/cdn/cup-border.png" href='https://ko-fi.com/Q5Q57B6DG' alt="Ko-fi donations" style={{ width: 27, height: 18, marginRight: 7 }}></img>
+                            Offrici un caffè
+                        </a>
+
+                    </button>
                     <div>
                         <Link href='/' className="backHome">Torna alla home</Link>
                     </div>
