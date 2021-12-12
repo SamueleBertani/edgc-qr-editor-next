@@ -1,9 +1,76 @@
 :root {
     --toastify-color-success: #07bc0c;
-  --toastify-color-warning: #f1c40f;
+    --toastify-color-warning: #f1c40f;
     --green: #F1FAEE;
 }
 
+.squiggly {
+    width: 24px;
+    left: 100px;
+    margin-top: 10px;
+    margin-left: 60px;
+}
+
+.squigglyWrite {
+    width: 158.54px;
+    height: 44.62px;
+    font-family: "Nanum Pen Script";
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    margin-left: 30px;
+    margin-bottom: 100px;
+    margin-right: 0;
+    color: #1D3557;
+    transform: rotate(-25.75deg);
+}
+
+.allScreen {
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+}
+
+.bigCircle {
+    position: absolute;
+    width: auto;
+    height: auto;
+    right: 0px;
+    top: 0px;
+}
+
+.yellow {
+    position: absolute;
+    width: 228px;
+    height: 228px;
+    left: 0;
+    top: 90px;
+}
+
+.littleBlue {
+    position: absolute;
+    width: 94.81px;
+    height: 108.23px;
+    right: 10px;
+    top: 365px;
+}
+
+.bigBlue {
+    position: absolute;
+    width: 228px;
+    height: 228px;
+    top: 440px;
+    left: -50px;
+}
+
+.mediumYellow {
+    position: absolute;
+    width: auto;
+    height: auto;
+    bottom: -40px;
+    right: 0px;
+    overflow-x: hidden;
+}
 
 .slide-in {
     position: fixed;
@@ -12,12 +79,9 @@
     height: 100vh;
     width: 100%;
     background: #F1FAEE;
-    
-    
-  }
+}
 
 .foto {
-
     position: fixed;
     z-index: 1;
 }
@@ -28,16 +92,13 @@ body {
     scroll-behavior: smooth;
 }
 
-.alert{
-
+.alert {
     visibility: visible;
     opacity: 1;
     transition: visibility 0s 2s, opacity 2s linear;
-
     position: absolute;
     z-index: 1;
     top: 60px;
-
     width: 361px;
     height: 222px;
     left: 0;
@@ -45,24 +106,19 @@ body {
     margin-left: auto;
     margin-right: auto;
     margin-top: 70px;
-
-
     background: #F1FAEE;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 26px;
     text-align: center;
-
 }
 
-.tryAgain{
-
+.tryAgain {
     width: 136px;
     height: 28px;
     left: 0;
     right: 0;
     margin-left: auto;
     margin-right: auto;
-
     font-family: Roboto;
     font-style: normal;
     font-weight: bold;
@@ -75,8 +131,7 @@ body {
     margin-bottom: 0;
 }
 
-.closeButton{
-    
+.closeButton {
     width: 171px;
     height: 52px;
     left: 0;
@@ -84,20 +139,15 @@ body {
     margin-left: auto;
     margin-right: auto;
     margin-top: 80px;
-
-
     background: #A8DADC;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 26px;
     border: none;
 }
 
-.notFound{
-
-
+.notFound {
     width: 290px;
     height: 50px;
-
     font-family: Roboto;
     font-style: normal;
     font-weight: bold;
@@ -105,7 +155,6 @@ body {
     line-height: 28px;
     padding-top: 55px;
     margin: 0 auto 0 auto;
-
     color: #d60000;
     text-align: center;
 }
@@ -119,99 +168,70 @@ body {
 }
 
 .squares {
-
     width: 45px;
     height: 45px;
     margin-right: 34px;
     margin-bottom: 30px;
     border-radius: 50%;
-
     float: left;
-
     background-position-x: 40%;
     background-position-y: center;
-
     background-color: #FFFFFF;
-
     background-size: 35px;
     background-repeat: no-repeat;
     border: none;
-
 }
 
 .squaresSelected {
-
     width: 45px;
     height: 45px;
     margin-right: 34px;
     margin-bottom: 30px;
     border-radius: 50%;
-
     float: left;
-
     background-position-x: 40%;
     background-position-y: center;
-
     background-color: #FFFFFF;
-
     background-size: 35px;
     background-repeat: no-repeat;
     border: none;
-
     outline: 3px solid #457B9D;
     outline-offset: 4px;
-
-
 }
 
 .CornerSquare {
-
     width: 45px;
     height: 45px;
     margin-right: 34px;
     margin-bottom: 30px;
     border-radius: 50%;
-
     float: left;
-
     background-position-x: center;
     background-position-y: center;
-
     background-color: #FFFFFF;
-
     background-size: 30px;
     background-repeat: no-repeat;
     border: none;
-
 }
 
 .CornerSquareSelected {
-
     width: 45px;
     height: 45px;
     margin-right: 34px;
     margin-bottom: 30px;
     border-radius: 50%;
-
     float: left;
-
     background-position-x: center;
     background-position-y: center;
-
     background-color: #FFFFFF;
-
     background-size: 30px;
     background-repeat: no-repeat;
     border: none;
-
     outline: 3px solid #457B9D;
     outline-offset: 4px;
-
-
 }
 
 .fase {
-
     padding-top: 45px;
     width: 267px;
     height: auto;
@@ -222,24 +242,27 @@ body {
     text-align: center;
 }
 
-.squaresSelected:nth-child(4), .CornerSquareSelected:nth-child(4) {
+.squaresSelected:nth-child(4),
+.CornerSquareSelected:nth-child(4) {
     margin-right: 0px;
 }
 
-.squaresSelected:nth-child(8), .CornerSquareSelected:nth-child(8) {
+.squaresSelected:nth-child(8),
+.CornerSquareSelected:nth-child(8) {
     margin-right: 0px;
 }
 
-.squares:nth-child(4), .CornerSquare:nth-child(4) {
+.squares:nth-child(4),
+.CornerSquare:nth-child(4) {
     margin-right: 0px;
 }
 
-.squares:nth-child(8), .CornerSquare:nth-child(8) {
+.squares:nth-child(8),
+.CornerSquare:nth-child(8) {
     margin-right: 0px;
 }
 
 .testoIniziale {
-
     padding-top: 125px;
     width: 295px;
     height: 100%;
@@ -247,104 +270,81 @@ body {
     right: 0;
     margin-left: auto;
     margin-right: auto;
-
-
 }
 
 .title {
-
     width: 270px;
     height: 200px;
-
     font-family: Roboto;
     font-style: normal;
     font-weight: bold;
     font-size: 48px;
     line-height: 56px;
-    text-align: left;
+    text-align: center;
     margin: 0;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
     padding-left: 20px;
-
     color: #1D3557;
-
 }
 
 .descr {
-
-
     width: 270px;
-    height: 260px;
-
+    height: 50px;
     font-family: Roboto;
     font-style: normal;
-    font-weight: normal;
-    font-size: 24px;
-    line-height: 28px;
-    text-align: left;
-    margin: 0;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
     padding-left: 20px;
-
+    margin-bottom: 0px;
     color: #1D3557;
 }
 
 .footer {
-
     width: 280px;
     height: 207px;
-
     text-align: center;
     padding-bottom: 80px;
     left: 0;
     right: 0;
     margin-left: auto;
     margin-right: auto;
-
 }
 
 .iniziaButton {
-
     width: 121px;
     height: 52px;
     left: 0;
     right: 0;
     margin-left: auto;
     margin-right: auto;
-
-
     background: #A8DADC;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 26px;
     border: none;
-
-
 }
 
-.shareButton{
+.shareButton {
     width: 150px;
     height: 52px;
     left: 0;
     right: 0;
     margin-left: auto;
     margin-right: auto;
-
-
     background: #A8DADC;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 26px;
     border: none;
-
 }
 
-.share{
-    
+.share {
     width: 130px;
     height: 28px;
     left: 0;
     right: 0;
     margin-left: auto;
     margin-right: auto;
-
     font-family: Roboto;
     font-style: normal;
     font-weight: bold;
@@ -355,18 +355,15 @@ body {
     color: #1D3557;
     margin-top: 0;
     margin-bottom: 0;
-
 }
 
 .inizia {
-
     width: 66px;
     height: 28px;
     left: 0;
     right: 0;
     margin-left: auto;
     margin-right: auto;
-
     font-family: Roboto;
     font-style: normal;
     font-weight: bold;
@@ -377,31 +374,25 @@ body {
     color: #1D3557;
     margin-top: 0;
     margin-bottom: 0;
-
 }
 
 .tranqui {
-
     width: 150px;
     left: 0;
     right: 0;
     margin-left: auto;
     margin-right: auto;
     margin-top: 30px;
-
     font-family: Roboto;
     font-style: italic;
     font-weight: normal;
     font-size: 13px;
     line-height: 15px;
     text-align: center;
-
     color: #1D3557;
-
 }
 
 .testolegale {
-
     padding-top: 100px;
     width: 295px;
     height: 100%;
@@ -409,72 +400,55 @@ body {
     right: 0;
     margin-left: auto;
     margin-right: auto;
-
-
 }
 
 .sub1 {
-
     width: 290px;
     height: auto;
-
     font-family: Roboto;
     font-style: normal;
     font-weight: bold;
     font-size: 26px;
     line-height: 28px;
     margin-bottom: 5px;
-
     color: #1D3557;
 }
 
 .sub2 {
-
     width: 290px;
     height: auto;
-
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
     line-height: 16px;
-
     color: #1D3557;
-
 }
 
 .sub3 {
-
     width: 290px;
     height: auto;
     margin-bottom: 5px;
-
     font-family: Roboto;
     font-style: normal;
     font-weight: bold;
     font-size: 26px;
     line-height: 28px;
     padding-top: 25px;
-
     color: #1D3557;
-
 }
 
 .footer1 {
-
     width: 280px;
     height: 150px;
-
     text-align: center;
     padding-bottom: 10px;
     left: 0;
     right: 0;
     margin-top: 50px;
-
 }
 
 .caffeButton {
-
     width: 231px;
     height: 52px;
     left: 0;
@@ -482,7 +456,6 @@ body {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 25px;
-
     background: #A8DADC;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 26px;
@@ -490,7 +463,6 @@ body {
 }
 
 .backHome {
-
     width: 130px;
     height: 26px;
     font-family: Roboto;
@@ -499,15 +471,12 @@ body {
     font-size: 14px;
     line-height: 16px;
     text-decoration-line: underline;
-
     color: #1D3557;
 }
 
-button > a{
-
+button>a {
     width: 181px;
     height: 28px;
-
     font-family: Roboto;
     font-style: normal;
     font-weight: bold;
@@ -516,18 +485,12 @@ button > a{
     text-decoration: none;
     margin-top: 0;
     margin-bottom: 0;
-    
-
     color: #1D3557;
-
 }
 
 .qrframe {
-
-
     width: 280px;
     height: 267px;
-
     text-align: center;
     padding-top: 60px;
     left: 0;
@@ -537,22 +500,18 @@ button > a{
 }
 
 .frame {
-
     width: 207px;
     height: 207px;
     left: 0;
     right: 0;
     margin-left: auto;
     margin-right: auto;
-
     background: #FFFFFF;
     box-shadow: 0px 4px 4px 3px rgba(0, 0, 0, 0.25);
     border-radius: 14px;
-
 }
 
 .panel {
-
     margin-top: 70px;
     width: 100%;
     height: auto;
@@ -561,14 +520,12 @@ button > a{
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 0;
-
     background: #F1FAEE;
     box-shadow: 0px 4px 4px 3px rgba(0, 0, 0, 0.25);
     border-radius: 30px 30px 0 0;
 }
 
 .panel7 {
-
     margin-top: 70px;
     width: 100%;
     height: auto;
@@ -578,14 +535,12 @@ button > a{
     margin-right: auto;
     margin-bottom: 0;
     text-align: center;
-
     background: #F1FAEE;
     box-shadow: 0px 4px 4px 3px rgba(0, 0, 0, 0.25);
     border-radius: 30px 30px 0 0;
 }
 
 .qr {
-
     width: 144px;
     height: 176px;
     left: 0;
@@ -599,7 +554,6 @@ button > a{
 }
 
 .guide {
-
     width: 100%;
     height: 70px;
     padding-top: 40px;
@@ -607,47 +561,37 @@ button > a{
     right: 0;
     margin-left: auto;
     margin-right: auto;
-
     font-family: Roboto;
     font-style: normal;
     font-weight: bold;
     font-size: 24px;
     line-height: 28px;
     text-align: center;
-
     color: #1D3557;
-
 }
 
 .loadsx {
-
     width: 130px;
     height: 130px;
     text-align: center;
-
     border: 1.5px solid #457B9D;
     box-sizing: border-box;
     border-radius: 20px;
     float: left;
-
 }
 
 .loaddx {
-
     width: 130px;
     height: 130px;
     margin-left: 35px;
     text-align: center;
-
     border: 1.5px solid #457B9D;
     box-sizing: border-box;
     border-radius: 20px;
     float: left;
-
 }
 
 .loadOptions {
-
     padding-top: 45px;
     width: 295px;
     height: auto;
@@ -656,50 +600,40 @@ button > a{
     right: 0;
     margin-left: auto;
     margin-right: auto;
-
 }
 
 .icon {
-
     width: 73px;
     height: 73px;
     margin-top: 15px;
     margin-left: auto;
     margin-right: auto;
-
 }
 
 .loadLabel {
-
     width: 130px;
     height: 31px;
     padding-top: 5px;
     margin-left: auto;
     margin-right: auto;
-
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
     line-height: 16px;
-
     color: #1D3557;
-
 }
 
 .pagineOptions {
-
     width: 135px;
     height: 50px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 80px;
     margin-bottom: 70px;
-
 }
 
 .buttonAvanti {
-
     width: 50px;
     height: 50px;
     margin-top: 0;
@@ -710,10 +644,9 @@ button > a{
     box-sizing: border-box;
     border-radius: 26px;
     float: right;
-
 }
-.buttonIndietro {
 
+.buttonIndietro {
     width: 50px;
     height: 50px;
     margin-top: 0;
@@ -727,9 +660,7 @@ button > a{
 }
 
 .buttonIndietroFoto {
-
     position: absolute;
-
     width: 50px;
     height: 50px;
     bottom: 30px;
@@ -745,7 +676,6 @@ button > a{
 }
 
 .avanti {
-
     width: 46px;
     height: 46px;
     left: 0;
@@ -755,20 +685,17 @@ button > a{
 }
 
 .indietro {
-
     width: 46px;
     height: 46px;
     left: 0;
     right: 0;
     margin-left: auto;
     margin-right: auto;
-
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1);
 }
 
 .colorframe {
-
     padding-top: 30px;
     width: 285px;
     height: auto;
@@ -780,23 +707,18 @@ button > a{
 }
 
 .colore {
-
     width: auto;
     height: 46px;
     padding-bottom: 10px;
-
     font-family: Roboto;
     font-style: normal;
     font-weight: 300;
     font-size: 22px;
     line-height: 26px;
-
     color: #1D3557;
-
 }
 
 .colortable {
-
     width: 100%;
     height: auto;
     min-height: 50px;
@@ -804,37 +726,28 @@ button > a{
     right: 0;
     margin-left: auto;
     margin-right: auto;
-
 }
 
 .scelta1 {
-
     width: 45px;
     height: 45px;
     margin-right: 34px;
     margin-bottom: 30px;
     border-radius: 50%;
-
     float: left;
-
     background-position-x: 40%;
     background-position-y: center;
-
     background: #000;
     background-repeat: no-repeat;
     border: none;
-
 }
 
 .selected {
-
     width: 45px;
     height: 45px;
     margin-right: 34px;
     border-radius: 50%;
-
     float: left;
-
     background: #000;
     outline: 3px solid #457B9D;
     outline-offset: 4px;
@@ -857,7 +770,6 @@ button > a{
 }
 
 .gradientframe {
-
     padding-top: 30px;
     width: 285px;
     height: auto;
@@ -867,13 +779,9 @@ button > a{
     margin-left: auto;
     margin-right: auto;
     border: none;
-
 }
 
-
 .gradienttable {
-
-
     width: 100%;
     height: auto;
     min-height: 50px;
@@ -881,11 +789,9 @@ button > a{
     right: 0;
     margin-left: auto;
     margin-right: auto;
-
 }
 
 .dotframe {
-
     padding-top: 30px;
     width: 285px;
     height: auto;
@@ -894,11 +800,9 @@ button > a{
     right: 0;
     margin-left: auto;
     margin-right: auto;
-
 }
 
 .loadlogo {
-
     width: 130px;
     height: 130px;
     left: 0;
@@ -912,7 +816,6 @@ button > a{
 }
 
 .logo {
-
     width: 73px;
     height: 85px;
     left: 159px;
@@ -925,7 +828,6 @@ button > a{
 }
 
 .rimuovilogo {
-
     width: 130px;
     height: auto;
     left: 0;
@@ -933,7 +835,6 @@ button > a{
     margin-left: auto;
     margin-right: auto;
     padding-top: 25px;
-
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
@@ -941,13 +842,10 @@ button > a{
     line-height: 16px;
     text-align: center;
     text-decoration-line: underline;
-
     color: #1D3557;
 }
 
 .scrittaframe {
-
-
     padding-top: 30px;
     width: 285px;
     height: 150px;
@@ -955,44 +853,38 @@ button > a{
     right: 0;
     margin-left: auto;
     margin-right: auto;
-
 }
 
-textarea { font-size: 20px; }
+textarea {
+    font-size: 20px;
+}
 
 .text {
-
     width: 90%;
     height: 40px;
-
     border: 2px solid #457B9D;
     box-sizing: border-box;
     border-radius: 7px;
 }
 
 .fontframe {
-
     width: 285px;
     height: 100px;
     left: 0;
     right: 0;
     margin-left: auto;
     margin-right: auto;
-
 }
 
 .tendina {
-
     width: 190px;
     height: 40px;
-
     border: 2px solid #457B9D;
     box-sizing: border-box;
     border-radius: 7px;
 }
 
 .coloreScrittaFrame {
-
     width: 285px;
     height: 160px;
     left: 0;
@@ -1002,37 +894,29 @@ textarea { font-size: 20px; }
 }
 
 .consiglioFrame {
-
     width: 295px;
     height: 80px;
     left: 0;
     right: 0;
     margin-left: auto;
     margin-right: auto;
-
 }
 
 .consiglio {
-
     width: 155px;
     height: 76px;
     padding-top: 40px;
     padding-left: 5px;
-
-
     font-family: "Nanum Pen Script";
     font-weight: normal;
     font-size: 17px;
     line-height: 17px;
     text-align: center;
-
     color: #1D3557;
-
     transform: rotate(-14.31deg)
 }
 
 .loadconclusione {
-
     padding-top: 20px;
     margin-bottom: 50px;
     width: 265px;
@@ -1044,71 +928,58 @@ textarea { font-size: 20px; }
 }
 
 .conlusione {
-
     width: 268px;
     height: 299px;
-
     font-family: Roboto;
     font-style: normal;
     font-weight: bold;
     font-size: 14px;
     line-height: 16px;
-
     color: #1D3557;
 }
 
 .subConc {
-
     width: 268px;
     height: auto;
     margin: 7px 0 7px 0;
     padding: 7px 0 8px 0;
-
     font-family: Roboto;
     font-style: normal;
     font-weight: bold;
     font-size: 17px;
     line-height: 16px;
     text-align: left;
-
     color: #1D3557;
 }
 
 .testoConc {
-
     width: 268px;
     height: auto;
-
     font-family: Roboto;
     font-style: normal;
     font-size: 17px;
     line-height: 16px;
     text-align: left;
-
     color: #1D3557;
 }
 
 .caffeButtonConc {
-
     width: 231px;
     height: 52px;
     left: 0;
     right: 0;
     margin: 50px auto 25px auto;
-
     background: #A8DADC;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 26px;
     border: none;
 }
 
-a{
-
+a {
     width: 130px;
     height: 26px;
     left: 0;
     right: 0;
-
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
@@ -1116,11 +987,10 @@ a{
     line-height: 16px;
     text-align: center;
     text-decoration-line: underline;
-
     color: #1D3557;
 }
 
-.kofi-button{
+.kofi-button {
     width: 231px;
     height: 45px;
     left: 0;
@@ -1128,15 +998,13 @@ a{
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 25px !important;
-
     background: #A8DADC !important;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25) !important;
     border-radius: 26px !important;
     border: none !important;
 }
 
-.kofitext{
-
+.kofitext {
     font-family: Roboto !important;
     font-style: normal !important;
     font-weight: bold !important;
@@ -1145,7 +1013,5 @@ a{
     text-decoration: none !important;
     margin-top: 0 !important;
     margin-bottom: 0 !important;
-
     color: #1D3557 !important;
 }
-

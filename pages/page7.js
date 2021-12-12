@@ -2,112 +2,152 @@ import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { useSelector } from "react-redux";
 import withTransition from "../HOC/withTransition";
-
-
+import { useToasts } from "react-toast-notifications";
 
 const fasi = "/images/Group 19.svg";
 
-
 function Page7() {
+    const { addToast } = useToasts();
 
     useEffect(() => {
-        const root = document.documentElement
-        root.style.setProperty('--green', "#FFFFFF");
-    })
+        const root = document.documentElement;
+        root.style.setProperty("--green", "#FFFFFF");
+    });
 
-    //window.scrollTo(0, 0);
+    useEffect(() => {
+        const shareData = {
+            title: "QR Personalization",
+            text: "Personalizza il tuo greenpass! Rendilo unico, è gratis e veloce!",
+            url: "https://personalizza-greenpass.it/",
+        };
 
-    const qrPanel = useRef()
+        const btn = document.getElementById("button");
+        const resultPara = document.querySelector(".result");
 
-    const qrOptions = useSelector(state => state.qrOptions.value)
+        // Share must be triggered by "user activation"
+        btn.addEventListener("click", async () => {
+            try {
+                await navigator.share(shareData);
+                addToast("Condivisa con successo", {
+                    appearance: "success",
+                    autoDismiss: true,
+                });
+            } catch (err) { }
+        });
+    });
 
-    const [qrCode, setQrCode] = useState(null)
+    const qrPanel = useRef();
+
+    const qrOptions = useSelector((state) => state.qrOptions.value);
+
+    const [qrCode, setQrCode] = useState(null);
 
     useEffect(() => {
         const dynamicImports = async () => {
-            const QRCodeStyling = (await import("qr-code-styling")).default
-            setQrCode(new QRCodeStyling(qrOptions))
-        }
-        dynamicImports()
-    }, [])
+            const QRCodeStyling = (await import("qr-code-styling")).default;
+            setQrCode(new QRCodeStyling(qrOptions));
+        };
+        dynamicImports();
+    }, []);
 
     useEffect(() => {
         if (qrCode) {
-            qrCode.append(qrPanel.current)
+            qrCode.append(qrPanel.current);
         }
-    }, [qrCode])
-
+    }, [qrCode]);
 
     useEffect(() => {
         if (qrCode) {
-            qrCode.update(qrOptions)
+            qrCode.update(qrOptions);
         }
-    }, [qrCode, qrOptions])
+    }, [qrCode, qrOptions]);
 
     return (
-        <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", height: "100%" }}>
+        <div
+            style={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-between",
+                height: "100%",
+            }}
+        >
             <div>
-                <div className="fase" >
+                <div className="fase">
                     <img src={fasi} alt="personalization part 7" />
                 </div>
-
                 <div className="qrframe">
                     <div className="frame">
-                        <svg ref={qrPanel} viewBox="0 0 1000 1000" style={{ width: 198, paddingTop: 4 }} />
-                    </div>
-                </div>
+                        <svg
+                            ref={qrPanel}
+                            viewBox="0 0 1000 1000"
+                            style={{ width: 198, paddingTop: 4 }}
+                        />{" "}
+                    </div>{" "}
+                </div>{" "}
             </div>
-
             <div className="panel7">
                 <div className="guideframe">
-                    <div className="guide">
-                        Hai finito!
-                    </div>
+                    <div className="guide">Hai finito!</div>{" "}
                 </div>
 
                 <div className="loadconclusione">
                     <div className="conclusione">
-                        <div className="subConc">
-                            E ora?
-                        </div>
+                        <div className="subConc">E ora ?</div>
 
                         <div className="testoConc">
-                            Non resta che usare il tuo nuovo “accessorio”
+                            Non resta che usare il tuo nuovo“ accessorio”{" "}
                         </div>
 
                         <div className="subConc">
-                            Che progetto bellissimo! Come potrò mai ripagarvi?<br />
+                            Che progetto bellissimo!Come potrò mai ripagarvi ? <br />
                         </div>
 
                         <div className="testoConc">
-                            Grazie mille! Se ci tieni a essere anche te partecipe di questo progetto, puoi offrire un
-                            caffè agli sviluppatori con il bottone qui sotto.<br />
+                            Grazie mille!Se ci tieni a essere anche te partecipe di questo
+                            progetto, puoi offrire un caffè agli sviluppatori con il bottone
+                            qui sotto. <br />
                         </div>
 
                         <div className="subConc">
-                            Oppure?<br />
+                            Oppure ? <br />
                         </div>
 
                         <div className="testoConc">
-                            Puoi condividere il progetto con un amicə! é gratis e noi siamo contenti lo stesso!
+                            Puoi condividere il progetto con un amicə!é gratis e noi siamo
+                            contenti lo stesso!
                         </div>
-
                     </div>
                     <button className="caffeButtonConc">
-                        <a href='https://ko-fi.com/Q5Q57B6DG' target='_blank' className="caffe" style={{color: "#1D3557"}}>
-                            <img src="https://storage.ko-fi.com/cdn/cup-border.png" href='https://ko-fi.com/Q5Q57B6DG' alt="Ko-fi donations" style={{ width: 27, height: 18, marginRight: 7 }}></img>
+                        <a
+                            href="https://ko-fi.com/Q5Q57B6DG"
+                            target="_blank"
+                            className="caffe"
+                            style={{ color: "#1D3557" }}
+                        >
+                            <img
+                                src="https://storage.ko-fi.com/cdn/cup-border.png"
+                                href="https://ko-fi.com/Q5Q57B6DG"
+                                alt="Ko-fi donations"
+                                style={{ width: 27, height: 18, marginRight: 7 }}
+                            >
+                            </img>
                             Offrici un caffè
                         </a>
-
                     </button>
                     <div>
-                        <Link href='/' className="backHomeConc">Torna alla home</Link>
+                        <Link href="/" className="backHomeConc">
+                            Torna alla home
+                        </Link>
                     </div>
+                    <p>
+                        <button id="button" className="shareButton">
+                            <h3 className="share"> Share MDN! </h3>
+                        </button>
+                    </p>
                 </div>
-
             </div>
         </div>
-    )
+    );
 }
 
-export default withTransition(Page7)
+export default withTransition(Page7);
