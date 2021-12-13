@@ -3,6 +3,8 @@ import Link from "next/link";
 import styles from '../styles/Home.module.css'
 import withTransition from "../HOC/withTransition";
 
+const share = '/images/Share.svg';
+
 
 function Legal() {
 
@@ -64,14 +66,24 @@ function Legal() {
 
                 <footer className="footer1">
                     <button className="caffeButton">
-                        <a href='https://ko-fi.com/Q5Q57B6DG' target='_blank' className="caffe" style={{color: "#1D3557"}}>
+                        <a href='https://ko-fi.com/Q5Q57B6DG' target='_blank' className="caffe" style={{ color: "#1D3557" }}>
                             <img src="https://storage.ko-fi.com/cdn/cup-border.png" href='https://ko-fi.com/Q5Q57B6DG' alt="Ko-fi donations" style={{ width: 27, height: 18, marginRight: 7 }}></img>
-                            Offrici un caffè
+                            Offrici un caffè!
                         </a>
 
                     </button>
+                    <button id="button" className="shareButton">
+
+                        <div style={{ width: 250, marginRight: 0 }}>
+                            <img src={share} style={{ width: 30, height: 30 }} /><p className="share"> Condividi il progetto! </p>
+                        </div>
+                    </button>
                     <div>
                         <Link href='/' className="backHome">Torna alla home</Link>
+                    </div>
+
+                    <div className="nonStudio">
+                        Creato con <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="heart" class="svg-inline--fa fa-heart fa-w-16 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" color="red" style={{ width: 20, height: 17.5 }}><path fill="currentColor" d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"></path></svg> da <a href="https://www.nonstudio.org" className="nonStudio"><strong>NonStudio</strong></a>
                     </div>
                 </footer>
             </div>

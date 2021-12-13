@@ -3,10 +3,11 @@ import Link from "next/link";
 import { useSelector } from "react-redux";
 import withTransition from "../HOC/withTransition";
 import { useToasts } from "react-toast-notifications";
-
 const fasi = "/images/Group 19.svg";
+const share = '/images/Share.svg';
 
 function Page7() {
+
     const { addToast } = useToasts();
 
     useEffect(() => {
@@ -80,14 +81,14 @@ function Page7() {
                         <svg
                             ref={qrPanel}
                             viewBox="0 0 1000 1000"
-                            style={{ width: 198, paddingTop: 4 }}
-                        />{" "}
-                    </div>{" "}
-                </div>{" "}
+                            style={{ width: 198, paddingTop: 4.5 }}
+                        />
+                    </div>
+                </div>
             </div>
             <div className="panel7">
                 <div className="guideframe">
-                    <div className="guide">Hai finito!</div>{" "}
+                    <div className="guide">Hai finito!</div>
                 </div>
 
                 <div className="loadconclusione">
@@ -95,11 +96,11 @@ function Page7() {
                         <div className="subConc">E ora ?</div>
 
                         <div className="testoConc">
-                            Non resta che usare il tuo nuovo“ accessorio”{" "}
+                            Non resta che usare il tuo nuovo“ accessorio”
                         </div>
 
                         <div className="subConc">
-                            Che progetto bellissimo!Come potrò mai ripagarvi ? <br />
+                            Che progetto bellissimo! Come potrò mai ripagarvi ? <br />
                         </div>
 
                         <div className="testoConc">
@@ -131,19 +132,20 @@ function Page7() {
                                 style={{ width: 27, height: 18, marginRight: 7 }}
                             >
                             </img>
-                            Offrici un caffè
+                            Offrici un caffè!
                         </a>
+                    </button>
+                    <button id="button" className="shareButton">
+
+                        <div style={{ width: 250, marginRight: 0 }}>
+                            <img src={share} style={{ width: 30, height: 30 }} /><p className="share"> Condividi il progetto! </p>
+                        </div>
                     </button>
                     <div>
                         <Link href="/" className="backHomeConc">
                             Torna alla home
                         </Link>
                     </div>
-                    <p>
-                        <button id="button" className="shareButton">
-                            <h3 className="share"> Share MDN! </h3>
-                        </button>
-                    </p>
                 </div>
             </div>
         </div>

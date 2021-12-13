@@ -170,7 +170,7 @@ function Page2() {
                 <div className="qrframe">
                     <div className="frame">
                         {!qrFound ? <img src={QR} className="qr" alt={"qr icon"} /> :
-                            <svg ref={qrPanel} viewBox="0 0 1000 1000" style={{width: 198, paddingTop: 4}} />}
+                            <svg ref={qrPanel} viewBox="0 0 1000 1000" style={{width: 198, paddingTop: 4.5}} />}
                     </div>
                 </div>
             </div>

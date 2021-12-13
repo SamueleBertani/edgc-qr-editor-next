@@ -326,7 +326,7 @@ body {
 }
 
 .shareButton {
-    width: 150px;
+    width: 280px;
     height: 52px;
     left: 0;
     right: 0;
@@ -335,11 +335,14 @@ body {
     background: #A8DADC;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 26px;
+    margin-top: 20px;
+    margin-bottom: 30px;
     border: none;
+    text-align: center;
 }
 
 .share {
-    width: 130px;
+    width: auto;
     height: 28px;
     left: 0;
     right: 0;
@@ -348,13 +351,14 @@ body {
     font-family: Roboto;
     font-style: normal;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 21px;
     line-height: 28px;
-    text-align: center;
     text-decoration: none;
     color: #1D3557;
     margin-top: 0;
     margin-bottom: 0;
+    margin-top: 2px;
+    float: right;
 }
 
 .inizia {
@@ -439,17 +443,18 @@ body {
 }
 
 .footer1 {
+
     width: 280px;
-    height: 150px;
+    height: auto;
     text-align: center;
-    padding-bottom: 10px;
+    padding-bottom: 30px;
     left: 0;
     right: 0;
     margin-top: 50px;
 }
 
 .caffeButton {
-    width: 231px;
+    width: 235px;
     height: 52px;
     left: 0;
     right: 0;
@@ -919,7 +924,7 @@ textarea {
 .loadconclusione {
     padding-top: 20px;
     margin-bottom: 50px;
-    width: 265px;
+    width: 285px;
     height: auto;
     left: 0;
     right: 0;
@@ -928,13 +933,14 @@ textarea {
 }
 
 .conlusione {
-    width: 268px;
+    width: 261px;
     height: 299px;
     font-family: Roboto;
     font-style: normal;
     font-weight: bold;
     font-size: 14px;
     line-height: 16px;
+    padding-top: 7px;
     color: #1D3557;
 }
 
@@ -943,6 +949,7 @@ textarea {
     height: auto;
     margin: 7px 0 7px 0;
     padding: 7px 0 8px 0;
+    padding-left: 10px;
     font-family: Roboto;
     font-style: normal;
     font-weight: bold;
@@ -960,11 +967,12 @@ textarea {
     font-size: 17px;
     line-height: 16px;
     text-align: left;
+    padding-left: 10px;
     color: #1D3557;
 }
 
 .caffeButtonConc {
-    width: 231px;
+    width: 235px;
     height: 52px;
     left: 0;
     right: 0;
@@ -1014,4 +1022,16 @@ a {
     margin-top: 0 !important;
     margin-bottom: 0 !important;
     color: #1D3557 !important;
+}
+
+.nonStudio{
+    margin-top: 80px;
+    font-family: Lato,sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    text-decoration: none;
+}
+.confetti{
+    width:100% !important;
+    height: 100% !important;
 }

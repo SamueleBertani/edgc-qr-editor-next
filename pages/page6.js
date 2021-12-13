@@ -91,7 +91,7 @@ function Page6() {
 
                 <div className="qrframe">
                     <div className="frame" >
-                        <svg ref={qrPanel} viewBox="0 0 1000 1000" style={{width: 198, paddingTop: 4}} />
+                        <svg ref={qrPanel} viewBox="0 0 1000 1000" style={{width: 198, paddingTop: 4.5}} />
                     </div>
                 </div>
             </div>
