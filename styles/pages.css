@@ -1030,6 +1030,7 @@ a {
     font-weight: 300;
     font-size: 18px;
     text-decoration: none;
+    padding-bottom: 30px;
 }
 .confetti{
     width:100% !important;
