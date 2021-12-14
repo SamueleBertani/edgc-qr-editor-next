@@ -59,7 +59,7 @@ function Page6() {
                         title: "Condividi il tuo green pass!",
                         text: "Il tuo green pass"
                     }
-                    setShare(navigator.canShare(obj))
+                    //setShare(navigator.canShare(obj))
                     setShareObj(obj)
                 } else {
                     setShare(false)
