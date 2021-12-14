@@ -21,7 +21,6 @@ const Home: NextPage = () => {
     })
 
     return (
-        <div className={styles.container}>
             <div className="testoIniziale">
                 
                 <img src={bigCircle} className='bigCircle' />
@@ -56,7 +55,6 @@ const Home: NextPage = () => {
                     </div>
                 </div>
             </div>
-        </div>
     )
 }
 
