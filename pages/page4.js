@@ -6,7 +6,7 @@ import withTransition from "../HOC/withTransition";
 
 const avanti = "/images/Avanti.svg";
 const image = "/images/Image.svg";
-const fasi = "/images/Group 8.svg";
+const fasi = "/images/Group 17.svg";
 
 
 function Page4() {
@@ -69,7 +69,7 @@ function Page4() {
 
                 <div className="qrframe">
                     <div className="frame">
-                        <svg ref={qrPanel} viewBox="0 0 1000 1000" style={{ width: 200 }} />
+                        <svg ref={qrPanel} viewBox="0 0 1000 1000" style={{width: 198, paddingTop: 4.5}} />
                     </div>
                 </div>
             </div>
@@ -113,4 +113,4 @@ function Page4() {
     )
 }
 
-export default withTransition(Page4);
+export default withTransition(Page4)

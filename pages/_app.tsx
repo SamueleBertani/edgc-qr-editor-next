@@ -11,6 +11,9 @@ import Head from "next/head"
 
 const favicon = '/favicon.ico';
 
+const favicon = '/favicon.svg';
+
+
 
 function App({ Component, pageProps, router }: AppProps) {
 
@@ -60,7 +63,7 @@ function App({ Component, pageProps, router }: AppProps) {
             <meta property="og:image:alt" content="site icon"/>
         </Head>
         <Provider store={store}>
-            <ToastProvider>
+        <ToastProvider>
                 <AnimatePresence exitBeforeEnter>
                     <Component {...pageProps} key={router.route} />
                 </AnimatePresence>

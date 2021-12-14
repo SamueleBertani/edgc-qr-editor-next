@@ -1,5 +1,4 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
-const favicon = '/favicon.ico';
 
 export default class MyDocument extends Document {
     render() {
