@@ -100,11 +100,11 @@ function Page7() {
                         </div>
 
                         <div className="subConc">
-                            Che progetto bellissimo! Come potrò mai ripagarvi ? <br />
+                            Che progetto bellissimo! Come potrò mai ripagarvi? <br />
                         </div>
 
                         <div className="testoConc">
-                            Grazie mille!Se ci tieni a essere anche te partecipe di questo
+                            Grazie mille! Se ci tieni a essere anche te partecipe di questo
                             progetto, puoi offrire un caffè agli sviluppatori con il bottone
                             qui sotto. <br />
                         </div>
@@ -114,7 +114,7 @@ function Page7() {
                         </div>
 
                         <div className="testoConc">
-                            Puoi condividere il progetto con un amicə!é gratis e noi siamo
+                            Puoi condividere il progetto con un amicə! é gratis e noi siamo
                             contenti lo stesso!
                         </div>
                     </div>
