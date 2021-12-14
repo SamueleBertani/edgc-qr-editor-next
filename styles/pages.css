@@ -33,6 +33,7 @@
 
 .bigCircle {
     position: absolute;
+    z-index: -2;
     width: auto;
     height: auto;
     right: 0px;
@@ -41,6 +42,7 @@
 
 .yellow {
     position: absolute;
+    z-index: -2;
     width: 228px;
     height: 228px;
     left: 0;
@@ -49,6 +51,7 @@
 
 .littleBlue {
     position: absolute;
+    z-index: -2;
     width: 94.81px;
     height: 108.23px;
     right: 10px;
@@ -57,6 +60,7 @@
 
 .bigBlue {
     position: absolute;
+    z-index: -2;
     width: 228px;
     height: 228px;
     top: 440px;
@@ -65,6 +69,7 @@
 
 .mediumYellow {
     position: absolute;
+    z-index: -2;
     width: auto;
     height: auto;
     bottom: -40px;
@@ -109,53 +114,6 @@ body {
     background: #F1FAEE;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 26px;
-    text-align: center;
-}
-
-.tryAgain {
-    width: 136px;
-    height: 28px;
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 22px;
-    line-height: 28px;
-    text-align: center;
-    text-decoration: none;
-    color: #1D3557;
-    margin-top: 0;
-    margin-bottom: 0;
-}
-
-.closeButton {
-    width: 171px;
-    height: 52px;
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 80px;
-    background: #A8DADC;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 26px;
-    border: none;
-}
-
-.notFound {
-    width: 290px;
-    height: 50px;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 27px;
-    line-height: 28px;
-    padding-top: 55px;
-    margin: 0 auto 0 auto;
-    color: #d60000;
     text-align: center;
 }
 
@@ -263,7 +221,8 @@ body {
 }
 
 .testoIniziale {
-    padding-top: 125px;
+    position: static;
+    padding-top: 25px;
     width: 295px;
     height: 100%;
     left: 0;
@@ -273,6 +232,7 @@ body {
 }
 
 .title {
+    position: static;
     width: 270px;
     height: 200px;
     font-family: Roboto;
@@ -288,6 +248,7 @@ body {
 }
 
 .descr {
+    position: static;
     width: 270px;
     height: 50px;
     font-family: Roboto;
@@ -302,6 +263,7 @@ body {
 }
 
 .footer {
+    position: static;
     width: 280px;
     height: 207px;
     text-align: center;
@@ -313,6 +275,7 @@ body {
 }
 
 .iniziaButton {
+    position: static;
     width: 121px;
     height: 52px;
     left: 0;
@@ -326,6 +289,7 @@ body {
 }
 
 .shareButton {
+    position: static;
     width: 280px;
     height: 52px;
     left: 0;
@@ -1030,7 +994,7 @@ a {
     font-weight: 300;
     font-size: 18px;
     text-decoration: none;
-    padding-bottom: 30px;
+    padding-bottom: 60px;
 }
 .confetti{
     width:100% !important;
