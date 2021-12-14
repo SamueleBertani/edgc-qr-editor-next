@@ -64,12 +64,12 @@ function Page4() {
         <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", height: "100%" }}>
             <div>
                 <div className="fase" >
-                    <img src={fasi} alt="personalization part 4"/>
+                    <img src={fasi} alt="personalization part 4" />
                 </div>
 
                 <div className="qrframe">
                     <div className="frame">
-                        <svg ref={qrPanel} viewBox="0 0 1000 1000" style={{width: 198, paddingTop: 4.5}} />
+                        <svg ref={qrPanel} viewBox="0 0 1000 1000" style={{ width: 198, paddingTop: 4.5 }} />
                     </div>
                 </div>
             </div>
@@ -83,28 +83,29 @@ function Page4() {
                 <div className="loadOptions">
                     <div className="loadlogo" onClick={onImageSelectorClick}>
                         <div>
-                            <img src={image} className="logo" alt="add logo"/>
+                            <img src={image} className="logo" alt="add logo" />
                         </div>
                         <div className="loadLabel">
                             Galleria
                         </div>
                         <input type="file" ref={inputFile} accept="image/png, image/jpeg"
                             onChange={e => (onImageInput(e.target.files[0]))} style={{ display: 'none' }} />
+                        <div className="rimuovilogo" onClick={onImageRemoveClick}>
+                            Rimuovi
+                        </div>
                     </div>
-                    <div className="rimuovilogo" onClick={onImageRemoveClick}>
-                        Rimuovi
-                    </div>
+
                 </div>
                 <div className="pagineOptions">
                     <Link href="/page6">
                         <div className="buttonAvanti" >
-                            <img src={avanti} className="avanti" alt="next page"/>
+                            <img src={avanti} className="avanti" alt="next page" />
                         </div>
                     </Link>
 
                     <Link href="/page3">
                         <div className="buttonIndietro" >
-                            <img src={avanti} className="indietro" alt="previous page"/>
+                            <img src={avanti} className="indietro" alt="previous page" />
                         </div>
                     </Link>
                 </div>
