@@ -44,7 +44,7 @@ function Legal() {
                         greenpass personalizzato la disinstallassi.</p>
                     <p>L’unica cosa che salviamo, un po come tutti i siti (ma in realtà di meno), sono dati
                         sull’utilizzo (quanta gente ha provato a usare questo sito, ecc).</p>
-                    <p>Se non ti fidi comunque <strong>puoi contattare Samuele</strong>(<a href="mailto:samuele@nonstudio.org" >samuele@nonstudio.org </a>) per
+                    <p>Se non ti fidi comunque <strong>puoi contattare Samuele </strong>(<a href="mailto:samuele@nonstudio.org" >samuele@nonstudio.org </a>) per
                         guardare il codice del progetto.</p>
                 </div>
                 <div className="sub3">
