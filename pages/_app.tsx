@@ -9,8 +9,6 @@ import React, { useEffect } from "react";
 import { ToastProvider } from "react-toast-notifications";
 import Head from "next/head"
 
-const favicon = '/favicon.ico';
-
 const favicon = '/favicon.svg';
 
 
