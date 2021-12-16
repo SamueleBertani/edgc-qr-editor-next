@@ -55,7 +55,7 @@ function App({ Component, pageProps, router }: AppProps) {
             <meta property="og:locale" content="it_IT"/>
             <meta property="og:url" content="https://personalizza-greenpass.it"/>
             <meta property="og:title" content="Personalizza il tuo greenpass! &#127881;"/>
-            <meta property="og:site_name" content="Personolizza Greenpass"/>
+            <meta property="og:site_name" content="Personalizza Greenpass"/>
             <meta property="og:description" content="Rendilo unico &#128081; è gratis e veloce &#127939;"/>
             <meta property="og:image" content={favicon}/>
             <meta property="og:image:alt" content="site icon"/>
