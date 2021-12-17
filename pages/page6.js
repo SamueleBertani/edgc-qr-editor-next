@@ -128,7 +128,7 @@ function Page6() {
                 </div>
 
                 <div className="pagineOptions">
-                    <Link href="/page7">
+                    <Link href="/framePage">
                         <div className="buttonAvanti">
                             <img src={avanti} className="avanti" alt="next page" />
                         </div>
